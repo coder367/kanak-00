@@ -16,6 +16,8 @@ export default {
         'disco': '#BC1444',
         'careys-pink': '#D0ADAB',
         'turkish-rose': '#BA778B',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
       },
       fontFamily: {
         'serif-display': ['DM Serif Display', 'serif'],
