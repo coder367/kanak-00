@@ -31,7 +31,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-50" />
 
       {/* Content */}
-      <div className="relative text-center px-4 flex flex-col items-center gap-64">
+      <div className="relative text-center px-4 flex flex-col items-center">
         <h1 
           ref={brandRef}
           className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-50"
@@ -43,7 +43,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         >
           G U C C I
         </h1>
-        <div className="mt-[45vh] space-y-8 z-30 relative w-full max-w-md mx-auto">
+        <div className="mt-[60vh] space-y-8 z-30 relative w-full max-w-md mx-auto">
           <Input 
             type="text" 
             placeholder="Full Name" 
