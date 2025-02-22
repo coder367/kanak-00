@@ -20,7 +20,7 @@ export const TeaserCards = () => {
   return (
     <section className="bg-careys-pink/60 backdrop-blur-lg py-24">
       <div className="container mx-auto px-4">
-        <div className="h-[120vh] relative perspective-[1000px]">
+        <div className="min-h-[150vh] relative perspective-[1000px]">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
