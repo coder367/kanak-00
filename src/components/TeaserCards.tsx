@@ -26,7 +26,7 @@ export const TeaserCards = () => {
               <h3 className="text-3xl font-serif-display text-disco-dark mb-4">{teaser.title}</h3>
               <p className="text-turkish-rose text-lg font-garamond">{teaser.description}</p>
             </Card>
-          </div>
+          ))}
         </div>
       </div>
     </section>
