@@ -17,11 +17,11 @@ export const Navbar = ({ isVisible }: NavbarProps) => {
       <div className="container mx-auto px-4 h-full flex items-center justify-center">
         <h1 
           className={cn(
-            "text-3xl brand-transition",
+            "text-3xl tracking-wider brand-transition text-disco",
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           )}
         >
-          GUCCI
+          G U C C I
         </h1>
       </div>
     </nav>
