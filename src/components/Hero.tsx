@@ -52,7 +52,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       {/* Brand Container */}
       <h1 
         ref={brandRef}
-        className="fixed w-full left-0 text-6xl md:text-7xl lg:text-8xl text-white tracking-[0.5rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60]"
+        className="fixed w-full left-0 text-7xl md:text-8xl lg:text-[10rem] text-white tracking-[0.5rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60]"
         style={{
           transform: `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`,
           top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
