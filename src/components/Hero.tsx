@@ -36,7 +36,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark/50 backdrop-blur-sm z-[60] flex items-center justify-end px-6">
+      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark/50 backdrop-blur-sm z-[50] flex items-center justify-end px-6">
         <button className="text-white hover:opacity-80 transition-opacity">
           <ShoppingCart size={24} />
         </button>
@@ -45,7 +45,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       {/* Brand Container */}
       <h1 
         ref={brandRef}
-        className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-50"
+        className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60]"
         style={{
           transform: `scale(${window.scrollY > 100 ? 0.15 : 1})`,
           top: window.scrollY > 100 ? '10px' : '20%',
@@ -56,7 +56,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </h1>
 
       {/* Tagline Container */}
-      <div className="absolute top-64 left-0 right-0 z-40">
+      <div className="absolute top-80 left-0 right-0 z-40">
         <p className="text-white text-2xl md:text-3xl lg:text-4xl font-garamond whitespace-nowrap text-center">
           Luxury Ethnic Wear, Crafted for You
         </p>
