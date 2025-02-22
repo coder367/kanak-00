@@ -25,22 +25,15 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   }, [onScroll]);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden" ref={observerRef}>
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-rum-swizzle/60 to-rum-swizzle/40" />
-        <img
-          src="/lovable-uploads/a8b4f9a6-e0cb-4de0-9a00-636e06b41c64.png"
-          alt="Elegant ethnic wear"
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div className="relative min-h-screen flex items-center justify-center" ref={observerRef}>
+      {/* Background Navbar */}
+      <div className="fixed top-0 left-0 right-0 h-20 bg-disco/90 z-40" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 flex flex-col items-center gap-48">
+      <div className="relative text-center px-4 flex flex-col items-center gap-48">
         <h1 
           ref={brandRef}
-          className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60]"
+          className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-50"
           style={{
             transform: `scale(${window.scrollY > 100 ? 0.15 : 1})`,
             top: window.scrollY > 100 ? '10px' : '30%',
@@ -49,7 +42,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         >
           G U C C I
         </h1>
-        <div className="mt-[35vh] space-y-16">
+        <div className="mt-[35vh] space-y-16 z-50 relative">
           <p className="font-garamond-bold text-xl md:text-2xl text-turkish-rose animate-slide-up">
             Embrace Tradition, Radiate Elegance
           </p>
