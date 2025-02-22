@@ -11,8 +11,8 @@ const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (brandRef.current) {
-        brandRef.current.style.transform = `translateY(${window.scrollY > 100 ? '0' : '0'}) scale(${window.scrollY > 100 ? 0.3 : 1})`;
-        brandRef.current.style.top = window.scrollY > 100 ? '10px' : '30%';
+        brandRef.current.style.transform = `translateY(${window.scrollY > 100 ? '0' : '0'}) scale(${window.scrollY > 100 ? 0.2 : 1})`;
+        brandRef.current.style.top = window.scrollY > 100 ? '-5px' : '30%';
       }
       setIsNavbarVisible(window.scrollY > 100);
     };
