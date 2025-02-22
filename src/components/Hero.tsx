@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { ShoppingCart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
@@ -38,11 +39,13 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       {/* Background Navbar */}
       <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-[50] flex items-center justify-between px-6">
         <div className="flex items-center space-x-4">
-          <img 
-            src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
-            alt="Kanakdhaga Logo" 
-            className="h-12 w-auto"
-          />
+          <Link to="/">
+            <img 
+              src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
+              alt="Kanakdhaga Logo" 
+              className="h-12 w-auto"
+            />
+          </Link>
         </div>
         <button className="text-white hover:opacity-80 transition-opacity">
           <ShoppingCart size={24} />
@@ -52,7 +55,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       {/* Brand Container */}
       <h1 
         ref={brandRef}
-        className="fixed w-full left-0 text-7xl md:text-8xl lg:text-[10rem] text-white tracking-[0.5rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60]"
+        className="fixed w-full left-0 text-6xl md:text-7xl lg:text-9xl text-white tracking-[0.5rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60] px-4"
         style={{
           transform: `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`,
           top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
@@ -63,7 +66,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </h1>
 
       {/* Tagline Container */}
-      <div className="absolute top-[32rem] left-0 right-0 z-40">
+      <div className="absolute top-[28rem] left-0 right-0 z-40">
         <p className="text-white text-2xl md:text-3xl lg:text-4xl font-garamond whitespace-nowrap text-center">
           Luxury Ethnic Wear, Crafted for You
         </p>
