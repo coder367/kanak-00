@@ -11,11 +11,11 @@ const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (brandRef.current) {
-        brandRef.current.style.transform = `scale(${window.scrollY > window.innerHeight / 4 ? 0.15 : 1})`;
-        brandRef.current.style.top = window.scrollY > window.innerHeight / 4 ? '10px' : '20%';
-        brandRef.current.style.height = window.scrollY > window.innerHeight / 4 ? '80px' : 'auto';
+        brandRef.current.style.transform = `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`;
+        brandRef.current.style.top = window.scrollY > window.innerHeight / 5 ? '10px' : '15%';
+        brandRef.current.style.height = window.scrollY > window.innerHeight / 5 ? '80px' : 'auto';
       }
-      setIsNavbarVisible(window.scrollY > window.innerHeight / 4);
+      setIsNavbarVisible(window.scrollY > window.innerHeight / 5);
     };
 
     window.addEventListener('scroll', handleScroll);
