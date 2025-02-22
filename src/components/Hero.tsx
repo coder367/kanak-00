@@ -43,18 +43,18 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         >
           G U C C I
         </h1>
-        <div className="mt-[75vh] space-y-6 z-30 relative w-full max-w-2xl mx-auto px-6">
+        <div className="mt-[75vh] space-y-6 z-30 relative w-full max-w-3xl mx-auto px-6">
           <Input 
             type="text" 
             placeholder="Full Name" 
-            className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 rounded-xl text-lg"
+            className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-16 rounded-2xl text-lg px-6"
           />
           <Input 
             type="email" 
             placeholder="Email Address" 
-            className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 rounded-xl text-lg"
+            className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-16 rounded-2xl text-lg px-6"
           />
-          <button className="w-full bg-disco hover:bg-disco/90 text-white font-garamond px-8 py-4 rounded-xl text-lg transition-all duration-300 animate-slide-up mt-8">
+          <button className="w-full bg-disco hover:bg-disco/90 text-white font-garamond px-8 py-4 rounded-2xl text-lg transition-all duration-300 animate-slide-up mt-8">
             Join Waitlist
           </button>
         </div>
