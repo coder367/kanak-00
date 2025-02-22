@@ -37,24 +37,24 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
           className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-50"
           style={{
             transform: `scale(${window.scrollY > 100 ? 0.15 : 1})`,
-            top: window.scrollY > 100 ? '10px' : '30%',
+            top: window.scrollY > 100 ? '10px' : '20%',
             height: window.scrollY > 100 ? '80px' : 'auto'
           }}
         >
           G U C C I
         </h1>
-        <div className="mt-[60vh] space-y-8 z-30 relative w-full max-w-md mx-auto">
+        <div className="mt-[75vh] space-y-12 z-30 relative w-full max-w-2xl mx-auto px-6">
           <Input 
             type="text" 
             placeholder="Full Name" 
-            className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 h-14 rounded-xl text-lg"
           />
           <Input 
             type="email" 
             placeholder="Email Address" 
-            className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 h-14 rounded-xl text-lg"
           />
-          <button className="w-full bg-disco hover:bg-disco/90 text-white font-garamond px-8 py-3 rounded-md transition-all duration-300 animate-slide-up">
+          <button className="w-full bg-disco hover:bg-disco/90 text-white font-garamond px-8 py-4 rounded-xl text-lg transition-all duration-300 animate-slide-up">
             Join Waitlist
           </button>
         </div>
