@@ -43,19 +43,17 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Brand Container */}
-      <div className="fixed w-full left-0 z-50">
-        <h1 
-          ref={brandRef}
-          className="text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center"
-          style={{
-            transform: `scale(${window.scrollY > 100 ? 0.15 : 1})`,
-            top: window.scrollY > 100 ? '10px' : '20%',
-            height: window.scrollY > 100 ? '80px' : 'auto'
-          }}
-        >
-          G U C C I
-        </h1>
-      </div>
+      <h1 
+        ref={brandRef}
+        className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-50"
+        style={{
+          transform: `scale(${window.scrollY > 100 ? 0.15 : 1})`,
+          top: window.scrollY > 100 ? '10px' : '20%',
+          height: window.scrollY > 100 ? '80px' : 'auto'
+        }}
+      >
+        G U C C I
+      </h1>
 
       {/* Tagline Container */}
       <div className="absolute top-64 left-0 right-0 z-40">
