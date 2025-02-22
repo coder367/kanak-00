@@ -24,14 +24,14 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white/10 backdrop-blur-sm border-none p-8 rounded-2xl flex gap-8 items-center sticky top-[15vh] transition-transform duration-300"
+              className="bg-white border-none p-8 rounded-2xl flex gap-8 items-center sticky top-[15vh] transition-transform duration-300"
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: `translateY(calc(${index * 10}vh)) translateZ(${index * -100}px)`,
               }}
             >
-              <div className="w-72 h-[400px] bg-white/20 rounded-xl flex-shrink-0">
+              <div className="w-72 h-[400px] bg-gray-200 rounded-xl flex-shrink-0">
                 <div className="w-full h-full bg-[linear-gradient(45deg,#f0f0f0_25%,#e0e0e0_25%,#e0e0e0_50%,#f0f0f0_50%,#f0f0f0_75%,#e0e0e0_75%)] bg-[length:20px_20px]" />
               </div>
               <div className="flex-1 text-left">
