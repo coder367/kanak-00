@@ -29,7 +29,7 @@ export const Hero = ({ onScroll }: HeroProps) => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-rum-swizzle/90 to-rum-swizzle/70" />
         <img
-          src="/lovable-uploads/564fc35d-c420-44c5-bf1a-dadfbb741cde.png"
+          src="/lovable-uploads/a8b4f9a6-e0cb-4de0-9a00-636e06b41c64.png"
           alt="Elegant ethnic wear"
           className="w-full h-full object-cover"
         />
@@ -38,7 +38,7 @@ export const Hero = ({ onScroll }: HeroProps) => {
       {/* Content */}
       <div className="relative z-10 text-center px-4">
         <h1 className="text-7xl md:text-8xl lg:text-9xl text-disco mb-8 animate-fade-in">
-          Ethniq Glow
+          GUCCI
         </h1>
         <p className="font-garamond-bold text-xl md:text-2xl text-turkish-rose mb-12 animate-slide-up">
           Embrace Tradition, Radiate Elegance

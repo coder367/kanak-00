@@ -21,7 +21,7 @@ export const Navbar = ({ isVisible }: NavbarProps) => {
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           )}
         >
-          Ethniq Glow
+          GUCCI
         </h1>
       </div>
     </nav>
