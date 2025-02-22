@@ -53,13 +53,13 @@ export const FeatureCards = () => {
               >
                 <div className="h-full w-full p-8 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-3xl font-serif-display text-disco-dark">Graceful Elegance</h3>
+                    <h3 className="text-3xl font-serif-display text-disco-dark">Traditional Sarees</h3>
                     <p className="text-turkish-rose font-garamond mt-4">
-                      Where tradition meets finesse! Experience the perfect blend of craftsmanship and contemporary design.
+                      Explore our collection of handcrafted sarees, featuring intricate embroidery and traditional designs.
                     </p>
                   </div>
                   <button className="bg-disco-dark text-white px-8 py-3 rounded-full font-garamond hover:bg-disco transition-colors self-start">
-                    Discover More
+                    View Collection
                   </button>
                 </div>
               </div>
@@ -71,13 +71,13 @@ export const FeatureCards = () => {
               >
                 <div className="h-full w-full p-8 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-3xl font-serif-display text-disco-dark">Modern Heritage</h3>
+                    <h3 className="text-3xl font-serif-display text-disco-dark">Ethnic Jewelry</h3>
                     <p className="text-turkish-rose font-garamond mt-4">
-                      Experience the perfect fusion of traditional aesthetics with contemporary design elements.
+                      Discover our exquisite collection of traditional jewelry pieces, each telling a unique cultural story.
                     </p>
                   </div>
                   <button className="bg-disco-dark text-white px-8 py-3 rounded-full font-garamond hover:bg-disco transition-colors self-start">
-                    Explore Collection
+                    Browse Jewelry
                   </button>
                 </div>
               </div>
@@ -89,13 +89,13 @@ export const FeatureCards = () => {
               >
                 <div className="h-full w-full p-8 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-3xl font-serif-display text-disco-dark">Timeless Beauty</h3>
+                    <h3 className="text-3xl font-serif-display text-disco-dark">Festive Wear</h3>
                     <p className="text-turkish-rose font-garamond mt-4">
-                      Discover pieces that transcend seasons, crafted with precision and traditional elements.
+                      Celebrate special occasions with our collection of festive ethnic wear, designed for memorable moments.
                     </p>
                   </div>
                   <button className="bg-disco-dark text-white px-8 py-3 rounded-full font-garamond hover:bg-disco transition-colors self-start">
-                    View Details
+                    Shop Now
                   </button>
                 </div>
               </div>
