@@ -12,11 +12,10 @@ export const Collections = () => {
     
     if (textScroll && collectionsScroll) {
       // Text scrolling animation (backward)
-      textScroll.style.transform = 'translateX(0)';
       const textAnimation = textScroll.animate(
         [
           { transform: 'translateX(0)' },
-          { transform: 'translateX(-50%)' }
+          { transform: 'translateX(-100%)' }
         ],
         {
           duration: 20000,
@@ -28,7 +27,7 @@ export const Collections = () => {
       // Collections scrolling animation (forward)
       const collectionsAnimation = collectionsScroll.animate(
         [
-          { transform: 'translateX(-50%)' },
+          { transform: 'translateX(-100%)' },
           { transform: 'translateX(0)' }
         ],
         {
@@ -48,8 +47,8 @@ export const Collections = () => {
   return (
     <section className="bg-rum-swizzle overflow-hidden py-24">
       <div className="relative whitespace-nowrap" ref={textContainerRef}>
-        <div className="flex items-center space-x-8 text-disco-dark">
-          {[...Array(4)].map((_, index) => (
+        <div className="flex items-center space-x-8 text-disco-dark" style={{ width: 'fit-content' }}>
+          {[...Array(8)].map((_, index) => (
             <div key={index} className="flex items-center space-x-4">
               <div className="w-4 h-4 bg-disco rounded-full" />
               <span className="text-8xl font-serif-display">COMING SOON</span>
@@ -59,8 +58,8 @@ export const Collections = () => {
       </div>
 
       <div className="mt-16 relative" ref={collectionsRef}>
-        <div className="flex space-x-8 px-4">
-          {[...Array(10)].map((_, index) => (
+        <div className="flex space-x-8 px-4" style={{ width: 'fit-content' }}>
+          {[...Array(20)].map((_, index) => (
             <Card 
               key={index}
               className="w-[300px] h-[400px] rounded-[40px] overflow-hidden flex-shrink-0 bg-turkish-rose/20"
