@@ -36,7 +36,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-50 flex items-center justify-end px-6">
+      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-[60] flex items-center justify-end px-6">
         <button className="text-white hover:opacity-80 transition-opacity">
           <ShoppingCart size={24} />
         </button>
@@ -55,7 +55,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         >
           G U C C I
         </h1>
-        <p className="absolute text-white text-2xl md:text-3xl lg:text-4xl font-garamond top-64 z-50">
+        <p className="absolute text-white text-2xl md:text-3xl lg:text-4xl font-garamond top-64 whitespace-nowrap z-40">
           Luxury Ethnic Wear, Crafted for You
         </p>
       </div>
