@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 
 export const WaitlistSection = () => {
   return (
-    <section className="bg-careys-pink py-24">
+    <section className="bg-careys-pink py-24 -mt-screen">
       <div className="container mx-auto px-4 max-w-xl">
         <div className="text-center space-y-8">
           <h2 className="text-5xl md:text-6xl font-serif-display text-[#8C1444]">Join the waitlist</h2>

@@ -25,7 +25,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   }, [onScroll]);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center" ref={observerRef}>
+    <div className="h-screen flex items-start justify-center pt-32" ref={observerRef}>
       {/* Background Navbar */}
       <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-50" />
 
@@ -46,4 +46,3 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
     </div>
   );
 };
-
