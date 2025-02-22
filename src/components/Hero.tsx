@@ -15,7 +15,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       ([entry]) => {
         onScroll(!entry.isIntersecting);
       },
-      { threshold: 0.9 }
+      { threshold: 0.75 } // Changed from 0.9 to 0.75 to trigger earlier
     );
 
     if (observerRef.current) {
@@ -47,16 +47,16 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         ref={brandRef}
         className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60]"
         style={{
-          transform: `scale(${window.scrollY > 100 ? 0.15 : 1})`,
-          top: window.scrollY > 100 ? '10px' : '20%',
-          height: window.scrollY > 100 ? '80px' : 'auto'
+          transform: `scale(${window.scrollY > window.innerHeight / 4 ? 0.15 : 1})`,
+          top: window.scrollY > window.innerHeight / 4 ? '10px' : '20%',
+          height: window.scrollY > window.innerHeight / 4 ? '80px' : 'auto'
         }}
       >
         G U C C I
       </h1>
 
       {/* Tagline Container */}
-      <div className="absolute top-96 left-0 right-0 z-40">
+      <div className="absolute top-[32rem] left-0 right-0 z-40">
         <p className="text-white text-2xl md:text-3xl lg:text-4xl font-garamond whitespace-nowrap text-center">
           Luxury Ethnic Wear, Crafted for You
         </p>
