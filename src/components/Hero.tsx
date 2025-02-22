@@ -36,7 +36,14 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-[50] flex items-center justify-end px-6">
+      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-[50] flex items-center justify-between px-6">
+        <div className="flex items-center space-x-4">
+          <img 
+            src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
+            alt="Kanakdhaga Logo" 
+            className="h-12 w-auto"
+          />
+        </div>
         <button className="text-white hover:opacity-80 transition-opacity">
           <ShoppingCart size={24} />
         </button>
@@ -52,7 +59,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
           height: window.scrollY > window.innerHeight / 5 ? '80px' : 'auto'
         }}
       >
-        G U C C I
+        KANAKDHAGA
       </h1>
 
       {/* Tagline Container */}

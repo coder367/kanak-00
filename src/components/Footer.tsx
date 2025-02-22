@@ -24,7 +24,7 @@ export const Footer = () => {
           <div>
             <h3 className="font-serif-display text-disco-dark text-xl mb-4">Follow Us</h3>
             <a 
-              href="https://instagram.com/ethniqglow" 
+              href="https://instagram.com/kanakdhaga" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex text-turkish-rose hover:text-disco transition-colors"
@@ -37,10 +37,10 @@ export const Footer = () => {
         {/* Bottom bar with logo and copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-turkish-rose/20">
           <h2 className="font-serif-display text-3xl text-disco-dark mb-4 md:mb-0">
-            ETHNIQ GLOW
+            KANAKDHAGA
           </h2>
           <p className="font-garamond text-turkish-rose text-sm">
-            © {new Date().getFullYear()} Ethniq Glow. All rights reserved.
+            © {new Date().getFullYear()} Kanakdhaga. All rights reserved.
           </p>
         </div>
       </div>
