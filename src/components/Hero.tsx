@@ -37,10 +37,10 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 flex flex-col items-center gap-32">
+      <div className="relative z-10 text-center px-4 flex flex-col items-center gap-48">
         <h1 
           ref={brandRef}
-          className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-disco tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60]"
+          className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-white tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60]"
           style={{
             transform: `scale(${window.scrollY > 100 ? 0.15 : 1})`,
             top: window.scrollY > 100 ? '10px' : '30%',
@@ -49,7 +49,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         >
           G U C C I
         </h1>
-        <div className="mt-[25vh] space-y-16">
+        <div className="mt-[35vh] space-y-16">
           <p className="font-garamond-bold text-xl md:text-2xl text-turkish-rose animate-slide-up">
             Embrace Tradition, Radiate Elegance
           </p>
