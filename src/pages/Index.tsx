@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { Hero } from '@/components/Hero';
 import { Welcome } from '@/components/Welcome';
+import { WaitlistSection } from '@/components/WaitlistSection';
 
 const Index = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -24,6 +25,7 @@ const Index = () => {
   return (
     <div className="relative">
       <Hero onScroll={setIsNavbarVisible} brandRef={brandRef} />
+      <WaitlistSection />
       <Welcome />
     </div>
   );
