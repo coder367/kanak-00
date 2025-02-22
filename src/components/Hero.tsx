@@ -43,9 +43,6 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
           G U C C I
         </h1>
         <div className="mt-[35vh] space-y-16 z-50 relative">
-          <p className="font-garamond-bold text-xl md:text-2xl text-turkish-rose animate-slide-up">
-            Embrace Tradition, Radiate Elegance
-          </p>
           <button className="bg-disco hover:bg-disco/90 text-white font-garamond px-8 py-3 rounded-md transition-all duration-300 animate-slide-up">
             Join Waitlist
           </button>
