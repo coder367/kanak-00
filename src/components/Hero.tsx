@@ -27,7 +27,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   return (
     <div className="relative min-h-screen flex items-center justify-center" ref={observerRef}>
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-20 bg-disco/95 z-50" />
+      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-50" />
 
       {/* Content */}
       <div className="relative text-center px-4 flex flex-col items-center gap-48">
