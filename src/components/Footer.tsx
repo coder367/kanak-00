@@ -10,20 +10,13 @@ export const Footer = () => {
           {/* Contact Section */}
           <div>
             <h3 className="font-serif-display text-disco-dark text-xl mb-4">Contact</h3>
-            <div className="space-y-2 font-garamond text-turkish-rose">
-              <p>123 Elegance Lane, Style City</p>
-              <p>contact@ethniqglow.com</p>
-              <p>+1 (555) 123-4567</p>
-            </div>
           </div>
 
           {/* Useful Section */}
           <div>
             <h3 className="font-serif-display text-disco-dark text-xl mb-4">Useful</h3>
             <ul className="space-y-2 font-garamond text-turkish-rose">
-              <li><a href="#" className="hover:text-disco transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-disco transition-colors">Terms & Conditions</a></li>
-              <li><a href="#" className="hover:text-disco transition-colors">Shipping Information</a></li>
+              <li><a href="#" className="hover:text-disco transition-colors">About Us</a></li>
             </ul>
           </div>
 
@@ -34,10 +27,9 @@ export const Footer = () => {
               href="https://instagram.com/ethniqglow" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 text-turkish-rose hover:text-disco transition-colors"
+              className="inline-flex text-turkish-rose hover:text-disco transition-colors"
             >
-              <Instagram size={20} />
-              <span className="font-garamond">@ethniqglow</span>
+              <Instagram size={24} />
             </a>
           </div>
         </div>
