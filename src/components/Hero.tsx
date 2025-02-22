@@ -56,7 +56,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </h1>
 
       {/* Tagline Container */}
-      <div className="absolute top-[32rem] left-0 right-0 z-40">
+      <div className="absolute top-[28rem] left-0 right-0 z-40">
         <p className="text-white text-2xl md:text-3xl lg:text-4xl font-garamond whitespace-nowrap text-center">
           Luxury Ethnic Wear, Crafted for You
         </p>
