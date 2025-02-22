@@ -27,7 +27,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   return (
     <div className="relative min-h-screen flex items-center justify-center" ref={observerRef}>
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-20 bg-disco/90 z-40" />
+      <div className="fixed top-0 left-0 right-0 h-20 bg-disco/90 z-50" />
 
       {/* Content */}
       <div className="relative text-center px-4 flex flex-col items-center gap-48">
@@ -42,7 +42,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         >
           G U C C I
         </h1>
-        <div className="mt-[35vh] space-y-16 z-50 relative">
+        <div className="mt-[35vh] space-y-16 z-30 relative">
           <button className="bg-disco hover:bg-disco/90 text-white font-garamond px-8 py-3 rounded-md transition-all duration-300 animate-slide-up">
             Join Waitlist
           </button>
