@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { ShoppingCart } from 'lucide-react';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
@@ -25,9 +26,21 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   }, [onScroll]);
 
   return (
-    <div className="h-screen flex items-start justify-center pt-32" ref={observerRef}>
+    <div 
+      className="h-screen flex items-start justify-center pt-32 relative" 
+      ref={observerRef}
+      style={{
+        backgroundImage: 'url("/lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-50" />
+      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-50 flex items-center justify-end px-6">
+        <button className="text-white hover:opacity-80 transition-opacity">
+          <ShoppingCart size={24} />
+        </button>
+      </div>
 
       {/* Content */}
       <div className="relative text-center px-4 flex flex-col items-center">
@@ -43,6 +56,9 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
           G U C C I
         </h1>
       </div>
+
+      {/* Overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black/30 z-10" />
     </div>
   );
 };
