@@ -3,9 +3,10 @@ import { useEffect, useRef } from 'react';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
+  brandRef: React.RefObject<HTMLHeadingElement>;
 }
 
-export const Hero = ({ onScroll }: HeroProps) => {
+export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   const observerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,7 +38,10 @@ export const Hero = ({ onScroll }: HeroProps) => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-8xl md:text-9xl lg:text-[12rem] text-disco mb-8 animate-fade-in tracking-[1rem] font-serif-display">
+        <h1 
+          ref={brandRef}
+          className="text-8xl md:text-9xl lg:text-[12rem] text-disco mb-8 animate-fade-in tracking-[1rem] font-serif-display"
+        >
           G U C C I
         </h1>
         <p className="font-garamond-bold text-xl md:text-2xl text-turkish-rose mb-12 animate-slide-up">
