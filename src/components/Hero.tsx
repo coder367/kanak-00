@@ -42,7 +42,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
           ref={brandRef}
           className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-disco mb-8 tracking-[1rem] font-serif-display transition-all duration-500"
           style={{
-            transform: `translateY(${window.scrollY > 100 ? '-160%' : '0'}) scale(${window.scrollY > 100 ? 0.3 : 1})`,
+            transform: `translateY(${window.scrollY > 100 ? '0' : '0'}) scale(${window.scrollY > 100 ? 0.3 : 1})`,
             top: window.scrollY > 100 ? '10px' : '30%'
           }}
         >
