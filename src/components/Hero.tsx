@@ -55,7 +55,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         >
           G U C C I
         </h1>
-        <p className="fixed text-white text-xl md:text-2xl font-garamond mt-40 z-50">
+        <p className="fixed text-white text-2xl md:text-3xl lg:text-4xl font-garamond mt-64 z-50">
           Luxury Ethnic Wear, Crafted for You
         </p>
       </div>
