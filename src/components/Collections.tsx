@@ -48,16 +48,12 @@ export const Collections = () => {
         repeat: -1
       });
 
-      // Animate collection images scrolling forwards
+      // Animate collection images scrolling forwards automatically
       gsap.to(imagesRef.current.children, {
         xPercent: -100 * (collections.length - 3),
         ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1
-        }
+        duration: 20,
+        repeat: -1
       });
     }
   }, []);
@@ -68,9 +64,10 @@ export const Collections = () => {
       <div className="relative w-full overflow-hidden mb-12">
         <div 
           ref={textRef}
-          className="whitespace-nowrap text-[150px] font-serif-display text-disco-dark opacity-90"
+          className="whitespace-nowrap text-[150px] font-serif-display text-disco-dark opacity-90 flex items-center"
           style={{ width: "fit-content" }}
         >
+          <span className="w-[150px] h-[150px] bg-disco-dark rounded-full mr-8"></span>
           COMING SOON COMING SOON COMING SOON COMING SOON
         </div>
       </div>
@@ -84,7 +81,10 @@ export const Collections = () => {
           {collections.map((collection) => (
             <div
               key={collection.id}
-              className="min-w-[400px] aspect-[3/4] group cursor-pointer relative rounded-2xl overflow-hidden flex-shrink-0"
+              className="min-w-[400px] aspect-[3/4] group cursor-pointer relative overflow-hidden flex-shrink-0"
+              style={{
+                borderRadius: "50% / 40%",
+              }}
             >
               <img
                 src={collection.image}
