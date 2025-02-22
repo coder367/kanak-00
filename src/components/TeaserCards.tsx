@@ -20,14 +20,15 @@ export const TeaserCards = () => {
   return (
     <section className="bg-rum-swizzle py-24">
       <div className="container mx-auto px-4">
-        <div className="space-y-[-100px]"> {/* This creates the overlapping effect */}
+        <div className="min-h-[150vh] relative perspective-[1000px]"> {/* Added perspective for 3D effect */}
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white border-none p-8 rounded-2xl hover:transform hover:scale-105 transition-all duration-300 flex gap-8 items-center relative"
+              className="bg-white border-none p-8 rounded-2xl flex gap-8 items-center sticky top-[15vh] transition-transform duration-300"
               style={{
-                transform: `translateY(${index * 20}px)`,
-                zIndex: teasers.length - index
+                willChange: 'transform',
+                transformStyle: 'preserve-3d',
+                transform: `translateY(calc(${index * 100}vh - ${index * 40}px)) translateZ(${index * -100}px)`,
               }}
             >
               <div className="w-72 h-[400px] bg-gray-200 rounded-xl flex-shrink-0">
