@@ -20,7 +20,7 @@ export const TeaserCards = () => {
   return (
     <section className="bg-rum-swizzle py-24">
       <div className="container mx-auto px-4">
-        <div className="min-h-[150vh] relative perspective-[1000px]"> {/* Added perspective for 3D effect */}
+        <div className="min-h-[150vh] relative perspective-[1000px]">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
@@ -28,7 +28,7 @@ export const TeaserCards = () => {
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
-                transform: `translateY(calc(${index * 100}vh - ${index * 40}px)) translateZ(${index * -100}px)`,
+                transform: `translateY(calc(${index * 50}vh - ${index * 40}px)) translateZ(${index * -100}px)`,
               }}
             >
               <div className="w-72 h-[400px] bg-gray-200 rounded-xl flex-shrink-0">
