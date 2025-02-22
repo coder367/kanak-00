@@ -1,0 +1,52 @@
+
+import { useEffect, useRef } from 'react';
+
+interface HeroProps {
+  onScroll: (isScrolled: boolean) => void;
+}
+
+export const Hero = ({ onScroll }: HeroProps) => {
+  const observerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        onScroll(!entry.isIntersecting);
+      },
+      { threshold: 0.9 }
+    );
+
+    if (observerRef.current) {
+      observer.observe(observerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [onScroll]);
+
+  return (
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden" ref={observerRef}>
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-rum-swizzle/90 to-rum-swizzle/70" />
+        <img
+          src="/lovable-uploads/564fc35d-c420-44c5-bf1a-dadfbb741cde.png"
+          alt="Elegant ethnic wear"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center px-4">
+        <h1 className="text-7xl md:text-8xl lg:text-9xl text-disco mb-8 animate-fade-in">
+          Ethniq Glow
+        </h1>
+        <p className="font-garamond-bold text-xl md:text-2xl text-turkish-rose mb-12 animate-slide-up">
+          Embrace Tradition, Radiate Elegance
+        </p>
+        <button className="bg-disco hover:bg-disco/90 text-white font-garamond px-8 py-3 rounded-md transition-all duration-300 animate-slide-up">
+          Join Waitlist
+        </button>
+      </div>
+    </div>
+  );
+};
