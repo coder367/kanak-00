@@ -18,7 +18,7 @@ export const TeaserCards = () => {
   ];
 
   return (
-    <section className="bg-careys-pink/60 backdrop-blur-lg py-24">
+    <section className="bg-careys-pink/60 backdrop-blur-lg pt-24 pb-12">
       <div className="container mx-auto px-4">
         <div className="min-h-[150vh] relative perspective-[1000px] pb-[30vh]">
           {teasers.map((teaser, index) => (

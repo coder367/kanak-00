@@ -43,7 +43,7 @@ export const Collections = () => {
   }, []);
 
   return (
-    <section className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden py-24">
+    <section className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-24">
       <div className="relative whitespace-nowrap" ref={textContainerRef}>
         <div className="flex items-center space-x-8 text-disco-dark" style={{ width: 'fit-content' }}>
           {[...Array(8)].map((_, index) => (
