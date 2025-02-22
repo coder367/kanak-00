@@ -40,10 +40,11 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       <div className="relative z-10 text-center px-4">
         <h1 
           ref={brandRef}
-          className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-disco mb-8 tracking-[1rem] font-serif-display transition-all duration-500"
+          className="fixed w-full left-0 text-8xl md:text-9xl lg:text-[12rem] text-disco mb-8 tracking-[1rem] font-serif-display transition-all duration-500 flex items-center justify-center"
           style={{
-            transform: `translateY(${window.scrollY > 100 ? '0' : '0'}) scale(${window.scrollY > 100 ? 0.2 : 1})`,
-            top: window.scrollY > 100 ? '-5px' : '30%'
+            transform: `scale(${window.scrollY > 100 ? 0.15 : 1})`,
+            top: window.scrollY > 100 ? '10px' : '30%',
+            height: window.scrollY > 100 ? '80px' : 'auto'
           }}
         >
           G U C C I
