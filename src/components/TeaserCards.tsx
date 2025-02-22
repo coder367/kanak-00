@@ -28,7 +28,7 @@ export const TeaserCards = () => {
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
-                transform: `translateY(calc(${index * 10}vh - ${index * 40}px)) translateZ(${index * -100}px)`,
+                transform: `translateY(calc(${index * 10}vh)) translateZ(${index * -100}px)`,
               }}
             >
               <div className="w-72 h-[400px] bg-gray-200 rounded-xl flex-shrink-0">
