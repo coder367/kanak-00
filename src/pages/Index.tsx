@@ -1,6 +1,5 @@
 
 import { useRef, useState, useEffect } from 'react';
-import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Welcome } from '@/components/Welcome';
 
@@ -24,7 +23,6 @@ const Index = () => {
 
   return (
     <div className="relative">
-      <Navbar isVisible={isNavbarVisible} brandRef={brandRef} />
       <Hero onScroll={setIsNavbarVisible} brandRef={brandRef} />
       <Welcome />
     </div>
