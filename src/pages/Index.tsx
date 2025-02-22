@@ -4,6 +4,7 @@ import { Hero } from '@/components/Hero';
 import { WaitlistSection } from '@/components/WaitlistSection';
 import { TeaserCards } from '@/components/TeaserCards';
 import { Collections } from '@/components/Collections';
+import { Footer } from '@/components/Footer';
 
 const Index = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -29,6 +30,7 @@ const Index = () => {
       <WaitlistSection />
       <TeaserCards />
       <Collections />
+      <Footer />
     </div>
   );
 };
