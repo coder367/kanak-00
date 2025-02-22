@@ -40,8 +40,7 @@ export const Welcome = () => {
   return (
     <section className="bg-rum-swizzle py-20">
       <div className="container mx-auto px-4 mb-16">
-        <h2 className="text-center text-disco text-xl tracking-widest mb-4">WELCOME TO</h2>
-        <h1 className="text-center text-disco text-6xl md:text-7xl font-serif-display tracking-wider">G U C C I</h1>
+        <h1 className="text-center text-disco text-4xl font-serif-display tracking-[0.5rem]">ELEVATING ETHNIC ELEGANCE</h1>
       </div>
       
       <div className="container mx-auto px-8">
