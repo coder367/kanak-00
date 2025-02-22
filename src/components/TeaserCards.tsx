@@ -18,17 +18,17 @@ export const TeaserCards = () => {
   ];
 
   return (
-    <section className="bg-rum-swizzle py-24">
+    <section className="bg-rum-swizzle">
       <div className="container mx-auto px-4">
-        <div className="min-h-[150vh] relative perspective-[1000px]">
+        <div className="min-h-[300vh]"> {/* Increased height to allow for full scroll effect */}
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white border-none p-8 rounded-2xl flex gap-8 items-center sticky top-[15vh] transition-transform duration-300"
+              className="bg-white border-none p-8 rounded-2xl flex gap-8 items-center fixed w-[calc(100%-2rem)] mx-4 top-1/2 -translate-y-1/2 transition-transform duration-300"
               style={{
                 willChange: 'transform',
-                transformStyle: 'preserve-3d',
-                transform: `translateY(calc(${index * 50}vh - ${index * 40}px)) translateZ(${index * -100}px)`,
+                opacity: 1,
+                transform: `translateY(calc(${index * 100}vh - 50vh))`,
               }}
             >
               <div className="w-72 h-[400px] bg-gray-200 rounded-xl flex-shrink-0">
