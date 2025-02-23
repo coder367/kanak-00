@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -10,6 +10,7 @@ interface HeroProps {
 
 export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   const observerRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,7 +24,17 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       observer.observe(observerRef.current);
     }
 
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [onScroll]);
 
   return (
@@ -37,7 +48,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className={`fixed top-0 left-0 right-0 h-20 bg-disco-dark z-[50] flex items-center justify-between px-6 transition-opacity duration-300 ${window.scrollY > 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`fixed top-0 left-0 right-0 h-20 bg-disco-dark z-[50] flex items-center justify-between px-6 transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex items-center space-x-4">
           <Link to="/">
             <img 
