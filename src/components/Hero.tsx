@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CountdownTimer from './CountdownTimer';
@@ -46,7 +47,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center justify-start pt-16 md:pt-32 relative overflow-hidden" 
+      className="min-h-[120vh] flex flex-col items-center justify-start pt-16 md:pt-32 relative overflow-hidden" 
       ref={observerRef}
       style={{
         backgroundImage: 'url("/lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png")',
@@ -88,13 +89,13 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </h1>
       </div>
 
-      {/* Feature Grid - Positioned absolutely within hero with more space from top */}
-      <div className="absolute top-[45%] left-0 right-0 z-[40]">
+      {/* Feature Grid - Adjusted positioning */}
+      <div className="absolute top-[50%] left-0 right-0 z-[40]">
         <CurvedFeatureGrid />
       </div>
 
-      {/* Launching Soon and Timer Container */}
-      <div className="absolute bottom-24 left-0 right-0 z-[40] px-4 flex flex-col items-center">
+      {/* Launching Soon and Timer Container - Adjusted positioning */}
+      <div className="absolute bottom-32 left-0 right-0 z-[40] px-4 flex flex-col items-center">
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
