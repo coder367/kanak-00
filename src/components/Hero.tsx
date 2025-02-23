@@ -89,13 +89,13 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </h1>
       </div>
 
-      {/* Feature Grid - Added between brand name and launching soon */}
-      <div className="fixed z-[40]" style={{ top: '35%' }}>
+      {/* Feature Grid - Positioned absolutely within hero */}
+      <div className="absolute top-[45%] left-0 right-0 z-[40]">
         <CurvedFeatureGrid />
       </div>
 
-      {/* Launching Soon and Timer Container */}
-      <div className="absolute bottom-24 left-0 right-0 z-[40] px-4 flex flex-col items-center">
+      {/* Launching Soon and Timer Container - Moved further down */}
+      <div className="absolute bottom-16 left-0 right-0 z-[40] px-4 flex flex-col items-center">
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
