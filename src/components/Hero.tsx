@@ -94,8 +94,8 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         <CurvedFeatureGrid />
       </div>
 
-      {/* Launching Soon and Timer Container */}
-      <div className="absolute bottom-48 left-0 right-0 z-[40] px-4 flex flex-col items-center">
+      {/* Launching Soon and Timer Container - Adjusted positioning for web view */}
+      <div className="absolute bottom-32 md:bottom-48 lg:bottom-36 left-0 right-0 z-[40] px-4 flex flex-col items-center">
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
