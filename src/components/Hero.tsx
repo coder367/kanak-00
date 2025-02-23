@@ -1,6 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import CountdownTimer from './CountdownTimer';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
@@ -90,6 +91,11 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         <div className={`mt-4 px-4 py-1.5 rounded-full border border-white/30 bg-black/20 backdrop-blur-sm flex items-center space-x-2 transition-all duration-500 ${window.scrollY > window.innerHeight / 5 ? 'scale-0' : 'scale-100'}`}>
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
           <span className="text-white text-sm tracking-wider">Launching Soon</span>
+        </div>
+
+        {/* Countdown Timer */}
+        <div className={`mt-6 transition-all duration-500 ${window.scrollY > window.innerHeight / 5 ? 'scale-0' : 'scale-100'}`}>
+          <CountdownTimer />
         </div>
       </div>
 
