@@ -1,9 +1,9 @@
 
-import { Building, Users } from "lucide-react";
+import { Building, Instagram, Link } from "lucide-react";
 
 export const AboutUs = () => {
   return (
-    <section className="bg-careys-pink/60 py-16 md:py-24">
+    <section className="bg-rum-swizzle py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           {/* Text Content */}
@@ -16,11 +16,27 @@ export const AboutUs = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                 <div className="flex items-center gap-3">
                   <Building className="w-6 h-6 text-disco" />
-                  <span className="font-garamond">Established 2024</span>
+                  <span className="font-garamond">Established 2025</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Users className="w-6 h-6 text-disco" />
-                  <span className="font-garamond">Growing Community</span>
+                  <div className="flex gap-4">
+                    <a 
+                      href="https://www.instagram.com/kanakdhaga?igsh=bThlaHp6ODFoN3Fn&utm_source=qr" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex text-turkish-rose hover:text-disco transition-colors"
+                    >
+                      <Instagram size={24} />
+                    </a>
+                    <a 
+                      href="https://pin.it/7DArmCSCD" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex text-turkish-rose hover:text-disco transition-colors"
+                    >
+                      <Link size={24} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
