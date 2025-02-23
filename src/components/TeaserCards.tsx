@@ -10,14 +10,22 @@ export const TeaserCards = () => {
       description: "Kanakdhaga is all about breathable co-ords, effortless lounge sets, and resort wear that move with you. Just like a golden thread ties everything together, our pieces bring together ease and charm without compromising on style.",
     },
     {
-      title: "Connect",
-      description: "Join a community of like-minded individuals and share your perspective today.",
+      image: "/lovable-uploads/6b994672-5bab-422a-86dc-3a94232daa33.png",
+      title: "Be the First to Grab It – Flat 20% Off!",
+      description: "Sign up now and enjoy an exclusive 20% discount on your first order, along with early access and a sneak peek at our first drop.",
     },
     {
       title: "Create",
       description: "Express yourself in new ways and build meaningful connections with others.",
     },
   ];
+
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.querySelector('#waitlist');
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-12">
@@ -56,6 +64,26 @@ export const TeaserCards = () => {
                     <p className="text-turkish-rose font-garamond leading-relaxed">
                       {teaser.description}
                     </p>
+                  </div>
+                </>
+              ) : index === 1 ? (
+                <>
+                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                    <img 
+                      src={teaser.image} 
+                      alt="Exclusive Offer" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 text-center md:text-left flex flex-col gap-4">
+                    <h3 className="text-3xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
+                    <p className="text-lg md:text-xl font-garamond text-turkish-rose max-w-md">{teaser.description}</p>
+                    <button 
+                      onClick={scrollToWaitlist}
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-8 py-3 rounded-xl transition-colors self-start mt-4"
+                    >
+                      Get Exclusive Access
+                    </button>
                   </div>
                 </>
               ) : (
