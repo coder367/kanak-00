@@ -1,6 +1,4 @@
 
-import { Building, Instagram, Link } from "lucide-react";
-
 export const AboutUs = () => {
   return (
     <section className="bg-rum-swizzle py-16 md:py-24">
@@ -13,32 +11,6 @@ export const AboutUs = () => {
               <p className="font-garamond text-lg">
                 Kanakdhaga is more than a brand—it's a legacy of craftsmanship, trust, and timeless elegance. Inspired by real stories and built on family values, every piece is crafted with care and precision. From the finest fabrics to skilled artisans, we create clothing that blends tradition with modern comfort.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                <div className="flex items-center gap-3">
-                  <Building className="w-6 h-6 text-disco" />
-                  <span className="font-garamond">Established 2025</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex gap-4">
-                    <a 
-                      href="https://www.instagram.com/kanakdhaga?igsh=bThlaHp6ODFoN3Fn&utm_source=qr" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex text-turkish-rose hover:text-disco transition-colors"
-                    >
-                      <Instagram size={24} />
-                    </a>
-                    <a 
-                      href="https://pin.it/7DArmCSCD" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex text-turkish-rose hover:text-disco transition-colors"
-                    >
-                      <Link size={24} />
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           
