@@ -25,9 +25,9 @@ const CurvedFeatureGrid = () => {
           }}
         >
           <div 
-            className="bg-[#BA778B] p-5 md:p-6 rounded-2xl border border-white/20 shadow-[4px_4px_10px_rgba(0,0,0,0.1)] hover:shadow-[8px_8px_20px_rgba(0,0,0,0.15)] transition-all duration-300 min-h-[180px] md:min-h-[220px] flex items-center"
+            className="bg-[#BA778B] p-4 md:p-5 rounded-2xl border border-white/20 shadow-[4px_4px_10px_rgba(0,0,0,0.1)] hover:shadow-[8px_8px_20px_rgba(0,0,0,0.15)] transition-all duration-300 min-h-[150px] md:min-h-[180px] flex items-center"
           >
-            <div className="flex flex-col items-center gap-4 text-white w-full">
+            <div className="flex flex-col items-center gap-3 text-white w-full">
               <h3 className="text-lg md:text-xl font-serif-display">{feature.title}</h3>
               <p className="text-sm md:text-base text-center text-white/90">{feature.description}</p>
             </div>
