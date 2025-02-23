@@ -39,11 +39,12 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-[#FBFBFB] border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300"
+              className="!bg-[#FBFBFB] border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300"
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: `translateY(calc(${index * 10}vh)) translateZ(${index * -100}px)`,
+                backgroundColor: '#FBFBFB',
               }}
             >
               {index === 0 ? (
