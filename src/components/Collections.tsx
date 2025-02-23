@@ -4,13 +4,11 @@ import { useRef, useEffect } from "react";
 
 export const Collections = () => {
   const textContainerRef = useRef<HTMLDivElement>(null);
-  const collectionsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const textScroll = textContainerRef.current;
-    const collectionsScroll = collectionsRef.current;
     
-    if (textScroll && collectionsScroll) {
+    if (textScroll) {
       const textAnimation = textScroll.animate(
         [
           { transform: 'translateX(0)' },
@@ -23,21 +21,8 @@ export const Collections = () => {
         }
       );
 
-      const collectionsAnimation = collectionsScroll.animate(
-        [
-          { transform: 'translateX(0)' },
-          { transform: 'translateX(-50%)' }
-        ],
-        {
-          duration: 15000,
-          iterations: Infinity,
-          easing: 'linear'
-        }
-      );
-
       return () => {
         textAnimation.cancel();
-        collectionsAnimation.cancel();
       };
     }
   }, []);
@@ -48,11 +33,9 @@ export const Collections = () => {
     "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
   ];
 
-  // Create a repeating array of images for continuous loop
-  const repeatedImages = [...images, ...images, ...images, ...images];
-
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
+      {/* Kept the original rotating COMING SOON text */}
       <div className="relative whitespace-nowrap" ref={textContainerRef}>
         <div className="flex items-center space-x-4 md:space-x-8 text-disco-dark" style={{ width: 'fit-content' }}>
           {[...Array(8)].map((_, index) => (
@@ -64,22 +47,21 @@ export const Collections = () => {
         </div>
       </div>
 
-      <div className="mt-8 md:mt-16 relative overflow-hidden">
-        <div className="relative overflow-hidden" ref={collectionsRef}>
-          <div className="flex space-x-4 md:space-x-8 px-4" style={{ width: 'fit-content' }}>
-            {repeatedImages.map((image, index) => (
-              <Card 
-                key={index}
-                className="w-[200px] md:w-[300px] h-[300px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden flex-shrink-0"
-              >
-                <img 
-                  src={image} 
-                  alt={`Collection ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </Card>
-            ))}
-          </div>
+      {/* New static grid for the three images */}
+      <div className="mt-8 md:mt-16 px-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          {images.map((image, index) => (
+            <Card 
+              key={index}
+              className="w-full aspect-[3/4] rounded-[30px] md:rounded-[40px] overflow-hidden"
+            >
+              <img 
+                src={image} 
+                alt={`Collection ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </Card>
+          ))}
         </div>
       </div>
     </section>
