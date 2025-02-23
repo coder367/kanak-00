@@ -49,7 +49,7 @@ export const Collections = () => {
   ];
 
   // Create a repeating array of images for continuous loop
-  const repeatedImages = [...Array(4)].flatMap(() => images);
+  const repeatedImages = [...images];
 
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
