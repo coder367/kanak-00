@@ -88,8 +88,8 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </h1>
       </div>
 
-      {/* Launching Soon and Timer Container */}
-      <div className="absolute z-[40] px-4 flex flex-col items-center" style={{ top: '40%' }}>
+      {/* Launching Soon and Timer Container - Moved to bottom */}
+      <div className="absolute bottom-24 left-0 right-0 z-[40] px-4 flex flex-col items-center">
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
