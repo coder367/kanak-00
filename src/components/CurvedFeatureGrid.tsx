@@ -39,15 +39,6 @@ const CurvedFeatureGrid = () => {
               <p className="text-xs text-center text-white/90">{feature.description}</p>
             </div>
           </div>
-          {/* Curved bottom shape */}
-          <div 
-            className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-[85%] h-10"
-            style={{
-              background: '#BA778B',
-              borderBottomLeftRadius: '100px',
-              borderBottomRightRadius: '100px'
-            }}
-          />
         </div>
       ))}
     </div>
