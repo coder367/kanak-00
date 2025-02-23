@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { useRef, useEffect } from "react";
 
@@ -41,6 +42,15 @@ export const Collections = () => {
     }
   }, []);
 
+  const images = [
+    "lovable-uploads/564fc35d-c420-44c5-bf1a-dadfbb741cde.png",
+    "lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png",
+    "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
+  ];
+
+  // Create a repeating array of images for continuous loop
+  const repeatedImages = [...Array(4)].flatMap(() => images);
+
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
       <div className="relative whitespace-nowrap" ref={textContainerRef}>
@@ -56,12 +66,16 @@ export const Collections = () => {
 
       <div className="mt-8 md:mt-16 relative" ref={collectionsRef}>
         <div className="flex space-x-4 md:space-x-8 px-4" style={{ width: 'fit-content' }}>
-          {[...Array(20)].map((_, index) => (
+          {repeatedImages.map((image, index) => (
             <Card 
               key={index}
-              className="w-[200px] md:w-[300px] h-[300px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden flex-shrink-0 bg-white/20 backdrop-blur-sm"
+              className="w-[200px] md:w-[300px] h-[300px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden flex-shrink-0"
             >
-              <div className="w-full h-full bg-[linear-gradient(45deg,#f0f0f0_25%,#e0e0e0_25%,#e0e0e0_50%,#f0f0f0_50%,#f0f0f0_75%,#e0e0e0_75%)] bg-[length:20px_20px]" />
+              <img 
+                src={image} 
+                alt={`Collection ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
             </Card>
           ))}
         </div>
