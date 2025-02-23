@@ -48,6 +48,9 @@ export const Collections = () => {
     "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
   ];
 
+  // Create a repeating array of images for continuous loop
+  const repeatedImages = [...Array(4)].flatMap(() => images);
+
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
       <div className="relative whitespace-nowrap" ref={textContainerRef}>
@@ -63,7 +66,7 @@ export const Collections = () => {
 
       <div className="mt-8 md:mt-16 relative" ref={collectionsRef}>
         <div className="flex space-x-4 md:space-x-8 px-4" style={{ width: 'fit-content' }}>
-          {images.map((image, index) => (
+          {repeatedImages.map((image, index) => (
             <Card 
               key={index}
               className="w-[200px] md:w-[300px] h-[300px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden flex-shrink-0"
