@@ -37,7 +37,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-20 bg-disco-dark z-[50] flex items-center justify-between px-6">
+      <div className={`fixed top-0 left-0 right-0 h-20 bg-disco-dark z-[50] flex items-center justify-between px-6 transition-opacity duration-300 ${window.scrollY > 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex items-center space-x-4">
           <Link to="/">
             <img 
