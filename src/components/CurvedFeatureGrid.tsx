@@ -31,7 +31,7 @@ const CurvedFeatureGrid = () => {
           }}
         >
           <div 
-            className="bg-[#8C1444] p-5 rounded-2xl border border-white/20"
+            className="bg-[#BA778B] p-5 rounded-2xl border border-white/20"
           >
             <div className="flex flex-col items-center gap-3 text-white">
               <feature.icon className="w-8 h-8 stroke-[1.5]" />
