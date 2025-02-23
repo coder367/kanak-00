@@ -1,5 +1,5 @@
 
-import { Building, Instagram, Link } from "lucide-react";
+import { Instagram, Link } from "lucide-react";
 
 export const AboutUs = () => {
   return (
@@ -7,36 +7,33 @@ export const AboutUs = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           {/* Text Content */}
-          <div className="w-full md:w-1/2 space-y-6">
-            <h2 className="text-4xl md:text-5xl font-serif-display text-disco-dark">A Heritage of Elegance & Craftsmanship</h2>
-            <div className="space-y-4 text-turkish-rose">
-              <p className="font-garamond text-lg">
+          <div className="w-full md:w-1/2 space-y-8">
+            <h2 className="text-4xl md:text-5xl font-serif-display text-disco-dark leading-tight">
+              A Heritage of Elegance & Craftsmanship
+            </h2>
+            <div className="space-y-6 text-turkish-rose">
+              <p className="font-garamond text-lg leading-relaxed">
                 Kanakdhaga is more than a brand—it's a legacy of craftsmanship, trust, and timeless elegance. Inspired by real stories and built on family values, every piece is crafted with care and precision. From the finest fabrics to skilled artisans, we create clothing that blends tradition with modern comfort.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                <div className="flex items-center gap-3">
-                  <Building className="w-6 h-6 text-disco" />
-                  <span className="font-garamond">Established 2025</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex gap-4">
-                    <a 
-                      href="https://www.instagram.com/kanakdhaga?igsh=bThlaHp6ODFoN3Fn&utm_source=qr" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex text-turkish-rose hover:text-disco transition-colors"
-                    >
-                      <Instagram size={24} />
-                    </a>
-                    <a 
-                      href="https://pin.it/7DArmCSCD" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex text-turkish-rose hover:text-disco transition-colors"
-                    >
-                      <Link size={24} />
-                    </a>
-                  </div>
+              <div className="flex items-center justify-between pt-4 border-t border-turkish-rose/20">
+                <span className="font-serif-display text-lg text-disco-dark">Est. 2025</span>
+                <div className="flex gap-4">
+                  <a 
+                    href="https://www.instagram.com/kanakdhaga?igsh=bThlaHp6ODFoN3Fn&utm_source=qr" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex text-turkish-rose hover:text-disco transition-colors"
+                  >
+                    <Instagram size={24} />
+                  </a>
+                  <a 
+                    href="https://pin.it/7DArmCSCD" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex text-turkish-rose hover:text-disco transition-colors"
+                  >
+                    <Link size={24} />
+                  </a>
                 </div>
               </div>
             </div>
@@ -44,7 +41,7 @@ export const AboutUs = () => {
           
           {/* Image */}
           <div className="w-full md:w-1/2">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src="/lovable-uploads/549b8eb7-c208-4bd5-8c3e-269d3664ae60.png"
                 alt="About Kanakdhaga"
