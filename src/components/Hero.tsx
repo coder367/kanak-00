@@ -72,18 +72,26 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </button>
       </div>
 
-      {/* Brand Container */}
-      <h1 
-        ref={brandRef}
-        className="fixed w-full left-0 text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500 flex items-center justify-center z-[60] px-4"
-        style={{
-          transform: `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`,
-          top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
-          height: window.scrollY > window.innerHeight / 5 ? '80px' : 'auto'
-        }}
-      >
-        KANAKDHAGA
-      </h1>
+      <div className="fixed flex flex-col items-center z-[60] px-4" style={{
+        top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
+      }}>
+        {/* Brand Name */}
+        <h1 
+          ref={brandRef}
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
+          style={{
+            transform: `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`,
+          }}
+        >
+          KANAKDHAGA
+        </h1>
+
+        {/* Launching Soon Tag */}
+        <div className={`mt-4 px-4 py-1.5 rounded-full border border-white/30 bg-black/20 backdrop-blur-sm flex items-center space-x-2 transition-all duration-500 ${window.scrollY > window.innerHeight / 5 ? 'scale-0' : 'scale-100'}`}>
+          <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+          <span className="text-white text-sm tracking-wider">Launching Soon</span>
+        </div>
+      </div>
 
       {/* Tagline Container */}
       <div className="absolute top-[65%] md:top-[28rem] left-0 right-0 z-40 px-4">
