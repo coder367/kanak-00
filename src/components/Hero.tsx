@@ -47,7 +47,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center justify-start pt-16 md:pt-32 relative overflow-hidden" 
+      className="min-h-[130vh] flex flex-col items-center justify-start pt-16 md:pt-32 relative overflow-hidden" 
       ref={observerRef}
       style={{
         backgroundImage: 'url("/lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png")',
