@@ -36,9 +36,9 @@ const CountdownTimer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const timeBoxStyle = "bg-black/40 backdrop-blur-sm rounded-lg p-3 flex flex-col items-center justify-center min-w-[70px] md:min-w-[80px] border border-white/30";
-  const numberStyle = "text-xl md:text-2xl lg:text-3xl font-garamond-bold text-white";
-  const labelStyle = "text-xs md:text-sm text-white/80 uppercase tracking-wider font-garamond";
+  const timeBoxStyle = "bg-black/80 backdrop-blur-sm rounded-lg p-3 flex flex-col items-center justify-center min-w-[70px] md:min-w-[80px]";
+  const numberStyle = "text-xl md:text-2xl lg:text-3xl font-bold text-white";
+  const labelStyle = "text-xs md:text-sm text-white/80 uppercase tracking-wider";
 
   return (
     <div className="flex gap-2 md:gap-4">
