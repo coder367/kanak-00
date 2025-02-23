@@ -1,5 +1,5 @@
 
-import { Instagram, Phone, Mail, Pinterest } from "lucide-react";
+import { Instagram, Phone, Mail, Link } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -40,7 +40,7 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-flex text-turkish-rose hover:text-disco transition-colors"
               >
-                <Pinterest size={24} />
+                <Link size={24} />
               </a>
             </div>
           </div>
