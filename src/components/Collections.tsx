@@ -48,8 +48,8 @@ export const Collections = () => {
     "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
   ];
 
-  // Create a repeating array of images for continuous loop
-  const repeatedImages = [...Array(4)].flatMap(() => images);
+  // Create a repeating array of images for continuous loop, showing only 3 at a time
+  const repeatedImages = [...images, ...images];
 
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
