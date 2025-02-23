@@ -1,17 +1,22 @@
 
+import { Star, Award, Rocket } from "lucide-react";
+
 const CurvedFeatureGrid = () => {
   return (
     <div className="w-full max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 z-30">
       {[
         {
+          icon: Star,
           title: "Early Bird Offer",
           description: "Flat 20% off on first order"
         },
         {
+          icon: Award,
           title: "Exclusive Giveaway",
           description: "Kurtis worth Rs. 10,000 to lucky waitlist members"
         },
         {
+          icon: Rocket,
           title: "Sneak Peek Access",
           description: "Early access and sneak peek to our first drop"
         }
@@ -26,11 +31,12 @@ const CurvedFeatureGrid = () => {
           }}
         >
           <div 
-            className="bg-[#BA778B] p-6 rounded-2xl border border-white/20 shadow-lg"
+            className="bg-[#BA778B] p-5 rounded-2xl border border-white/20"
           >
-            <div className="flex flex-col items-center gap-3">
-              <h3 className="text-xl font-serif-display text-white tracking-wide">{feature.title}</h3>
-              <p className="text-sm font-garamond text-center text-white/95 leading-relaxed">{feature.description}</p>
+            <div className="flex flex-col items-center gap-3 text-white">
+              <feature.icon className="w-8 h-8 stroke-[1.5]" />
+              <h3 className="text-lg font-serif-display">{feature.title}</h3>
+              <p className="text-xs text-center text-white/90">{feature.description}</p>
             </div>
           </div>
         </div>
