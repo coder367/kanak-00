@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { useRef, useEffect } from "react";
 
@@ -43,7 +42,7 @@ export const Collections = () => {
   }, []);
 
   return (
-    <section className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
+    <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
       <div className="relative whitespace-nowrap" ref={textContainerRef}>
         <div className="flex items-center space-x-4 md:space-x-8 text-disco-dark" style={{ width: 'fit-content' }}>
           {[...Array(8)].map((_, index) => (

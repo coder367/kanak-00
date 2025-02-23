@@ -1,6 +1,5 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface HeroProps {
@@ -37,6 +36,13 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
     };
   }, [onScroll]);
 
+  const scrollToCollections = () => {
+    const collectionsSection = document.querySelector('#collections');
+    if (collectionsSection) {
+      collectionsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div 
       className="min-h-screen flex items-start justify-center pt-16 md:pt-32 relative" 
@@ -58,8 +64,11 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
             />
           </Link>
         </div>
-        <button className="text-white hover:opacity-80 transition-opacity">
-          <ShoppingCart size={20} className="md:w-6 md:h-6" />
+        <button 
+          onClick={scrollToCollections}
+          className="text-white hover:opacity-80 transition-opacity px-4 py-2 border border-white rounded-lg text-sm md:text-base"
+        >
+          Our Collection
         </button>
       </div>
 
