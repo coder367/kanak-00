@@ -1,24 +1,24 @@
 
-import { Diamond, Crown, Gem } from "lucide-react";
+import { BadgePercent, Gift, Eye } from "lucide-react";
 
 const CurvedFeatureGrid = () => {
   return (
     <div className="w-full max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 z-30">
       {[
         {
-          icon: Diamond,
-          title: "Feature One",
-          description: "Lorem ipsum dolor sit amet consectetur"
+          icon: BadgePercent,
+          title: "Early Bird Offer",
+          description: "Flat 20% off on first order"
         },
         {
-          icon: Crown,
-          title: "Feature Two",
-          description: "Sed do eiusmod tempor incididunt"
+          icon: Gift,
+          title: "Exclusive Giveaway",
+          description: "Kurtis worth Rs. 10,000 to lucky waitlist members"
         },
         {
-          icon: Gem,
-          title: "Feature Three",
-          description: "Ut enim ad minim veniam quis"
+          icon: Eye,
+          title: "Sneak Peek Access",
+          description: "Early access and sneak peek to our first drop"
         }
       ].map((feature, index) => (
         <div 
