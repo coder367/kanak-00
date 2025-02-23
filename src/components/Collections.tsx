@@ -1,39 +1,85 @@
 
 import { Card } from "@/components/ui/card";
+import { useRef, useEffect } from "react";
 
 export const Collections = () => {
-  // Fixed array of three placeholder images
+  const textContainerRef = useRef<HTMLDivElement>(null);
+  const collectionsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const textScroll = textContainerRef.current;
+    const collectionsScroll = collectionsRef.current;
+    
+    if (textScroll && collectionsScroll) {
+      const textAnimation = textScroll.animate(
+        [
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-100%)' }
+        ],
+        {
+          duration: 20000,
+          iterations: Infinity,
+          easing: 'linear'
+        }
+      );
+
+      const collectionsAnimation = collectionsScroll.animate(
+        [
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-50%)' }
+        ],
+        {
+          duration: 15000,
+          iterations: Infinity,
+          easing: 'linear'
+        }
+      );
+
+      return () => {
+        textAnimation.cancel();
+        collectionsAnimation.cancel();
+      };
+    }
+  }, []);
+
   const images = [
     "lovable-uploads/564fc35d-c420-44c5-bf1a-dadfbb741cde.png",
     "lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png",
     "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
   ];
 
+  // Create a repeating array of images for continuous loop
+  const repeatedImages = [...images, ...images, ...images, ...images];
+
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
-      <div className="relative whitespace-nowrap mb-12">
-        <div className="flex items-center justify-center">
-          <div className="flex items-center space-x-2 md:space-x-4">
-            <div className="w-2 h-2 md:w-4 md:h-4 bg-disco rounded-full" />
-            <span className="text-4xl md:text-6xl lg:text-8xl font-serif-display text-disco-dark">COMING SOON</span>
-          </div>
+      <div className="relative whitespace-nowrap" ref={textContainerRef}>
+        <div className="flex items-center space-x-4 md:space-x-8 text-disco-dark" style={{ width: 'fit-content' }}>
+          {[...Array(8)].map((_, index) => (
+            <div key={index} className="flex items-center space-x-2 md:space-x-4">
+              <div className="w-2 h-2 md:w-4 md:h-4 bg-disco rounded-full" />
+              <span className="text-4xl md:text-6xl lg:text-8xl font-serif-display">COMING SOON</span>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="mt-8 md:mt-16 px-4 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-          {images.map((image, index) => (
-            <Card 
-              key={index}
-              className="w-full aspect-[3/4] rounded-[30px] md:rounded-[40px] overflow-hidden"
-            >
-              <img 
-                src={image} 
-                alt={`Collection ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </Card>
-          ))}
+      <div className="mt-8 md:mt-16 relative overflow-hidden">
+        <div className="relative overflow-hidden" ref={collectionsRef}>
+          <div className="flex space-x-4 md:space-x-8 px-4" style={{ width: 'fit-content' }}>
+            {repeatedImages.map((image, index) => (
+              <Card 
+                key={index}
+                className="w-[200px] md:w-[300px] h-[300px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden flex-shrink-0"
+              >
+                <img 
+                  src={image} 
+                  alt={`Collection ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
