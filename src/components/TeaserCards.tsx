@@ -1,12 +1,17 @@
 
 import { Card } from "@/components/ui/card";
+import { Sun, Truck, Heart, Shirt } from "lucide-react";
 
 export const TeaserCards = () => {
   const teasers = [
     {
       image: "/lovable-uploads/0f856697-8814-4188-a095-7ea4ce08c309.png",
-      icons: Array(4).fill("/lovable-uploads/a08578c5-401f-4005-a90d-7239da562542.png"),
-      iconLabels: ["Light", "Free Shipping", "Made with love", "Pure Cotton"],
+      icons: [
+        { icon: Sun, label: "Light" },
+        { icon: Truck, label: "Free Shipping" },
+        { icon: Heart, label: "Made with love" },
+        { icon: Shirt, label: "Pure Cotton" },
+      ],
       description: "Kanakdhaga is all about breathable co-ords, effortless lounge sets, and resort wear that move with you. Just like a golden thread ties everything together, our pieces bring together ease and charm without compromising on style.",
     },
     {
@@ -21,7 +26,7 @@ export const TeaserCards = () => {
   ];
 
   const scrollToWaitlist = () => {
-    const waitlistSection = document.querySelector('#waitlist');
+    const waitlistSection = document.querySelector('.waitlist-section');
     if (waitlistSection) {
       waitlistSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -53,9 +58,9 @@ export const TeaserCards = () => {
                   <div className="flex-1">
                     {/* Icons Grid */}
                     <div className="grid grid-cols-4 gap-4 mb-6">
-                      {teaser.iconLabels.map((label, i) => (
+                      {teaser.icons.map(({ icon: Icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
-                          <img src={teaser.icons[i]} alt={label} className="w-6 h-6" />
+                          <Icon className="w-6 h-6 text-disco" />
                           <span className="text-xs mt-1 text-disco">{label}</span>
                         </div>
                       ))}
