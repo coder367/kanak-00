@@ -24,10 +24,16 @@ const CurvedFeatureGrid = () => {
         <div 
           key={index}
           className="relative group transition-transform duration-300 hover:scale-105"
+          style={{
+            transform: index === 1 ? 'translateY(-2rem)' : 'none'
+          }}
         >
           <div 
-            style={{ borderRadius: '30px' }}
-            className="bg-[#BA778B] p-6 border border-white/20 overflow-hidden"
+            style={{ 
+              borderRadius: '20px',
+              transform: `rotate(${index === 0 ? '-5deg' : index === 2 ? '5deg' : '0deg'})`
+            }}
+            className="bg-[#BA778B] p-6 border border-white/20"
           >
             <div className="flex flex-col items-center gap-4 text-white">
               <feature.icon className="w-10 h-10 stroke-[1.5]" />
@@ -42,6 +48,7 @@ const CurvedFeatureGrid = () => {
               background: '#BA778B',
               borderBottomLeftRadius: '100px',
               borderBottomRightRadius: '100px',
+              transform: `rotate(${index === 0 ? '-5deg' : index === 2 ? '5deg' : '0deg'})`
             }}
           />
         </div>
