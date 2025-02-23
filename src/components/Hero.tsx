@@ -46,7 +46,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
   return (
     <div 
-      className="min-h-screen flex items-start justify-center pt-16 md:pt-32 relative" 
+      className="min-h-screen flex items-start justify-center pt-16 md:pt-32 relative overflow-hidden" 
       ref={observerRef}
       style={{
         backgroundImage: 'url("/lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png")',
@@ -74,7 +74,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Brand Name Container */}
-      <div className="fixed z-[60] px-4" style={{
+      <div className="fixed z-[40] px-4" style={{
         top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
       }}>
         <h1 
@@ -88,8 +88,8 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </h1>
       </div>
 
-      {/* Launching Soon and Timer Container - Separate from Brand Name */}
-      <div className="fixed z-[60] px-4 flex flex-col items-center" style={{ top: '40%' }}>
+      {/* Launching Soon and Timer Container */}
+      <div className="absolute z-[30] px-4 flex flex-col items-center w-full" style={{ top: '40%' }}>
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
