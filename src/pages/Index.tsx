@@ -1,9 +1,10 @@
 
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import { Hero } from '@/components/Hero';
 import { WaitlistSection } from '@/components/WaitlistSection';
 import { TeaserCards } from '@/components/TeaserCards';
 import { Collections } from '@/components/Collections';
+import { AboutUs } from '@/components/AboutUs';
 import { Footer } from '@/components/Footer';
 
 const Index = () => {
@@ -30,6 +31,7 @@ const Index = () => {
       <WaitlistSection />
       <TeaserCards />
       <Collections />
+      <AboutUs />
       <Footer />
     </div>
   );

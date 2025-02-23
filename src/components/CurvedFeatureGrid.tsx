@@ -1,22 +1,22 @@
 
-import { BadgePercent, Gift, Eye } from "lucide-react";
+import { Star, Award, Rocket } from "lucide-react";
 
 const CurvedFeatureGrid = () => {
   return (
     <div className="w-full max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 z-30">
       {[
         {
-          icon: BadgePercent,
+          icon: Star,
           title: "Early Bird Offer",
           description: "Flat 20% off on first order"
         },
         {
-          icon: Gift,
+          icon: Award,
           title: "Exclusive Giveaway",
           description: "Kurtis worth Rs. 10,000 to lucky waitlist members"
         },
         {
-          icon: Eye,
+          icon: Rocket,
           title: "Sneak Peek Access",
           description: "Early access and sneak peek to our first drop"
         }
