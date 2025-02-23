@@ -23,14 +23,13 @@ export const Collections = () => {
         }
       );
 
-      // Create a seamless loop by duplicating images and using a longer animation
       const collectionsAnimation = collectionsScroll.animate(
         [
-          { transform: 'translateX(-50%)' },
+          { transform: 'translateX(-100%)' },
           { transform: 'translateX(0)' }
         ],
         {
-          duration: 20000,
+          duration: 30000,
           iterations: Infinity,
           easing: 'linear'
         }
@@ -49,8 +48,8 @@ export const Collections = () => {
     "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
   ];
 
-  // Create a seamless loop by duplicating the images
-  const repeatedImages = [...images, ...images];
+  // Create a repeating array of images for continuous loop
+  const repeatedImages = [...Array(4)].flatMap(() => images);
 
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
@@ -65,8 +64,8 @@ export const Collections = () => {
         </div>
       </div>
 
-      <div className="mt-8 md:mt-16 relative overflow-hidden">
-        <div className="flex space-x-4 md:space-x-8 px-4" ref={collectionsRef}>
+      <div className="mt-8 md:mt-16 relative" ref={collectionsRef}>
+        <div className="flex space-x-4 md:space-x-8 px-4" style={{ width: 'fit-content' }}>
           {repeatedImages.map((image, index) => (
             <Card 
               key={index}
