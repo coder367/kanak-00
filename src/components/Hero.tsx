@@ -46,7 +46,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center justify-between pt-16 md:pt-32 pb-24 relative overflow-hidden" 
+      className="min-h-screen flex flex-col items-center justify-start pt-16 md:pt-32 relative overflow-hidden" 
       ref={observerRef}
       style={{
         backgroundImage: 'url("/lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png")',
@@ -74,7 +74,9 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Brand Name Container */}
-      <div className="w-full text-center mt-20">
+      <div className="fixed z-[60] px-4" style={{
+        top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
+      }}>
         <h1 
           ref={brandRef}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
@@ -87,7 +89,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Launching Soon and Timer Container */}
-      <div className="flex flex-col items-center gap-6 mt-auto">
+      <div className="absolute z-[40] px-4 flex flex-col items-center" style={{ top: '40%' }}>
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
@@ -95,7 +97,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </div>
 
         {/* Countdown Timer */}
-        <div className="mb-12">
+        <div className="mt-6">
           <CountdownTimer />
         </div>
       </div>
