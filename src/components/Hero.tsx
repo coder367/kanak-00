@@ -55,7 +55,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
     >
       {/* Background Navbar */}
       <div className={`fixed top-0 left-0 right-0 h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-between px-4 md:px-6 transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-col items-start space-y-1">
           <Link to="/">
             <img 
               src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
@@ -63,6 +63,10 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
               className="h-8 md:h-12 w-auto"
             />
           </Link>
+          <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-900 to-purple-600 px-3 py-1 rounded-full text-xs">
+            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
+            <span className="text-blue-200 tracking-wide">LAUNCHES: MAY 5, 2025</span>
+          </div>
         </div>
         <button 
           onClick={scrollToCollections}
