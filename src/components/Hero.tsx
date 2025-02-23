@@ -10,6 +10,7 @@ interface HeroProps {
 
 export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   const observerRef = useRef<HTMLDivElement>(null);
+  const launchingSoonRef = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,6 +27,15 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
+      
+      // Calculate the position where the brand text should start scaling
+      if (brandRef.current && launchingSoonRef.current) {
+        const launchingSoonPosition = launchingSoonRef.current.getBoundingClientRect().top;
+        const scaleFactor = Math.max(0.15, 1 - (window.scrollY / (launchingSoonPosition / 2)));
+        
+        brandRef.current.style.transform = `scale(${scaleFactor})`;
+        brandRef.current.style.opacity = String(scaleFactor);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -74,22 +84,20 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Brand Name Container */}
-      <div className="fixed z-[60] px-4" style={{
-        top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
-      }}>
+      <div className="relative z-[40] px-4 mt-20">
         <h1 
           ref={brandRef}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
-          style={{
-            transform: `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`,
-          }}
         >
           KANAKDHAGA
         </h1>
       </div>
 
       {/* Launching Soon and Timer Container */}
-      <div className="absolute z-[40] px-4 flex flex-col items-center" style={{ top: '40%' }}>
+      <div 
+        ref={launchingSoonRef}
+        className="relative z-[30] px-4 flex flex-col items-center mt-32"
+      >
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
