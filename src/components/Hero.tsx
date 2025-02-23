@@ -90,12 +90,12 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Feature Grid - Adjusted positioning */}
-      <div className="absolute top-[35%] left-0 right-0 z-[40]">
+      <div className="absolute top-[40%] md:top-[45%] left-0 right-0 z-[40]">
         <CurvedFeatureGrid />
       </div>
 
-      {/* Launching Soon and Timer Container */}
-      <div className="absolute bottom-48 left-0 right-0 z-[40] px-4 flex flex-col items-center">
+      {/* Launching Soon and Timer Container - Adjusted for better visibility */}
+      <div className="absolute bottom-24 md:bottom-32 lg:bottom-28 left-0 right-0 z-[40] px-4 flex flex-col items-center">
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
