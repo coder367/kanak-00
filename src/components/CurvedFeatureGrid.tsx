@@ -19,9 +19,6 @@ const CurvedFeatureGrid = () => {
         <div 
           key={index}
           className="relative transition-all duration-300 group w-full md:w-1/3"
-          style={{
-            transform: `rotate(${index === 0 ? '-5deg' : index === 2 ? '5deg' : '0deg'})`
-          }}
         >
           <div 
             className="bg-[#BA778B] p-8 rounded-2xl border border-white/20 transition-transform duration-300 group-hover:transform group-hover:-translate-y-2 shadow-[0_10px_20px_rgba(186,119,139,0.3)] group-hover:shadow-[0_20px_30px_rgba(186,119,139,0.4)]"

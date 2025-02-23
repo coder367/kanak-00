@@ -26,8 +26,8 @@ export const Collections = () => {
       // Create a seamless loop by duplicating images and using a longer animation
       const collectionsAnimation = collectionsScroll.animate(
         [
-          { transform: 'translateX(0)' },
-          { transform: 'translateX(-50%)' }
+          { transform: 'translateX(-50%)' },
+          { transform: 'translateX(0)' }
         ],
         {
           duration: 20000,
