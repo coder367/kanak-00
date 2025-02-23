@@ -1,7 +1,6 @@
 
 import { Card } from "@/components/ui/card";
 import { useRef, useEffect } from "react";
-import { Feather, Truck, Heart } from "lucide-react";
 
 export const Collections = () => {
   const textContainerRef = useRef<HTMLDivElement>(null);
@@ -28,6 +27,12 @@ export const Collections = () => {
     }
   }, []);
 
+  const images = [
+    "lovable-uploads/564fc35d-c420-44c5-bf1a-dadfbb741cde.png",
+    "lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png",
+    "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
+  ];
+
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
       {/* Kept the original rotating COMING SOON text */}
@@ -42,62 +47,17 @@ export const Collections = () => {
         </div>
       </div>
 
-      {/* Collection Cards Grid */}
+      {/* New static grid for the three images */}
       <div className="mt-8 md:mt-16 px-4 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-          {/* First Card with Updated Content */}
-          <Card className="w-full overflow-hidden flex flex-col">
-            {/* Image Container */}
-            <div className="aspect-[3/4] overflow-hidden">
-              <img 
-                src="/lovable-uploads/55f0eba3-8655-468b-8ebc-0be0fa061155.png"
-                alt="Collection 1"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Content Container */}
-            <div className="p-6 bg-white">
-              {/* Icons Row */}
-              <div className="flex justify-between mb-4">
-                <div className="flex flex-col items-center">
-                  <Feather className="h-6 w-6 text-disco" />
-                  <span className="text-xs mt-1 text-disco">Light</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Truck className="h-6 w-6 text-disco" />
-                  <span className="text-xs mt-1 text-disco">Free Shipping</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Heart className="h-6 w-6 text-disco" />
-                  <span className="text-xs mt-1 text-disco">Made with love</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img 
-                    src="/lovable-uploads/3c2ffa71-eb02-47e5-b95b-5baa139d8c50.png" 
-                    alt="Pure Cotton"
-                    className="h-6 w-6"
-                  />
-                  <span className="text-xs mt-1 text-disco">Pure Cotton</span>
-                </div>
-              </div>
-              
-              {/* Description */}
-              <p className="text-sm text-disco-dark leading-relaxed">
-                Kanakdhaga is all about breathable co-ords, effortless lounge sets, and resort wear that move with you. Just like a golden thread ties everything together, our pieces bring together ease and charm without compromising on style.
-              </p>
-            </div>
-          </Card>
-
-          {/* Placeholder Cards */}
-          {[2, 3].map((index) => (
+          {images.map((image, index) => (
             <Card 
               key={index}
               className="w-full aspect-[3/4] rounded-[30px] md:rounded-[40px] overflow-hidden"
             >
               <img 
-                src={`lovable-uploads/${index === 2 ? '5466685f-1a29-4607-aa30-193e43a50157.png' : '5e181592-590b-4783-a78b-2238367c209b.png'}`}
-                alt={`Collection ${index}`}
+                src={image} 
+                alt={`Collection ${index + 1}`}
                 className="w-full h-full object-cover"
               />
             </Card>
