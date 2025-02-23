@@ -26,10 +26,10 @@ export const Collections = () => {
       const collectionsAnimation = collectionsScroll.animate(
         [
           { transform: 'translateX(0)' },
-          { transform: 'translateX(100%)' }
+          { transform: 'translateX(-50%)' }
         ],
         {
-          duration: 30000,
+          duration: 15000,
           iterations: Infinity,
           easing: 'linear'
         }
@@ -49,7 +49,7 @@ export const Collections = () => {
   ];
 
   // Create a repeating array of images for continuous loop
-  const repeatedImages = [...Array(3)].flatMap(() => images);
+  const repeatedImages = [...images, ...images, ...images, ...images];
 
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
@@ -64,20 +64,22 @@ export const Collections = () => {
         </div>
       </div>
 
-      <div className="mt-8 md:mt-16 relative overflow-hidden" ref={collectionsRef}>
-        <div className="flex space-x-4 md:space-x-8 px-4" style={{ width: 'fit-content' }}>
-          {repeatedImages.map((image, index) => (
-            <Card 
-              key={index}
-              className="w-[200px] md:w-[300px] h-[300px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden flex-shrink-0"
-            >
-              <img 
-                src={image} 
-                alt={`Collection ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </Card>
-          ))}
+      <div className="mt-8 md:mt-16 relative overflow-hidden">
+        <div className="relative overflow-hidden" ref={collectionsRef}>
+          <div className="flex space-x-4 md:space-x-8 px-4" style={{ width: 'fit-content' }}>
+            {repeatedImages.map((image, index) => (
+              <Card 
+                key={index}
+                className="w-[200px] md:w-[300px] h-[300px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden flex-shrink-0"
+              >
+                <img 
+                  src={image} 
+                  alt={`Collection ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
