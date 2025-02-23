@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CountdownTimer from './CountdownTimer';
+import FeatureGrid from './FeatureGrid';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
@@ -88,8 +89,11 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </h1>
       </div>
 
+      {/* Feature Grid */}
+      <FeatureGrid />
+
       {/* Launching Soon and Timer Container */}
-      <div className="absolute z-[40] px-4 flex flex-col items-center" style={{ top: '40%' }}>
+      <div className="fixed z-[40] px-4 flex flex-col items-center" style={{ top: '40%' }}>
         {/* Launching Soon Tag */}
         <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
