@@ -43,24 +43,24 @@ export const Collections = () => {
   }, []);
 
   return (
-    <section className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-24">
+    <section className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
       <div className="relative whitespace-nowrap" ref={textContainerRef}>
-        <div className="flex items-center space-x-8 text-disco-dark" style={{ width: 'fit-content' }}>
+        <div className="flex items-center space-x-4 md:space-x-8 text-disco-dark" style={{ width: 'fit-content' }}>
           {[...Array(8)].map((_, index) => (
-            <div key={index} className="flex items-center space-x-4">
-              <div className="w-4 h-4 bg-disco rounded-full" />
-              <span className="text-8xl font-serif-display">COMING SOON</span>
+            <div key={index} className="flex items-center space-x-2 md:space-x-4">
+              <div className="w-2 h-2 md:w-4 md:h-4 bg-disco rounded-full" />
+              <span className="text-4xl md:text-6xl lg:text-8xl font-serif-display">COMING SOON</span>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mt-16 relative" ref={collectionsRef}>
-        <div className="flex space-x-8 px-4" style={{ width: 'fit-content' }}>
+      <div className="mt-8 md:mt-16 relative" ref={collectionsRef}>
+        <div className="flex space-x-4 md:space-x-8 px-4" style={{ width: 'fit-content' }}>
           {[...Array(20)].map((_, index) => (
             <Card 
               key={index}
-              className="w-[300px] h-[400px] rounded-[40px] overflow-hidden flex-shrink-0 bg-white/20 backdrop-blur-sm"
+              className="w-[200px] md:w-[300px] h-[300px] md:h-[400px] rounded-[30px] md:rounded-[40px] overflow-hidden flex-shrink-0 bg-white/20 backdrop-blur-sm"
             >
               <div className="w-full h-full bg-[linear-gradient(45deg,#f0f0f0_25%,#e0e0e0_25%,#e0e0e0_50%,#f0f0f0_50%,#f0f0f0_75%,#e0e0e0_75%)] bg-[length:20px_20px]" />
             </Card>
