@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Card } from "@/components/ui/card";
+import { Feather, Gift, HandHeart, Leaf } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +46,7 @@ export const FeatureCards = () => {
           {/* Cards Container */}
           <div className="sticky top-32 flex justify-center items-center">
             <div className="relative w-full max-w-2xl">
-              {/* Card 1 - Updated with new content */}
+              {/* Card 1 - Updated with new icons */}
               <div 
                 ref={el => cardsRef.current[0] = el}
                 className="absolute top-0 left-0 right-0 bg-white rounded-2xl overflow-hidden shadow-xl"
@@ -63,22 +63,22 @@ export const FeatureCards = () => {
 
                   {/* Content */}
                   <div className="p-6">
-                    {/* Icons Row */}
+                    {/* Icons Row - Updated with new Lucide icons */}
                     <div className="grid grid-cols-4 gap-4 mb-6">
                       <div className="flex flex-col items-center">
-                        <img src="/lovable-uploads/a08578c5-401f-4005-a90d-7239da562542.png" alt="Light" className="w-6 h-6" />
+                        <Feather size={24} className="text-disco" />
                         <span className="text-xs mt-1 text-disco">Light</span>
                       </div>
                       <div className="flex flex-col items-center">
-                        <img src="/lovable-uploads/a08578c5-401f-4005-a90d-7239da562542.png" alt="Free Shipping" className="w-6 h-6" />
+                        <Gift size={24} className="text-disco" />
                         <span className="text-xs mt-1 text-disco">Free Shipping</span>
                       </div>
                       <div className="flex flex-col items-center">
-                        <img src="/lovable-uploads/a08578c5-401f-4005-a90d-7239da562542.png" alt="Made with love" className="w-6 h-6" />
+                        <HandHeart size={24} className="text-disco" />
                         <span className="text-xs mt-1 text-disco">Made with love</span>
                       </div>
                       <div className="flex flex-col items-center">
-                        <img src="/lovable-uploads/a08578c5-401f-4005-a90d-7239da562542.png" alt="Pure Cotton" className="w-6 h-6" />
+                        <Leaf size={24} className="text-disco" />
                         <span className="text-xs mt-1 text-disco">Pure Cotton</span>
                       </div>
                     </div>
