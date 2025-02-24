@@ -1,6 +1,4 @@
 
-import { Star } from "lucide-react";
-
 const CurvedFeatureGrid = () => {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-[24px] z-30">
@@ -47,21 +45,6 @@ const CurvedFeatureGrid = () => {
               <div className="absolute -left-3 -bottom-3 w-6 h-6 bg-careys-pink rounded-tr-full" />
               {/* Bottom Right */}
               <div className="absolute -right-3 -bottom-3 w-6 h-6 bg-careys-pink rounded-tl-full" />
-            </div>
-
-            {/* Decorative Border Frame */}
-            <div className="absolute inset-[12px] border-2 border-[#D4AF37]/60 rounded-sm" />
-
-            {/* Star Decorations */}
-            <div className="absolute left-0 top-0 h-full flex flex-col justify-between py-4">
-              {[0, 1, 2].map((i) => (
-                <Star key={i} className="w-4 h-4 ml-5 text-[#D4AF37]/60" />
-              ))}
-            </div>
-            <div className="absolute right-0 top-0 h-full flex flex-col justify-between py-4">
-              {[0, 1, 2].map((i) => (
-                <Star key={i} className="w-4 h-4 mr-5 text-[#D4AF37]/60" />
-              ))}
             </div>
 
             {/* Content Container */}
