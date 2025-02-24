@@ -55,12 +55,12 @@ export const TeaserCards = () => {
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
-                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 12)}vh)) translateZ(${index * -100}px)`,
+                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 25)}vh)) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '500px' : undefined,
                 opacity: index === 2 ? 0.99 : 1,
-                marginBottom: window.innerWidth < 768 ? '1rem' : undefined,
+                marginBottom: window.innerWidth < 768 ? '2rem' : undefined,
               }}
             >
               {index === 0 ? (
