@@ -13,6 +13,7 @@ export const Collections = () => {
   const textContainerRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const isMobile = useIsMobile();
 
   // Text scroll animation
   useEffect(() => {
@@ -40,7 +41,7 @@ export const Collections = () => {
   useInterval(() => {
     if (carouselRef.current) {
       setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % 3;
+        const nextSlide = (prev + 1) % (isMobile ? 1 : 3);
         carouselRef.current?.scrollTo({
           left: nextSlide * carouselRef.current.offsetWidth,
           behavior: 'smooth'
@@ -73,7 +74,7 @@ export const Collections = () => {
         <div ref={carouselRef} className="w-full overflow-hidden">
           <Carousel className="w-full">
             <CarouselContent>
-              {images.map((image, index) => (
+              {(isMobile ? [images[0]] : images).map((image, index) => (
                 <CarouselItem key={index}>
                   <Card className="w-[85%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
                     <img 
