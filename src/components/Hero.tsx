@@ -1,6 +1,5 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import CountdownTimer from './CountdownTimer';
 import CurvedFeatureGrid from './CurvedFeatureGrid';
 
@@ -64,8 +63,11 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
     >
       {/* Background Navbar */}
       <div className={`fixed top-0 left-0 right-0 h-14 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-between px-3 sm:px-4 md:px-6 transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="flex items-center space-x-4">
-          <button onClick={scrollToTop} className="transition-transform hover:scale-105">
+        <div className="flex items-center">
+          <button 
+            onClick={scrollToTop} 
+            className="p-2 rounded-lg transition-all duration-300 hover:bg-white/10 active:scale-95"
+          >
             <img 
               src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
               alt="Kanakdhaga Logo" 
@@ -75,7 +77,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </div>
         <button 
           onClick={scrollToCollections}
-          className="text-white px-3 sm:px-4 py-1.5 sm:py-2 border border-white rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-disco-dark hover:scale-105"
+          className="text-white px-4 sm:px-6 py-2 sm:py-2.5 border border-white rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-disco-dark active:scale-95 hover:shadow-lg"
         >
           Our Collection
         </button>
