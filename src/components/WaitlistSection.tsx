@@ -20,7 +20,7 @@ export const WaitlistSection = () => {
             />
             <Input 
               type="email" 
-              placeholder="Your mailadress" 
+              placeholder="Email" 
               className="w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6"
             />
             <Input 
