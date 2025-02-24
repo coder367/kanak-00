@@ -36,51 +36,15 @@ const CurvedFeatureGrid = () => {
               transition-all duration-300
             `}
           >
-            {/* Decorative Border */}
-            <div className="absolute inset-0 border-2 border-[#FBFBEB]/30">
-              {/* Top Decorative Pattern */}
-              <div className="absolute top-0 left-0 right-0 h-6 border-b border-[#FBFBEB]/30">
-                <div className="absolute inset-x-4 top-1 flex justify-between">
-                  {[...Array(6)].map((_, i) => (
-                    <div key={i} className="w-4 h-4">
-                      <div className="w-3 h-3 border-2 border-[#FBFBEB]/30 rounded-full" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Bottom Decorative Pattern */}
-              <div className="absolute bottom-0 left-0 right-0 h-6 border-t border-[#FBFBEB]/30">
-                <div className="absolute inset-x-4 bottom-1 flex justify-between">
-                  {[...Array(6)].map((_, i) => (
-                    <div key={i} className="w-4 h-4">
-                      <div className="w-3 h-3 border-2 border-[#FBFBEB]/30 rounded-full" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Left Side Pattern */}
-              <div className="absolute left-0 top-6 bottom-6 w-6 border-r border-[#FBFBEB]/30">
-                <div className="absolute inset-y-4 left-1 flex flex-col justify-between">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="w-4 h-4">
-                      <div className="w-3 h-3 border-2 border-[#FBFBEB]/30 rounded-full" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Side Pattern */}
-              <div className="absolute right-0 top-6 bottom-6 w-6 border-l border-[#FBFBEB]/30">
-                <div className="absolute inset-y-4 right-1 flex flex-col justify-between">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="w-4 h-4">
-                      <div className="w-3 h-3 border-2 border-[#FBFBEB]/30 rounded-full" />
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* Left Cutout */}
+            <div className="absolute -left-[8px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
+            
+            {/* Right Cutout */}
+            <div className="absolute -right-[8px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
+            
+            {/* Left Decorative Circle */}
+            <div className="absolute left-5 top-1/2 -translate-y-1/2 w-8 h-8 border border-[#D4AF37]/30 rounded-full flex items-center justify-center">
+              <div className="w-5 h-5 border border-[#D4AF37]/50 rounded-full" />
             </div>
 
             {/* Content Container */}
@@ -99,6 +63,9 @@ const CurvedFeatureGrid = () => {
                 </button>
               </div>
             </div>
+
+            {/* Dotted Line */}
+            <div className="absolute left-14 right-14 top-1/2 -translate-y-1/2 border-t border-dashed border-[#D4AF37]/30" />
           </div>
         </div>
       ))}
