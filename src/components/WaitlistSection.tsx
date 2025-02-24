@@ -1,6 +1,7 @@
 
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Facebook, Instagram } from "lucide-react";
 
 export const WaitlistSection = () => {
   return (
@@ -36,10 +37,44 @@ export const WaitlistSection = () => {
                 <SelectValue placeholder="Where did you hear about us?" />
               </SelectTrigger>
               <SelectContent className="bg-white/90 backdrop-blur-md">
-                <SelectItem value="friends">Friends</SelectItem>
-                <SelectItem value="google">Google</SelectItem>
-                <SelectItem value="whatsapp">Whatsapp</SelectItem>
-                <SelectItem value="others">Others</SelectItem>
+                <SelectItem 
+                  value="facebook" 
+                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                >
+                  <Facebook className="w-4 h-4" />
+                  Facebook
+                </SelectItem>
+                <SelectItem 
+                  value="instagram" 
+                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                >
+                  <Instagram className="w-4 h-4" />
+                  Instagram
+                </SelectItem>
+                <SelectItem 
+                  value="friends" 
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                >
+                  Friends
+                </SelectItem>
+                <SelectItem 
+                  value="google" 
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                >
+                  Google
+                </SelectItem>
+                <SelectItem 
+                  value="whatsapp" 
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                >
+                  Whatsapp
+                </SelectItem>
+                <SelectItem 
+                  value="others" 
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                >
+                  Others
+                </SelectItem>
               </SelectContent>
             </Select>
 
