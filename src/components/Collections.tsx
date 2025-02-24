@@ -11,7 +11,6 @@ import { useInterval } from "@/hooks/use-interval";
 
 export const Collections = () => {
   const textContainerRef = useRef<HTMLDivElement>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const isMobile = useIsMobile();
 
@@ -39,15 +38,8 @@ export const Collections = () => {
 
   // Auto scroll for images on mobile
   useInterval(() => {
-    if (carouselRef.current && isMobile) {
-      setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % 3;
-        carouselRef.current?.scrollTo({
-          left: nextSlide * carouselRef.current.offsetWidth,
-          behavior: 'smooth'
-        });
-        return nextSlide;
-      });
+    if (isMobile) {
+      setCurrentSlide((prev) => (prev + 1) % 3);
     }
   }, 3000);
 
@@ -58,11 +50,7 @@ export const Collections = () => {
   ];
 
   const handleManualScroll = (index: number) => {
-    if (carouselRef.current && isMobile) {
-      carouselRef.current.scrollTo({
-        left: index * carouselRef.current.offsetWidth,
-        behavior: 'smooth'
-      });
+    if (isMobile) {
       setCurrentSlide(index);
     }
   };
@@ -81,22 +69,28 @@ export const Collections = () => {
       </div>
 
       <div className="mt-8 md:mt-16 px-4 max-w-7xl mx-auto">
-        <div ref={carouselRef} className="w-full overflow-hidden">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index} className={isMobile ? 'w-full' : 'basis-1/3'}>
-                  <Card className="w-[85%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
-                    <img 
-                      src={image} 
-                      alt={`Collection ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+        <div className="w-full overflow-hidden relative">
+          <div 
+            className={`w-full flex transition-transform duration-500 ease-in-out ${
+              isMobile ? `transform -translate-x-[${currentSlide * 100}%]` : ''
+            }`}
+          >
+            {images.map((image, index) => (
+              <div 
+                key={index} 
+                className={`${isMobile ? 'w-full flex-shrink-0' : 'w-1/3'} px-2`}
+                style={isMobile ? { transform: `translateX(-${currentSlide * 100}%)` } : undefined}
+              >
+                <Card className="w-[85%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
+                  <img 
+                    src={image} 
+                    alt={`Collection ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Dots indicator for mobile */}
