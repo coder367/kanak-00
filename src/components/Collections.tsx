@@ -37,7 +37,7 @@ export const Collections = () => {
     }
   }, []);
 
-  // Auto scroll for images
+  // Auto scroll for images on mobile
   useInterval(() => {
     if (carouselRef.current && isMobile) {
       setCurrentSlide((prev) => {
@@ -52,9 +52,9 @@ export const Collections = () => {
   }, 3000);
 
   const images = [
-    "lovable-uploads/564fc35d-c420-44c5-bf1a-dadfbb741cde.png",
-    "lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png",
-    "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
+    "/lovable-uploads/7b27dc6d-47a9-4b38-9aa0-4ceea485d2ae.png",
+    "/lovable-uploads/198fdacb-0a3b-4f40-bbf7-552a328f74ea.png",
+    "/lovable-uploads/3a6333ff-d27f-481c-9b11-4403340dc64a.png"
   ];
 
   const handleManualScroll = (index: number) => {
@@ -85,7 +85,7 @@ export const Collections = () => {
           <Carousel className="w-full">
             <CarouselContent>
               {images.map((image, index) => (
-                <CarouselItem key={index} className={isMobile ? 'w-full' : 'w-1/3'}>
+                <CarouselItem key={index} className={isMobile ? 'w-full' : 'basis-1/3'}>
                   <Card className="w-[85%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
                     <img 
                       src={image} 
