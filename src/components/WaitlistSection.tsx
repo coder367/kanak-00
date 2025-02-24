@@ -1,7 +1,6 @@
 
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Facebook, Instagram } from "lucide-react";
 
 export const WaitlistSection = () => {
   return (
@@ -39,16 +38,14 @@ export const WaitlistSection = () => {
               <SelectContent className="bg-white/90 backdrop-blur-md">
                 <SelectItem 
                   value="facebook" 
-                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <Facebook className="w-4 h-4" />
                   Facebook
                 </SelectItem>
                 <SelectItem 
                   value="instagram" 
-                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <Instagram className="w-4 h-4" />
                   Instagram
                 </SelectItem>
                 <SelectItem 
