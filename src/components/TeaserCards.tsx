@@ -1,10 +1,10 @@
 
 import { Card } from "@/components/ui/card";
-import { Sun, Truck, Heart, Shirt } from "lucide-react";
+import Image from 'next/image';
 
 type Teaser = {
   image: string;
-  icons?: Array<{ icon: any; label: string }>;
+  icons?: Array<{ icon: string; label: string }>;
   title?: string;
   description: string | string[];
 }
@@ -14,10 +14,10 @@ export const TeaserCards = () => {
     {
       image: "/lovable-uploads/0f856697-8814-4188-a095-7ea4ce08c309.png",
       icons: [
-        { icon: Sun, label: "Light" },
-        { icon: Truck, label: "Free Shipping" },
-        { icon: Heart, label: "Made with love" },
-        { icon: Shirt, label: "Pure Cotton" },
+        { icon: "/lovable-uploads/4626dc7d-05b9-4deb-8583-9b1dd7c941ee.png", label: "Breathable" },
+        { icon: "/lovable-uploads/10f8f108-fe25-447e-99e8-f53d6b14f47b.png", label: "Free Shipping" },
+        { icon: "/lovable-uploads/f9e5edf4-16fa-4ffa-bd73-cb13fbd501be.png", label: "Made with love" },
+        { icon: "/lovable-uploads/67697866-a69e-4875-8a89-2c5acf3fdd09.png", label: "Pure Cotton" },
       ],
       description: "Kanakdhaga is all about breathable co-ords, effortless lounge sets, and resort wear that move with you. Just like a golden thread ties everything together, our pieces bring together ease and charm without compromising on style.",
     },
@@ -73,10 +73,16 @@ export const TeaserCards = () => {
                   </div>
                   <div className="flex-1">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                      {teaser.icons?.map(({ icon: Icon, label }, i) => (
+                      {teaser.icons?.map(({ icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
-                          <Icon className="w-6 h-6 text-disco" />
-                          <span className="text-xs mt-1 text-disco">{label}</span>
+                          <div className="w-8 h-8 md:w-10 md:h-10">
+                            <img 
+                              src={icon} 
+                              alt={label}
+                              className="w-full h-full object-contain" 
+                            />
+                          </div>
+                          <span className="text-xs md:text-sm mt-2 text-disco text-center">{label}</span>
                         </div>
                       ))}
                     </div>
