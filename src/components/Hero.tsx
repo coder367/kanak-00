@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import CountdownTimer from './CountdownTimer';
 import CurvedFeatureGrid from './CurvedFeatureGrid';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { ChevronDown } from 'lucide-react';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
@@ -121,6 +122,18 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         <div className="mt-6 sm:mt-8">
           <CountdownTimer />
         </div>
+
+        {/* Scroll Indicator - Only visible on mobile */}
+        {isMobile && (
+          <div className="absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+            <div className="flex space-x-1.5 mb-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/80" />
+              <div className="w-1.5 h-1.5 rounded-full bg-white/80" />
+              <div className="w-1.5 h-1.5 rounded-full bg-white/80" />
+            </div>
+            <ChevronDown className="w-6 h-6 text-white/80" />
+          </div>
+        )}
       </div>
 
       {/* Overlay */}
