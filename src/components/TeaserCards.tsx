@@ -1,6 +1,6 @@
 
 import { Card } from "@/components/ui/card";
-import { Sun, Truck, Heart, Shirt } from "lucide-react";
+import { Sun, Truck, Heart, Shirt, Mail, Percent } from "lucide-react";
 
 export const TeaserCards = () => {
   const teasers = [
@@ -18,6 +18,23 @@ export const TeaserCards = () => {
       image: "/lovable-uploads/6b994672-5bab-422a-86dc-3a94232daa33.png",
       title: "Be the First to Grab It – Flat 20% Off!",
       description: "Sign up now and enjoy an exclusive 20% discount on your first order, along with early access and a sneak peek at our first drop.",
+      promos: [
+        {
+          icon: Percent,
+          title: "Use code KANAK20",
+          description: "Flat 20% OFF on your first order!"
+        },
+        {
+          icon: Shirt,
+          title: "Win a Free Kurti!",
+          description: "Stand a chance to get a beautiful Kurti from us on launch."
+        },
+        {
+          icon: Mail,
+          title: "Stay tuned!",
+          description: "Check your mail & WhatsApp for exciting updates."
+        }
+      ]
     },
     {
       title: "Create",
@@ -56,7 +73,6 @@ export const TeaserCards = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    {/* Icons Grid */}
                     <div className="grid grid-cols-4 gap-4 mb-6">
                       {teaser.icons.map(({ icon: Icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
@@ -65,42 +81,34 @@ export const TeaserCards = () => {
                         </div>
                       ))}
                     </div>
-                    {/* Description */}
                     <p className="text-turkish-rose font-garamond leading-relaxed">
                       {teaser.description}
                     </p>
                   </div>
                 </>
               ) : index === 1 ? (
-                <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
-                    <img 
-                      src={teaser.image} 
-                      alt="Exclusive Offer" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 text-center md:text-left flex flex-col gap-4">
-                    <h3 className="text-3xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
-                    <p className="text-lg md:text-xl font-garamond text-turkish-rose max-w-md">{teaser.description}</p>
-                    <button 
-                      onClick={scrollToWaitlist}
-                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-8 py-3 rounded-xl transition-colors self-start mt-4"
-                    >
-                      Get Exclusive Access
-                    </button>
-                  </div>
-                </>
+                <div className="w-full flex flex-col gap-6">
+                  {teaser.promos?.map((promo, i) => (
+                    <div key={i} className="flex items-center space-x-4">
+                      <promo.icon size={28} className="text-disco" />
+                      <div>
+                        <h3 className="text-xl font-serif-display text-disco-dark">{promo.title}</h3>
+                        <p className="text-turkish-rose font-garamond">{promo.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                  <button 
+                    onClick={scrollToWaitlist}
+                    className="mt-4 bg-disco-dark text-white px-8 py-3 rounded-full font-garamond hover:bg-disco transition-colors self-start"
+                  >
+                    Join Waitlist
+                  </button>
+                </div>
               ) : (
-                <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] bg-gray-200 rounded-xl flex-shrink-0">
-                    <div className="w-full h-full bg-[linear-gradient(45deg,#f0f0f0_25%,#e0e0e0_25%,#e0e0e0_50%,#f0f0f0_50%,#f0f0f0_75%,#e0e0e0_75%)] bg-[length:20px_20px]" />
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-3xl md:text-5xl font-serif-display text-disco-dark mb-2 md:mb-4">{teaser.title}</h3>
-                    <p className="text-lg md:text-xl font-garamond text-turkish-rose max-w-md">{teaser.description}</p>
-                  </div>
-                </>
+                <div className="w-full text-center md:text-left">
+                  <h3 className="text-3xl md:text-5xl font-serif-display text-disco-dark mb-2 md:mb-4">{teaser.title}</h3>
+                  <p className="text-lg md:text-xl font-garamond text-turkish-rose max-w-md">{teaser.description}</p>
+                </div>
               )}
             </Card>
           ))}
