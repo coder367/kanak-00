@@ -1,9 +1,7 @@
-
 import { useEffect, useRef, useState } from 'react';
 import CountdownTimer from './CountdownTimer';
 import CurvedFeatureGrid from './CurvedFeatureGrid';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { ChevronDown } from 'lucide-react';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
@@ -88,7 +86,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         )}
       </div>
 
-      {/* Brand Name Container - Hidden on Mobile */}
+      {/* Brand Name Container */}
       {!isMobile && (
         <div className="fixed z-[60] px-4" style={{
           top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
@@ -123,15 +121,12 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
           <CountdownTimer />
         </div>
 
-        {/* Scroll Indicator - Only visible on mobile */}
+        {/* Scroll Indicator Dots - Only visible on mobile */}
         {isMobile && (
-          <div className="absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-            <div className="flex space-x-1.5 mb-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-white/80" />
-              <div className="w-1.5 h-1.5 rounded-full bg-white/80" />
-              <div className="w-1.5 h-1.5 rounded-full bg-white/80" />
-            </div>
-            <ChevronDown className="w-6 h-6 text-white/80" />
+          <div className="flex space-x-2 mt-8">
+            <div className="w-2 h-2 rounded-full bg-white/80" />
+            <div className="w-2 h-2 rounded-full bg-white/80" />
+            <div className="w-2 h-2 rounded-full bg-white/80" />
           </div>
         )}
       </div>

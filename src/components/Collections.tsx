@@ -39,9 +39,9 @@ export const Collections = () => {
 
   // Auto scroll for images
   useInterval(() => {
-    if (carouselRef.current) {
+    if (carouselRef.current && isMobile) {
       setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % (isMobile ? 1 : 3);
+        const nextSlide = (prev + 1) % 3;
         carouselRef.current?.scrollTo({
           left: nextSlide * carouselRef.current.offsetWidth,
           behavior: 'smooth'
@@ -56,6 +56,16 @@ export const Collections = () => {
     "lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png",
     "lovable-uploads/5e181592-590b-4783-a78b-2238367c209b.png"
   ];
+
+  const handleManualScroll = (index: number) => {
+    if (carouselRef.current && isMobile) {
+      carouselRef.current.scrollTo({
+        left: index * carouselRef.current.offsetWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
 
   return (
     <section id="collections" className="bg-careys-pink/60 backdrop-blur-lg overflow-hidden pt-12 pb-16 md:pb-24">
@@ -74,8 +84,8 @@ export const Collections = () => {
         <div ref={carouselRef} className="w-full overflow-hidden">
           <Carousel className="w-full">
             <CarouselContent>
-              {(isMobile ? [images[0]] : images).map((image, index) => (
-                <CarouselItem key={index}>
+              {images.map((image, index) => (
+                <CarouselItem key={index} className={isMobile ? 'w-full' : 'w-1/3'}>
                   <Card className="w-[85%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
                     <img 
                       src={image} 
@@ -88,6 +98,21 @@ export const Collections = () => {
             </CarouselContent>
           </Carousel>
         </div>
+
+        {/* Dots indicator for mobile */}
+        {isMobile && (
+          <div className="flex justify-center space-x-2 mt-6">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleManualScroll(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? 'bg-disco-dark' : 'bg-disco-dark/30'
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
