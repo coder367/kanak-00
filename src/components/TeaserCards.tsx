@@ -68,8 +68,8 @@ export const TeaserCards = () => {
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: isFixed ? 
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 10)}vh) translateZ(${index * -100}px)` :
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 10)}vh) translateZ(${index * -100}px)`,
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 12)}vh) translateZ(${index * -100}px)` :
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 12)}vh) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
@@ -78,11 +78,11 @@ export const TeaserCards = () => {
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[300px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Feature Collection" 
-                      className="w-full h-full object-contain md:object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="flex-1">
