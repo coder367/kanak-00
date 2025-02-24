@@ -20,8 +20,13 @@ export const TeaserCards = () => {
       description: "Sign up now and enjoy an exclusive 20% discount on your first order, along with early access and a sneak peek at our first drop.",
     },
     {
-      title: "Create",
-      description: "Express yourself in new ways and build meaningful connections with others.",
+      image: "/lovable-uploads/8e47072b-c16a-4210-879c-a243d34faf13.png",
+      title: "Exclusive Launch Offer",
+      description: [
+        "Flat 20% OFF on your first order – Use code KANAK20 at checkout.",
+        "Stand a chance to win a free Kurti as part of our launch giveaway.",
+        "Stay updated—check your email and WhatsApp for upcoming announcements."
+      ],
     },
   ];
 
@@ -56,7 +61,6 @@ export const TeaserCards = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    {/* Icons Grid */}
                     <div className="grid grid-cols-4 gap-4 mb-6">
                       {teaser.icons.map(({ icon: Icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
@@ -65,7 +69,6 @@ export const TeaserCards = () => {
                         </div>
                       ))}
                     </div>
-                    {/* Description */}
                     <p className="text-turkish-rose font-garamond leading-relaxed">
                       {teaser.description}
                     </p>
@@ -93,12 +96,29 @@ export const TeaserCards = () => {
                 </>
               ) : (
                 <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] bg-gray-200 rounded-xl flex-shrink-0">
-                    <div className="w-full h-full bg-[linear-gradient(45deg,#f0f0f0_25%,#e0e0e0_25%,#e0e0e0_50%,#f0f0f0_50%,#f0f0f0_75%,#e0e0e0_75%)] bg-[length:20px_20px]" />
+                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                    <img 
+                      src={teaser.image} 
+                      alt="Launch Offer" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-3xl md:text-5xl font-serif-display text-disco-dark mb-2 md:mb-4">{teaser.title}</h3>
-                    <p className="text-lg md:text-xl font-garamond text-turkish-rose max-w-md">{teaser.description}</p>
+                  <div className="flex-1 text-left">
+                    <h3 className="text-3xl md:text-4xl font-serif-display text-disco-dark mb-6">{teaser.title}</h3>
+                    <div className="space-y-4">
+                      {teaser.description.map((item, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <span className="text-disco text-lg">✔</span>
+                          <p className="text-lg font-garamond text-turkish-rose">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <button 
+                      onClick={scrollToWaitlist}
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-8 py-3 rounded-xl transition-colors mt-6"
+                    >
+                      Join Waitlist
+                    </button>
                   </div>
                 </>
               )}
