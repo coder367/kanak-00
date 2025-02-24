@@ -64,7 +64,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-14 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center px-3 sm:px-4 md:px-6">
+      <div className="fixed top-0 left-0 right-0 h-16 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center px-4 sm:px-4 md:px-6">
         <div className="flex items-center">
           <button 
             onClick={scrollToTop} 
@@ -73,7 +73,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
             <img 
               src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
               alt="Kanakdhaga Logo" 
-              className="h-6 sm:h-8 md:h-12 w-auto"
+              className="h-8 sm:h-8 md:h-12 w-auto"
             />
           </button>
         </div>
@@ -105,12 +105,12 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       )}
 
       {/* Feature Grid */}
-      <div className="absolute top-[20%] sm:top-[35%] md:top-[43%] left-0 right-0 z-[40]">
+      <div className="absolute top-[25%] sm:top-[35%] md:top-[43%] left-0 right-0 z-[40] px-6">
         <CurvedFeatureGrid />
       </div>
 
       {/* Launching Soon and Timer Container */}
-      <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 lg:bottom-4 left-0 right-0 z-[40] px-4 flex flex-col items-center">
+      <div className="absolute bottom-8 sm:bottom-8 md:bottom-12 lg:bottom-4 left-0 right-0 z-[40] px-6 flex flex-col items-center">
         {/* Launching Soon Tag */}
         <div className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2 sm:space-x-3 shadow-lg hover:bg-[#8C1444]/90 hover:shadow-[0_0_15px_rgba(140,20,68,0.4)] transition-all duration-300">
           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#FBFBEB] animate-pulse" />
@@ -118,7 +118,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </div>
 
         {/* Countdown Timer */}
-        <div className="mt-4 sm:mt-8">
+        <div className="mt-6 sm:mt-8">
           <CountdownTimer />
         </div>
       </div>

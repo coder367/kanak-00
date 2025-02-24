@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Sun, Truck, Heart, Shirt } from "lucide-react";
 
@@ -51,14 +50,13 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300"
+              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden"
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 5)}vh)) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
-                maxHeight: window.innerWidth < 768 ? '80vh' : undefined,
-                overflowY: window.innerWidth < 768 ? 'auto' : undefined
+                maxHeight: window.innerWidth < 768 ? '70vh' : undefined,
               }}
             >
               {index === 0 ? (

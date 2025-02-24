@@ -75,7 +75,7 @@ export const Collections = () => {
               <CarouselContent>
                 {images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <Card className="w-[90%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
+                    <Card className="w-[85%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
                       <img 
                         src={image} 
                         alt={`Collection ${index + 1}`}
