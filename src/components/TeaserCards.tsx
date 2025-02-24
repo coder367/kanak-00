@@ -13,7 +13,7 @@ export const TeaserCards = () => {
   const [isFixed, setIsFixed] = useState(false);
   const teasers: Teaser[] = [
     {
-      image: "/lovable-uploads/0f856697-8814-4188-a095-7ea4ce08c309.png",
+      image: "/lovable-uploads/ac808e5a-80f9-4ac9-b87e-16796a17ab1c.png",
       icons: [
         { icon: "/lovable-uploads/4626dc7d-05b9-4deb-8583-9b1dd7c941ee.png", label: "Breathable" },
         { icon: "/lovable-uploads/10f8f108-fe25-447e-99e8-f53d6b14f47b.png", label: "Free Shipping" },
@@ -48,7 +48,7 @@ export const TeaserCards = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const threshold = window.innerHeight * 1.5; // Adjust this value to control when cards become fixed
+      const threshold = window.innerHeight * 1.5;
       setIsFixed(scrollPosition > threshold);
     };
 
@@ -68,8 +68,8 @@ export const TeaserCards = () => {
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: isFixed ? 
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 8)}vh) translateZ(${index * -100}px)` :
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 8)}vh) translateZ(${index * -100}px)`,
+                  `translateY(${index * 20}vh) translateZ(${index * -100}px)` : 
+                  `translateY(${index * 20}vh) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
@@ -78,11 +78,11 @@ export const TeaserCards = () => {
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[300px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Feature Collection" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain md:object-cover"
                     />
                   </div>
                   <div className="flex-1">
