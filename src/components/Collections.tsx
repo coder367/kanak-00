@@ -5,14 +5,15 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useInterval } from "@/hooks/use-interval";
 
 export const Collections = () => {
   const textContainerRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const textScroll = textContainerRef.current;
@@ -36,6 +37,18 @@ export const Collections = () => {
     }
   }, []);
 
+  useInterval(() => {
+    if (isMobile && carouselRef.current) {
+      setCurrentSlide((prev) => (prev + 1) % 3);
+      const nextSlide = (currentSlide + 1) % 3;
+      const scrollAmount = nextSlide * carouselRef.current.offsetWidth;
+      carouselRef.current.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }, 3000);
+
   const images = [
     "lovable-uploads/564fc35d-c420-44c5-bf1a-dadfbb741cde.png",
     "lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png",
@@ -57,23 +70,23 @@ export const Collections = () => {
 
       <div className="mt-8 md:mt-16 px-4 max-w-7xl mx-auto">
         {isMobile ? (
-          <Carousel className="w-full">
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <Card className="w-full aspect-[3/4] rounded-[30px] md:rounded-[40px] overflow-hidden">
-                    <img 
-                      src={image} 
-                      alt={`Collection ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
+          <div ref={carouselRef} className="w-full overflow-hidden">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <Card className="w-[90%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
+                      <img 
+                        src={image} 
+                        alt={`Collection ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {images.map((image, index) => (

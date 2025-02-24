@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import CountdownTimer from './CountdownTimer';
 import CurvedFeatureGrid from './CurvedFeatureGrid';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
@@ -11,6 +12,7 @@ interface HeroProps {
 export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   const observerRef = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -62,7 +64,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className={`fixed top-0 left-0 right-0 h-14 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-between px-3 sm:px-4 md:px-6 transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div className="fixed top-0 left-0 right-0 h-14 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center px-3 sm:px-4 md:px-6">
         <div className="flex items-center">
           <button 
             onClick={scrollToTop} 
@@ -75,36 +77,40 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
             />
           </button>
         </div>
-        <button 
-          onClick={scrollToCollections}
-          className="text-white px-4 sm:px-6 py-2 sm:py-2.5 border border-white rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-disco-dark active:scale-95 hover:shadow-lg"
-        >
-          Our Collection
-        </button>
+        {!isMobile && (
+          <button 
+            onClick={scrollToCollections}
+            className="ml-auto text-white px-4 sm:px-6 py-2 sm:py-2.5 border border-white rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-disco-dark active:scale-95 hover:shadow-lg"
+          >
+            Our Collection
+          </button>
+        )}
       </div>
 
-      {/* Brand Name Container */}
-      <div className="fixed z-[60] px-4" style={{
-        top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
-      }}>
-        <h1 
-          ref={brandRef}
-          className="text-3xl sm:text-4xl md:text-7xl lg:text-9xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
-          style={{
-            transform: `scale(${window.scrollY > window.innerHeight / 5 ? (window.innerWidth < 640 ? 0.1 : 0.15) : 1})`,
-          }}
-        >
-          KANAKDHAGA
-        </h1>
-      </div>
+      {/* Brand Name Container - Hidden on Mobile */}
+      {!isMobile && (
+        <div className="fixed z-[60] px-4" style={{
+          top: window.scrollY > window.innerHeight / 5 ? '10px' : '15%',
+        }}>
+          <h1 
+            ref={brandRef}
+            className="text-3xl sm:text-4xl md:text-7xl lg:text-9xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
+            style={{
+              transform: `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`,
+            }}
+          >
+            KANAKDHAGA
+          </h1>
+        </div>
+      )}
 
       {/* Feature Grid */}
-      <div className="absolute top-[30%] sm:top-[35%] md:top-[43%] left-0 right-0 z-[40]">
+      <div className="absolute top-[20%] sm:top-[35%] md:top-[43%] left-0 right-0 z-[40]">
         <CurvedFeatureGrid />
       </div>
 
       {/* Launching Soon and Timer Container */}
-      <div className="absolute bottom-6 sm:bottom-8 md:bottom-12 lg:bottom-4 left-0 right-0 z-[40] px-4 flex flex-col items-center">
+      <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 lg:bottom-4 left-0 right-0 z-[40] px-4 flex flex-col items-center">
         {/* Launching Soon Tag */}
         <div className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2 sm:space-x-3 shadow-lg hover:bg-[#8C1444]/90 hover:shadow-[0_0_15px_rgba(140,20,68,0.4)] transition-all duration-300">
           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#FBFBEB] animate-pulse" />
@@ -112,7 +118,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </div>
 
         {/* Countdown Timer */}
-        <div className="mt-6 sm:mt-8">
+        <div className="mt-4 sm:mt-8">
           <CountdownTimer />
         </div>
       </div>

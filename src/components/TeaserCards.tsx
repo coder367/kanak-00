@@ -47,7 +47,7 @@ export const TeaserCards = () => {
   return (
     <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-12">
       <div className="container mx-auto px-4">
-        <div className="min-h-[150vh] md:min-h-[150vh] relative perspective-[1000px] pb-[30vh]">
+        <div className="min-h-[100vh] md:min-h-[150vh] relative perspective-[1000px] pb-[30vh]">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
@@ -56,6 +56,9 @@ export const TeaserCards = () => {
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 5)}vh)) translateZ(${index * -100}px)`,
+                height: window.innerWidth < 768 ? 'auto' : undefined,
+                maxHeight: window.innerWidth < 768 ? '80vh' : undefined,
+                overflowY: window.innerWidth < 768 ? 'auto' : undefined
               }}
             >
               {index === 0 ? (
