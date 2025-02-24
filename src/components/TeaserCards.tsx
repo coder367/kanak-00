@@ -1,5 +1,6 @@
 
 import { Card } from "@/components/ui/card";
+import { useEffect, useState } from "react";
 
 type Teaser = {
   image: string;
@@ -9,6 +10,7 @@ type Teaser = {
 }
 
 export const TeaserCards = () => {
+  const [isFixed, setIsFixed] = useState(false);
   const teasers: Teaser[] = [
     {
       image: "/lovable-uploads/0f856697-8814-4188-a095-7ea4ce08c309.png",
@@ -43,6 +45,17 @@ export const TeaserCards = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const threshold = window.innerHeight * 1.5; // Adjust this value to control when cards become fixed
+      setIsFixed(scrollPosition > threshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-12">
       <div className="container mx-auto px-4">
@@ -54,7 +67,9 @@ export const TeaserCards = () => {
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
-                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 12)}vh)) translateZ(${index * -100}px)`,
+                transform: isFixed ? 
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 8)}vh) translateZ(${index * -100}px)` :
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 8)}vh) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
