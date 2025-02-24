@@ -35,7 +35,7 @@ const CurvedFeatureGrid = () => {
             className={`
               relative h-[180px]
               bg-turkish-rose
-              border-2 border-[#BA778B]
+              border-2 border-[#8C1444]
               overflow-hidden
               transition-all duration-300
               shadow-[0_4px_8px_rgba(0,0,0,0.15)]
