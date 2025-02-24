@@ -45,6 +45,13 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div 
       className="min-h-[100vh] flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-32 relative overflow-hidden" 
@@ -58,17 +65,17 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       {/* Background Navbar */}
       <div className={`fixed top-0 left-0 right-0 h-14 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-between px-3 sm:px-4 md:px-6 transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex items-center space-x-4">
-          <Link to="/">
+          <button onClick={scrollToTop} className="transition-transform hover:scale-105">
             <img 
               src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
               alt="Kanakdhaga Logo" 
               className="h-6 sm:h-8 md:h-12 w-auto"
             />
-          </Link>
+          </button>
         </div>
         <button 
           onClick={scrollToCollections}
-          className="text-white hover:opacity-80 transition-opacity px-3 sm:px-4 py-1.5 sm:py-2 border border-white rounded-lg text-xs sm:text-sm md:text-base"
+          className="text-white px-3 sm:px-4 py-1.5 sm:py-2 border border-white rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-disco-dark hover:scale-105"
         >
           Our Collection
         </button>
