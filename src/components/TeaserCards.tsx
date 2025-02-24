@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { Sun, Truck, Heart, Shirt } from "lucide-react";
 
@@ -54,9 +55,10 @@ export const TeaserCards = () => {
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
-                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 5)}vh)) translateZ(${index * -100}px)`,
+                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 7)}vh)) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
-                maxHeight: window.innerWidth < 768 ? '70vh' : undefined,
+                maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
+                minHeight: window.innerWidth < 768 ? '450px' : undefined,
               }}
             >
               {index === 0 ? (
