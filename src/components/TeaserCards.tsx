@@ -1,6 +1,6 @@
 
 import { Card } from "@/components/ui/card";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 type Teaser = {
   image: string;
@@ -11,6 +11,8 @@ type Teaser = {
 
 export const TeaserCards = () => {
   const [isFixed, setIsFixed] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
   const teasers: Teaser[] = [
     {
       image: "/lovable-uploads/12ca3f72-8647-4356-b4e0-f06341eef697.png",
@@ -38,12 +40,12 @@ export const TeaserCards = () => {
     },
   ];
 
-  const scrollToWaitlist = () => {
+  const scrollToWaitlist = useCallback(() => {
     const waitlistSection = document.querySelector('.waitlist-section');
     if (waitlistSection) {
       waitlistSection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,18 +54,38 @@ export const TeaserCards = () => {
       setIsFixed(scrollPosition > threshold);
     };
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.querySelector('.teaser-cards-section');
+    if (section) {
+      observer.observe(section);
+    }
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
-    <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-6 md:pb-12">
+    <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-6 md:pb-12 teaser-cards-section">
       <div className="container mx-auto px-4">
         <div className="min-h-[80vh] md:min-h-[150vh] relative perspective-[1000px] pb-[15vh] md:pb-[30vh]">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden"
+              className={`bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
+                isVisible ? 'animate-fade-in' : 'opacity-0'
+              }`}
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
@@ -75,6 +97,7 @@ export const TeaserCards = () => {
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
                 opacity: index === 2 ? 0.99 : 1,
                 marginBottom: 0,
+                transitionDelay: `${index * 150}ms`,
               }}
             >
               {index === 0 ? (
