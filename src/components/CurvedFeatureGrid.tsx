@@ -1,9 +1,12 @@
+
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useRef, useState } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { useInterval } from "@/hooks/use-interval";
 
 const CurvedFeatureGrid = () => {
   const isMobile = useIsMobile();
