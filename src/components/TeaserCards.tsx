@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 
 type Teaser = {
@@ -50,30 +49,27 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky transition-transform duration-300 overflow-hidden"
+              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden mb-4"
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
-                transform: window.innerWidth >= 768 
-                  ? `translateY(calc(${index * 10}vh)) translateZ(${index * -100}px)`
-                  : `translateY(calc(${index * 85}vh)) translateZ(${index * -50}px)`,
-                top: window.innerWidth >= 768 ? '15vh' : '8vh',
-                height: window.innerWidth >= 768 ? undefined : '80vh',
-                maxHeight: window.innerWidth >= 768 ? undefined : '500px',
-                minHeight: window.innerWidth >= 768 ? undefined : '400px',
+                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 15)}vh)) translateZ(${index * -100}px) ${window.innerWidth < 768 && index > 0 ? 'translateY(-2vh)' : ''}`,
+                height: window.innerWidth < 768 ? 'auto' : undefined,
+                maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
+                minHeight: window.innerWidth < 768 ? '450px' : undefined,
                 opacity: index === 2 ? 0.99 : 1,
               }}
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[180px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Feature Collection" 
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 overflow-y-auto">
+                  <div className="flex-1">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                       {teaser.icons?.map(({ icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
@@ -95,14 +91,14 @@ export const TeaserCards = () => {
                 </>
               ) : index === 1 ? (
                 <>
-                  <div className="w-full md:w-72 h-[180px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Exclusive Offer" 
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 overflow-y-auto text-center md:text-left flex flex-col gap-4">
+                  <div className="flex-1 text-center md:text-left flex flex-col gap-4">
                     <h3 className="text-2xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
                     <p className="text-base md:text-xl font-garamond text-turkish-rose max-w-md">
                       {typeof teaser.description === 'string' ? teaser.description : teaser.description.join(' ')}
@@ -117,14 +113,14 @@ export const TeaserCards = () => {
                 </>
               ) : (
                 <>
-                  <div className="w-full md:w-72 h-[180px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Launch Offer" 
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 overflow-y-auto text-left">
+                  <div className="flex-1 text-left">
                     <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
                     <div className="space-y-3 md:space-y-4">
                       {Array.isArray(teaser.description) ? teaser.description.map((item, i) => (
