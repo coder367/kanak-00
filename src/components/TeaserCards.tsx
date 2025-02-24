@@ -47,15 +47,15 @@ export const TeaserCards = () => {
   return (
     <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-12">
       <div className="container mx-auto px-4">
-        <div className="min-h-[100vh] md:min-h-[150vh] relative perspective-[1000px] pb-[30vh]">
+        <div className="min-h-[100vh] md:min-h-[150vh] relative perspective-[1000px] pb-[30vh] space-y-24 md:space-y-0">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden mb-4"
+              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden"
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
-                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 15)}vh)) translateZ(${index * -100}px) ${window.innerWidth < 768 && index > 0 ? 'translateY(-2vh)' : ''}`,
+                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 24)}vh)) translateZ(${index * -100}px) ${window.innerWidth < 768 ? 'translateY(-2vh)' : ''}`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
