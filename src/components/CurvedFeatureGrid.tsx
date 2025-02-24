@@ -25,7 +25,7 @@ const CurvedFeatureGrid = () => {
       ].map((feature, index) => (
         <div 
           key={index}
-          className="relative w-[380px] transition-all duration-300 hover:-translate-y-[5px] hover:scale-[1.01]"
+          className="relative w-[300px] sm:w-[340px] md:w-[380px] transition-all duration-300 hover:-translate-y-[5px] hover:scale-[1.01]"
           style={{
             transform: `rotate(${index === 0 ? '-5deg' : index === 2 ? '5deg' : '0deg'})`,
             marginTop: index === 1 ? '-2rem' : '0'
@@ -33,7 +33,7 @@ const CurvedFeatureGrid = () => {
         >
           <div 
             className={`
-              relative h-[170px]
+              relative h-[150px] sm:h-[160px] md:h-[170px]
               bg-turkish-rose
               rounded-[10px]
               border border-[#D4AF37]
@@ -44,30 +44,30 @@ const CurvedFeatureGrid = () => {
             `}
           >
             {/* Left Cutout */}
-            <div className="absolute -left-[8px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
+            <div className="absolute -left-[8px] top-1/2 -translate-y-1/2 w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] bg-careys-pink rounded-full" />
             
             {/* Right Cutout */}
-            <div className="absolute -right-[8px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
+            <div className="absolute -right-[8px] top-1/2 -translate-y-1/2 w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] bg-careys-pink rounded-full" />
             
             {/* Left Decorative Circle */}
-            <div className="absolute left-5 top-1/2 -translate-y-1/2 w-8 h-8 border border-[#D4AF37]/30 rounded-full flex items-center justify-center">
-              <div className="w-5 h-5 border border-[#D4AF37]/50 rounded-full" />
+            <div className="absolute left-5 top-1/2 -translate-y-1/2 w-6 sm:w-8 h-6 sm:h-8 border border-[#D4AF37]/30 rounded-full flex items-center justify-center">
+              <div className="w-4 sm:w-5 h-4 sm:h-5 border border-[#D4AF37]/50 rounded-full" />
             </div>
 
             {/* Content Container */}
-            <div className="h-full px-16 py-5 flex flex-col justify-center">
+            <div className="h-full px-8 sm:px-12 md:px-16 py-4 sm:py-5 flex flex-col justify-center">
               <div className="flex flex-col gap-2">
-                <h3 className="text-[22px] font-bold font-serif-display text-[#FBFBEB]">
+                <h3 className="text-[18px] sm:text-[20px] md:text-[22px] font-bold font-serif-display text-[#FBFBEB]">
                   {feature.title}
                 </h3>
-                <p className="text-[16px] text-[#FBFBEB]/90 font-garamond">
+                <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#FBFBEB]/90 font-garamond">
                   {feature.description}
                 </p>
                 
                 {/* CTA Button */}
                 <button 
                   onClick={scrollToWaitlist}
-                  className="mt-2 px-6 py-1.5 bg-[#8C1444] text-[#FBFBEB] text-[16px] rounded-full font-medium mx-auto hover:bg-[#8C1444]/90 hover:scale-105 hover:shadow-[0_0_15px_rgba(140,20,68,0.3)] transition-all duration-300"
+                  className="mt-2 px-4 sm:px-6 py-1 sm:py-1.5 bg-[#8C1444] text-[#FBFBEB] text-[14px] sm:text-[16px] rounded-full font-medium mx-auto hover:bg-[#8C1444]/90 hover:scale-105 hover:shadow-[0_0_15px_rgba(140,20,68,0.3)] transition-all duration-300"
                 >
                   Claim Now
                 </button>
