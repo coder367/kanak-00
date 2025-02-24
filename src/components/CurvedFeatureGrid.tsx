@@ -1,4 +1,6 @@
 
+import { Star } from "lucide-react";
+
 const CurvedFeatureGrid = () => {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-[24px] z-30">
@@ -20,31 +22,46 @@ const CurvedFeatureGrid = () => {
           key={index}
           className="relative w-[350px] transition-all duration-300 hover:-translate-y-[5px] hover:scale-[1.01]"
           style={{
-            transform: `rotate(${index === 0 ? '-5deg' : index === 2 ? '5deg' : '0deg'})`,
-            marginTop: index === 1 ? '-2rem' : '0'
+            transform: `rotate(${index === 0 ? '-3deg' : index === 2 ? '3deg' : '0deg'})`,
+            marginTop: index === 1 ? '-1rem' : '0'
           }}
         >
           <div 
             className={`
-              relative h-[150px]
+              relative h-[180px]
               bg-turkish-rose
-              rounded-[10px]
-              border border-[#D4AF37]
-              shadow-[0_4px_8px_rgba(0,0,0,0.15)]
-              hover:shadow-[0_6px_12px_rgba(0,0,0,0.2)]
+              border-2 border-[#D4AF37]
               overflow-hidden
               transition-all duration-300
+              shadow-[0_4px_8px_rgba(0,0,0,0.15)]
+              hover:shadow-[0_6px_12px_rgba(0,0,0,0.2)]
             `}
           >
-            {/* Left Cutout */}
-            <div className="absolute -left-[8px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
-            
-            {/* Right Cutout */}
-            <div className="absolute -right-[8px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
-            
-            {/* Left Decorative Circle */}
-            <div className="absolute left-5 top-1/2 -translate-y-1/2 w-8 h-8 border border-[#D4AF37]/30 rounded-full flex items-center justify-center">
-              <div className="w-5 h-5 border border-[#D4AF37]/50 rounded-full" />
+            {/* Ticket Shape Corners */}
+            <div className="absolute inset-0">
+              {/* Top Left */}
+              <div className="absolute -left-3 -top-3 w-6 h-6 bg-careys-pink rounded-br-full" />
+              {/* Top Right */}
+              <div className="absolute -right-3 -top-3 w-6 h-6 bg-careys-pink rounded-bl-full" />
+              {/* Bottom Left */}
+              <div className="absolute -left-3 -bottom-3 w-6 h-6 bg-careys-pink rounded-tr-full" />
+              {/* Bottom Right */}
+              <div className="absolute -right-3 -bottom-3 w-6 h-6 bg-careys-pink rounded-tl-full" />
+            </div>
+
+            {/* Decorative Border Frame */}
+            <div className="absolute inset-[12px] border-2 border-[#D4AF37]/60 rounded-sm" />
+
+            {/* Star Decorations */}
+            <div className="absolute left-0 top-0 h-full flex flex-col justify-between py-4">
+              {[0, 1, 2].map((i) => (
+                <Star key={i} className="w-4 h-4 ml-5 text-[#D4AF37]/60" />
+              ))}
+            </div>
+            <div className="absolute right-0 top-0 h-full flex flex-col justify-between py-4">
+              {[0, 1, 2].map((i) => (
+                <Star key={i} className="w-4 h-4 mr-5 text-[#D4AF37]/60" />
+              ))}
             </div>
 
             {/* Content Container */}
@@ -64,8 +81,9 @@ const CurvedFeatureGrid = () => {
               </div>
             </div>
 
-            {/* Dotted Line */}
-            <div className="absolute left-14 right-14 top-1/2 -translate-y-1/2 border-t border-dashed border-[#D4AF37]/30" />
+            {/* Horizontal Decorative Lines */}
+            <div className="absolute left-12 right-12 top-[30px] border-t border-[#D4AF37]/30" />
+            <div className="absolute left-12 right-12 bottom-[30px] border-t border-[#D4AF37]/30" />
           </div>
         </div>
       ))}
