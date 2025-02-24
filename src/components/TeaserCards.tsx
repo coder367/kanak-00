@@ -2,8 +2,15 @@
 import { Card } from "@/components/ui/card";
 import { Sun, Truck, Heart, Shirt } from "lucide-react";
 
+type Teaser = {
+  image: string;
+  icons?: Array<{ icon: any; label: string }>;
+  title?: string;
+  description: string | string[];
+}
+
 export const TeaserCards = () => {
-  const teasers = [
+  const teasers: Teaser[] = [
     {
       image: "/lovable-uploads/0f856697-8814-4188-a095-7ea4ce08c309.png",
       icons: [
@@ -62,7 +69,7 @@ export const TeaserCards = () => {
                   </div>
                   <div className="flex-1">
                     <div className="grid grid-cols-4 gap-4 mb-6">
-                      {teaser.icons.map(({ icon: Icon, label }, i) => (
+                      {teaser.icons?.map(({ icon: Icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
                           <Icon className="w-6 h-6 text-disco" />
                           <span className="text-xs mt-1 text-disco">{label}</span>
@@ -85,7 +92,9 @@ export const TeaserCards = () => {
                   </div>
                   <div className="flex-1 text-center md:text-left flex flex-col gap-4">
                     <h3 className="text-3xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
-                    <p className="text-lg md:text-xl font-garamond text-turkish-rose max-w-md">{teaser.description}</p>
+                    <p className="text-lg md:text-xl font-garamond text-turkish-rose max-w-md">
+                      {typeof teaser.description === 'string' ? teaser.description : teaser.description.join(' ')}
+                    </p>
                     <button 
                       onClick={scrollToWaitlist}
                       className="bg-disco hover:bg-disco-dark text-white font-garamond px-8 py-3 rounded-xl transition-colors self-start mt-4"
@@ -106,12 +115,14 @@ export const TeaserCards = () => {
                   <div className="flex-1 text-left">
                     <h3 className="text-3xl md:text-4xl font-serif-display text-disco-dark mb-6">{teaser.title}</h3>
                     <div className="space-y-4">
-                      {teaser.description.map((item, i) => (
+                      {Array.isArray(teaser.description) ? teaser.description.map((item, i) => (
                         <div key={i} className="flex items-start gap-2">
                           <span className="text-disco text-lg">✔</span>
                           <p className="text-lg font-garamond text-turkish-rose">{item}</p>
                         </div>
-                      ))}
+                      )) : (
+                        <p className="text-lg font-garamond text-turkish-rose">{teaser.description}</p>
+                      )}
                     </div>
                     <button 
                       onClick={scrollToWaitlist}
