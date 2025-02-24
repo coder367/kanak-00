@@ -1,5 +1,12 @@
 
 const CurvedFeatureGrid = () => {
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.querySelector('.waitlist-section');
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="w-full max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-[24px] z-30">
       {[
@@ -28,7 +35,7 @@ const CurvedFeatureGrid = () => {
             className={`
               relative h-[180px]
               bg-turkish-rose
-              border-2 border-[#FBFBFB]
+              border-2 border-[#8C1444]
               overflow-hidden
               transition-all duration-300
               shadow-[0_4px_8px_rgba(0,0,0,0.15)]
@@ -58,15 +65,14 @@ const CurvedFeatureGrid = () => {
                 </p>
                 
                 {/* CTA Button */}
-                <button className="mt-2 px-6 py-1.5 bg-[#8C1444] text-[#FBFBEB] text-[16px] rounded-full font-medium mx-auto hover:bg-[#8C1444]/90 hover:scale-105 hover:shadow-[0_0_15px_rgba(140,20,68,0.3)] transition-all duration-300">
+                <button 
+                  onClick={scrollToWaitlist}
+                  className="mt-2 px-6 py-1.5 bg-[#8C1444] text-[#FBFBEB] text-[16px] rounded-full font-medium mx-auto hover:bg-[#8C1444]/90 hover:scale-105 hover:shadow-[0_0_15px_rgba(140,20,68,0.3)] transition-all duration-300"
+                >
                   Claim Now
                 </button>
               </div>
             </div>
-
-            {/* Horizontal Decorative Lines */}
-            <div className="absolute left-12 right-12 top-[30px] border-t border-[#FBFBFB]/30" />
-            <div className="absolute left-12 right-12 bottom-[30px] border-t border-[#FBFBFB]/30" />
           </div>
         </div>
       ))}
