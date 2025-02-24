@@ -11,11 +11,11 @@ export const Footer = () => {
           <div>
             <h3 className="font-serif-display text-disco-dark text-lg sm:text-xl mb-3 sm:mb-4">Contact</h3>
             <ul className="space-y-2 sm:space-y-3 font-garamond text-turkish-rose">
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 transition-colors duration-200 hover:text-disco cursor-pointer">
                 <Phone size={18} className="sm:w-5 sm:h-5" />
                 <span className="text-sm sm:text-base">+91 999 999 9999</span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 transition-colors duration-200 hover:text-disco cursor-pointer">
                 <Mail size={18} className="sm:w-5 sm:h-5" />
                 <span className="text-sm sm:text-base">info@kanakdhaga.com</span>
               </li>
@@ -30,7 +30,7 @@ export const Footer = () => {
                 href="https://www.instagram.com/kanakdhaga?igsh=bThlaHp6ODFoN3Fn&utm_source=qr" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex text-turkish-rose hover:text-disco transition-colors"
+                className="inline-flex text-turkish-rose hover:text-disco transition-colors duration-200"
               >
                 <Instagram size={20} className="sm:w-6 sm:h-6" />
               </a>
@@ -38,7 +38,7 @@ export const Footer = () => {
                 href="https://pin.it/7DArmCSCD" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex text-turkish-rose hover:text-disco transition-colors"
+                className="inline-flex text-turkish-rose hover:text-disco transition-colors duration-200"
               >
                 <Link size={20} className="sm:w-6 sm:h-6" />
               </a>

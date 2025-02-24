@@ -1,9 +1,10 @@
+
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export const WaitlistSection = () => {
   return (
-    <section className="waitlist-section bg-careys-pink/60 backdrop-blur-lg py-16 md:py-24 -mt-screen relative">
+    <section className="waitlist-section bg-careys-pink/60 backdrop-blur-lg py-16 md:py-20 relative">
       <div className="container mx-auto px-4 max-w-xl relative z-10">
         <div className="text-center space-y-6 md:space-y-8 bg-white/10 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-lg">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif-display text-[#8C1444]">Join the waitlist</h2>
