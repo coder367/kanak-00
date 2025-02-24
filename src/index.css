@@ -70,3 +70,16 @@
   perspective: 1000px;
 }
 
+/* Custom container max-width for larger screens */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1270px;
+  }
+}
+
+/* Custom bottom spacing for large screens */
+@media (min-width: 1024px) {
+  .lg\:bottom-16 {
+    bottom: 1rem;
+  }
+}
