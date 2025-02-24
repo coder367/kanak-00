@@ -47,7 +47,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
   return (
     <div 
-      className="min-h-[100vh] flex flex-col items-center justify-start pt-16 md:pt-32 relative overflow-hidden" 
+      className="min-h-[100vh] flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-32 relative overflow-hidden" 
       ref={observerRef}
       style={{
         backgroundImage: 'url("/lovable-uploads/5466685f-1a29-4607-aa30-193e43a50157.png")',
@@ -56,19 +56,19 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className={`fixed top-0 left-0 right-0 h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-between px-4 md:px-6 transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`fixed top-0 left-0 right-0 h-14 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-between px-3 sm:px-4 md:px-6 transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex items-center space-x-4">
           <Link to="/">
             <img 
               src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
               alt="Kanakdhaga Logo" 
-              className="h-8 md:h-12 w-auto"
+              className="h-6 sm:h-8 md:h-12 w-auto"
             />
           </Link>
         </div>
         <button 
           onClick={scrollToCollections}
-          className="text-white hover:opacity-80 transition-opacity px-4 py-2 border border-white rounded-lg text-sm md:text-base"
+          className="text-white hover:opacity-80 transition-opacity px-3 sm:px-4 py-1.5 sm:py-2 border border-white rounded-lg text-xs sm:text-sm md:text-base"
         >
           Our Collection
         </button>
@@ -80,9 +80,9 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}>
         <h1 
           ref={brandRef}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
+          className="text-3xl sm:text-4xl md:text-7xl lg:text-9xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
           style={{
-            transform: `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`,
+            transform: `scale(${window.scrollY > window.innerHeight / 5 ? (window.innerWidth < 640 ? 0.1 : 0.15) : 1})`,
           }}
         >
           KANAKDHAGA
@@ -90,20 +90,20 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Feature Grid */}
-      <div className="absolute top-[35%] md:top-[43%] left-0 right-0 z-[40]">
+      <div className="absolute top-[30%] sm:top-[35%] md:top-[43%] left-0 right-0 z-[40]">
         <CurvedFeatureGrid />
       </div>
 
       {/* Launching Soon and Timer Container */}
-      <div className="absolute bottom-8 md:bottom-12 lg:bottom-4 left-0 right-0 z-[40] px-4 flex flex-col items-center">
+      <div className="absolute bottom-6 sm:bottom-8 md:bottom-12 lg:bottom-4 left-0 right-0 z-[40] px-4 flex flex-col items-center">
         {/* Launching Soon Tag */}
-        <div className="px-6 py-2 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-3 shadow-lg hover:bg-[#8C1444]/90 hover:shadow-[0_0_15px_rgba(140,20,68,0.4)] transition-all duration-300">
-          <div className="w-2 h-2 rounded-full bg-[#FBFBEB] animate-pulse" />
-          <span className="text-[#FBFBEB] text-sm md:text-base tracking-wider font-serif-display">Launching Soon</span>
+        <div className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2 sm:space-x-3 shadow-lg hover:bg-[#8C1444]/90 hover:shadow-[0_0_15px_rgba(140,20,68,0.4)] transition-all duration-300">
+          <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#FBFBEB] animate-pulse" />
+          <span className="text-[#FBFBEB] text-xs sm:text-sm md:text-base tracking-wider font-serif-display">Launching Soon</span>
         </div>
 
         {/* Countdown Timer */}
-        <div className="mt-8">
+        <div className="mt-6 sm:mt-8">
           <CountdownTimer />
         </div>
       </div>

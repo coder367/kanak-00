@@ -13,7 +13,9 @@ const Index = () => {
 
   const handleScroll = useCallback(() => {
     if (brandRef.current) {
-      brandRef.current.style.transform = `scale(${window.scrollY > window.innerHeight / 5 ? 0.15 : 1})`;
+      const scale = window.scrollY > window.innerHeight / 5 ? 
+        (window.innerWidth < 640 ? 0.1 : 0.15) : 1; // Smaller scale for mobile
+      brandRef.current.style.transform = `scale(${scale})`;
       brandRef.current.style.top = window.scrollY > window.innerHeight / 5 ? '10px' : '15%';
       brandRef.current.style.height = window.scrollY > window.innerHeight / 5 ? '80px' : 'auto';
     }
