@@ -63,26 +63,27 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden mb-4"
+              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden"
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: isFixed ? 
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 12)}vh) translateZ(${index * -100}px)` :
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 12)}vh) translateZ(${index * -100}px)`,
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 5)}vh) translateZ(${index * -100}px)` :
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 5)}vh) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
                 opacity: index === 2 ? 0.99 : 1,
+                marginBottom: 0,
               }}
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[300px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Feature Collection" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain md:object-cover"
                     />
                   </div>
                   <div className="flex-1">
