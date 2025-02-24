@@ -28,23 +28,23 @@ const CurvedFeatureGrid = () => {
             className={`
               relative h-[180px]
               bg-turkish-rose
-              border-2 border-[#D4AF37]
+              border-2 border-[#FBFBFB]
               overflow-hidden
               transition-all duration-300
               shadow-[0_4px_8px_rgba(0,0,0,0.15)]
               hover:shadow-[0_6px_12px_rgba(0,0,0,0.2)]
             `}
           >
-            {/* Ticket Shape Corners */}
+            {/* Ticket Shape Corners - Deeper and More Curved */}
             <div className="absolute inset-0">
               {/* Top Left */}
-              <div className="absolute -left-3 -top-3 w-6 h-6 bg-careys-pink rounded-br-full" />
+              <div className="absolute -left-4 -top-4 w-8 h-8 bg-careys-pink rounded-br-[2rem]" />
               {/* Top Right */}
-              <div className="absolute -right-3 -top-3 w-6 h-6 bg-careys-pink rounded-bl-full" />
+              <div className="absolute -right-4 -top-4 w-8 h-8 bg-careys-pink rounded-bl-[2rem]" />
               {/* Bottom Left */}
-              <div className="absolute -left-3 -bottom-3 w-6 h-6 bg-careys-pink rounded-tr-full" />
+              <div className="absolute -left-4 -bottom-4 w-8 h-8 bg-careys-pink rounded-tr-[2rem]" />
               {/* Bottom Right */}
-              <div className="absolute -right-3 -bottom-3 w-6 h-6 bg-careys-pink rounded-tl-full" />
+              <div className="absolute -right-4 -bottom-4 w-8 h-8 bg-careys-pink rounded-tl-[2rem]" />
             </div>
 
             {/* Content Container */}
@@ -65,8 +65,8 @@ const CurvedFeatureGrid = () => {
             </div>
 
             {/* Horizontal Decorative Lines */}
-            <div className="absolute left-12 right-12 top-[30px] border-t border-[#D4AF37]/30" />
-            <div className="absolute left-12 right-12 bottom-[30px] border-t border-[#D4AF37]/30" />
+            <div className="absolute left-12 right-12 top-[30px] border-t border-[#FBFBFB]/30" />
+            <div className="absolute left-12 right-12 bottom-[30px] border-t border-[#FBFBFB]/30" />
           </div>
         </div>
       ))}
