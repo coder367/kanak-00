@@ -79,7 +79,7 @@ export const TeaserCards = () => {
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[450px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Feature Collection" 
