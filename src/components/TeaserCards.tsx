@@ -80,11 +80,14 @@ export const TeaserCards = () => {
               {index === 0 ? (
                 <>
                   <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
-                    <img 
-                      src={teaser.image} 
-                      alt="Feature Collection" 
-                      className="w-full h-full object-cover"
-                    />
+                    <picture>
+                      <source media="(min-width: 768px)" srcSet={teaser.image} />
+                      <img 
+                        src="/lovable-uploads/8015cc13-9ed8-4eb9-b287-cbf4d6c85a7c.png" 
+                        alt="Feature Collection" 
+                        className="w-full h-full object-cover"
+                      />
+                    </picture>
                   </div>
                   <div className="flex-1">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
