@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import CountdownTimer from './CountdownTimer';
 import CurvedFeatureGrid from './CurvedFeatureGrid';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useInterval } from '@/hooks/use-interval';
 
 interface HeroProps {
   onScroll: (isScrolled: boolean) => void;
@@ -14,7 +13,6 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
   const observerRef = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,12 +39,6 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
     };
   }, [onScroll]);
 
-  useInterval(() => {
-    if (isMobile) {
-      setCurrentSlide((prev) => (prev + 1) % 3);
-    }
-  }, 3000);
-
   const scrollToCollections = () => {
     const collectionsSection = document.querySelector('#collections');
     if (collectionsSection) {
@@ -61,10 +53,6 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
     });
   };
 
-  const handleDotClick = (index: number) => {
-    setCurrentSlide(index);
-  };
-
   return (
     <div 
       className="min-h-[100vh] flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-32 relative overflow-hidden" 
@@ -76,7 +64,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       }}
     >
       {/* Background Navbar */}
-      <div className="fixed top-0 left-0 right-0 h-16 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-between px-4 sm:px-4 md:px-6">
+      <div className="fixed top-0 left-0 right-0 h-16 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center px-4 sm:px-4 md:px-6">
         <div className="flex items-center">
           <button 
             onClick={scrollToTop} 
@@ -89,12 +77,14 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
             />
           </button>
         </div>
-        <button 
-          onClick={scrollToCollections}
-          className="text-white px-4 sm:px-6 py-2 sm:py-2.5 border border-white rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-disco-dark active:scale-95 hover:shadow-lg"
-        >
-          Our Collection
-        </button>
+        {!isMobile && (
+          <button 
+            onClick={scrollToCollections}
+            className="ml-auto text-white px-4 sm:px-6 py-2 sm:py-2.5 border border-white rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-disco-dark active:scale-95 hover:shadow-lg"
+          >
+            Our Collection
+          </button>
+        )}
       </div>
 
       {/* Brand Name Container */}
@@ -114,28 +104,9 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </div>
       )}
 
-      {/* Feature Grid with Slider */}
+      {/* Feature Grid */}
       <div className="absolute top-[25%] sm:top-[35%] md:top-[43%] left-0 right-0 z-[40] px-6">
-        {isMobile ? (
-          <div className="relative overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              <div className="w-full flex-shrink-0">
-                <CurvedFeatureGrid />
-              </div>
-              <div className="w-full flex-shrink-0">
-                <CurvedFeatureGrid />
-              </div>
-              <div className="w-full flex-shrink-0">
-                <CurvedFeatureGrid />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <CurvedFeatureGrid />
-        )}
+        <CurvedFeatureGrid />
       </div>
 
       {/* Launching Soon and Timer Container */}
@@ -143,15 +114,9 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         {/* Scroll Indicator Dots - Only visible on mobile */}
         {isMobile && (
           <div className="flex space-x-2 mb-8">
-            {[0, 1, 2].map((index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? 'bg-white' : 'bg-white/50'
-                }`}
-              />
-            ))}
+            <div className="w-2 h-2 rounded-full bg-white/80" />
+            <div className="w-2 h-2 rounded-full bg-white/80" />
+            <div className="w-2 h-2 rounded-full bg-white/80" />
           </div>
         )}
 
