@@ -48,7 +48,7 @@ export const TeaserCards = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const threshold = window.innerHeight * 1.5;
+      const threshold = window.innerHeight * 1.5; // Adjust this value to control when cards become fixed
       setIsFixed(scrollPosition > threshold);
     };
 
@@ -68,8 +68,8 @@ export const TeaserCards = () => {
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: isFixed ? 
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : index === 2 ? 16 : 8)}vh) translateZ(${index * -100}px)` :
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : index === 2 ? 16 : 8)}vh) translateZ(${index * -100}px)`,
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 8)}vh) translateZ(${index * -100}px)` :
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 8)}vh) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
@@ -78,7 +78,7 @@ export const TeaserCards = () => {
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Feature Collection" 
@@ -107,7 +107,7 @@ export const TeaserCards = () => {
                 </>
               ) : index === 1 ? (
                 <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Exclusive Offer" 
@@ -129,7 +129,7 @@ export const TeaserCards = () => {
                 </>
               ) : (
                 <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Launch Offer" 
