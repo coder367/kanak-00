@@ -89,26 +89,26 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </h1>
       </div>
 
-      {/* Feature Grid - Adjusted for web view */}
+      {/* Feature Grid */}
       <div className="absolute top-[35%] md:top-[43%] left-0 right-0 z-[40]">
         <CurvedFeatureGrid />
       </div>
 
-      {/* Launching Soon and Timer Container - Adjusted for web view */}
+      {/* Launching Soon and Timer Container */}
       <div className="absolute bottom-16 md:bottom-20 lg:bottom-16 left-0 right-0 z-[40] px-4 flex flex-col items-center">
         {/* Launching Soon Tag */}
-        <div className="px-4 py-1.5 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2">
-          <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
-          <span className="text-white text-sm tracking-wider font-serif-display">Launching Soon</span>
+        <div className="px-6 py-2 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-3 shadow-lg hover:bg-[#8C1444]/90 hover:shadow-[0_0_15px_rgba(140,20,68,0.4)] transition-all duration-300">
+          <div className="w-2 h-2 rounded-full bg-[#FBFBEB] animate-pulse" />
+          <span className="text-[#FBFBEB] text-sm md:text-base tracking-wider font-serif-display">Launching Soon</span>
         </div>
 
         {/* Countdown Timer */}
-        <div className="mt-6">
+        <div className="mt-8">
           <CountdownTimer />
         </div>
       </div>
 
-      {/* Overlay for better text visibility */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/30 z-10" />
     </div>
   );
