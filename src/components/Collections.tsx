@@ -1,6 +1,6 @@
 
 import { Card } from "@/components/ui/card";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import {
   Carousel,
   CarouselContent,
