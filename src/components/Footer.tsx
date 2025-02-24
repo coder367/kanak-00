@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="bg-rum-swizzle py-16 px-4 md:px-8">
       <div className="container mx-auto">
         {/* Main footer content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {/* Contact Section */}
           <div>
             <h3 className="font-serif-display text-disco-dark text-xl mb-4">Contact</h3>
@@ -46,9 +46,9 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar with logo and copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-turkish-rose/20">
-          <h2 className="font-serif-display text-3xl text-disco-dark mb-4 md:mb-0">
+        {/* Brand and Copyright Section */}
+        <div className="text-center pt-8 border-t border-turkish-rose/20">
+          <h2 className="font-serif-display text-6xl md:text-7xl lg:text-8xl text-disco-dark mb-6 tracking-wider">
             KANAKDHAGA
           </h2>
           <p className="font-garamond text-turkish-rose text-sm">
