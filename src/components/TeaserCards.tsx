@@ -1,9 +1,10 @@
 
 import { Card } from "@/components/ui/card";
+import { Sun, Truck, Heart, Shirt } from "lucide-react";
 
 type Teaser = {
   image: string;
-  icons?: Array<{ icon: string; label: string }>;
+  icons?: Array<{ icon: any; label: string }>;
   title?: string;
   description: string | string[];
 }
@@ -13,10 +14,10 @@ export const TeaserCards = () => {
     {
       image: "/lovable-uploads/0f856697-8814-4188-a095-7ea4ce08c309.png",
       icons: [
-        { icon: "/lovable-uploads/006115a0-fad0-428c-9f5e-72820b42865d.png#0", label: "Light" },
-        { icon: "/lovable-uploads/006115a0-fad0-428c-9f5e-72820b42865d.png#1", label: "Free Shipping" },
-        { icon: "/lovable-uploads/006115a0-fad0-428c-9f5e-72820b42865d.png#2", label: "Made with love" },
-        { icon: "/lovable-uploads/006115a0-fad0-428c-9f5e-72820b42865d.png#3", label: "Pure Cotton" },
+        { icon: Sun, label: "Light" },
+        { icon: Truck, label: "Free Shipping" },
+        { icon: Heart, label: "Made with love" },
+        { icon: Shirt, label: "Pure Cotton" },
       ],
       description: "Kanakdhaga is all about breathable co-ords, effortless lounge sets, and resort wear that move with you. Just like a golden thread ties everything together, our pieces bring together ease and charm without compromising on style.",
     },
@@ -68,14 +69,10 @@ export const TeaserCards = () => {
                   </div>
                   <div className="flex-1">
                     <div className="grid grid-cols-4 gap-4 mb-6">
-                      {teaser.icons?.map(({ icon, label }, i) => (
+                      {teaser.icons?.map(({ icon: Icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
-                          <img 
-                            src={`${icon.split('#')[0]}`} 
-                            alt={label}
-                            className="w-12 h-12 object-cover object-[center_${25 * i}%]"
-                          />
-                          <span className="text-xs mt-2 text-disco font-medium">{label}</span>
+                          <Icon className="w-6 h-6 text-disco" />
+                          <span className="text-xs mt-1 text-disco">{label}</span>
                         </div>
                       ))}
                     </div>
