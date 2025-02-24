@@ -13,7 +13,7 @@ export const TeaserCards = () => {
   const [isFixed, setIsFixed] = useState(false);
   const teasers: Teaser[] = [
     {
-      image: "/lovable-uploads/0f856697-8814-4188-a095-7ea4ce08c309.png",
+      image: "/lovable-uploads/9b6b6b9a-a140-4c24-a626-f6a31bd071f8.png",
       icons: [
         { icon: "/lovable-uploads/4626dc7d-05b9-4deb-8583-9b1dd7c941ee.png", label: "Breathable" },
         { icon: "/lovable-uploads/10f8f108-fe25-447e-99e8-f53d6b14f47b.png", label: "Free Shipping" },
@@ -63,22 +63,23 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden mb-4"
+              className="bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden"
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: isFixed ? 
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 12)}vh) translateZ(${index * -100}px)` :
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 12)}vh) translateZ(${index * -100}px)`,
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 2)}vh) translateZ(${index * -100}px)` :
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 2)}vh) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
                 opacity: index === 2 ? 0.99 : 1,
+                marginBottom: 0,
               }}
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[450px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Feature Collection" 
