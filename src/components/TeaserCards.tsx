@@ -48,7 +48,7 @@ export const TeaserCards = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const threshold = window.innerHeight * 1.5; // Adjust this value to control when cards become fixed
+      const threshold = window.innerHeight * 1.5;
       setIsFixed(scrollPosition > threshold);
     };
 
@@ -68,8 +68,8 @@ export const TeaserCards = () => {
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
                 transform: isFixed ? 
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 8)}vh) translateZ(${index * -100}px)` :
-                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 8)}vh) translateZ(${index * -100}px)`,
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 12)}vh) translateZ(${index * -100}px)` :
+                  `translateY(${index * (window.innerWidth >= 768 ? 10 : 12)}vh) translateZ(${index * -100}px)`,
                 height: window.innerWidth < 768 ? 'auto' : undefined,
                 maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
