@@ -47,7 +47,7 @@ export const TeaserCards = () => {
   return (
     <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-12">
       <div className="container mx-auto px-4">
-        <div className="min-h-[150vh] relative perspective-[1000px] pb-[30vh]">
+        <div className="min-h-[150vh] md:min-h-[150vh] relative perspective-[1000px] pb-[30vh]">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
@@ -55,12 +55,12 @@ export const TeaserCards = () => {
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
-                transform: `translateY(calc(${index * 10}vh)) translateZ(${index * -100}px)`,
+                transform: `translateY(calc(${index * (window.innerWidth >= 768 ? 10 : 5)}vh)) translateZ(${index * -100}px)`,
               }}
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Feature Collection" 
@@ -68,7 +68,7 @@ export const TeaserCards = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <div className="grid grid-cols-4 gap-4 mb-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                       {teaser.icons?.map(({ icon: Icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
                           <Icon className="w-6 h-6 text-disco" />
@@ -76,14 +76,14 @@ export const TeaserCards = () => {
                         </div>
                       ))}
                     </div>
-                    <p className="text-turkish-rose font-garamond leading-relaxed">
+                    <p className="text-turkish-rose font-garamond leading-relaxed text-sm md:text-base">
                       {teaser.description}
                     </p>
                   </div>
                 </>
               ) : index === 1 ? (
                 <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Exclusive Offer" 
@@ -91,13 +91,13 @@ export const TeaserCards = () => {
                     />
                   </div>
                   <div className="flex-1 text-center md:text-left flex flex-col gap-4">
-                    <h3 className="text-3xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
-                    <p className="text-lg md:text-xl font-garamond text-turkish-rose max-w-md">
+                    <h3 className="text-2xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
+                    <p className="text-base md:text-xl font-garamond text-turkish-rose max-w-md">
                       {typeof teaser.description === 'string' ? teaser.description : teaser.description.join(' ')}
                     </p>
                     <button 
                       onClick={scrollToWaitlist}
-                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-8 py-3 rounded-xl transition-colors self-start mt-4"
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors mx-auto md:mx-0 mt-4"
                     >
                       Get Exclusive Access
                     </button>
@@ -105,7 +105,7 @@ export const TeaserCards = () => {
                 </>
               ) : (
                 <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Launch Offer" 
@@ -113,20 +113,20 @@ export const TeaserCards = () => {
                     />
                   </div>
                   <div className="flex-1 text-left">
-                    <h3 className="text-3xl md:text-4xl font-serif-display text-disco-dark mb-6">{teaser.title}</h3>
-                    <div className="space-y-4">
+                    <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
+                    <div className="space-y-3 md:space-y-4">
                       {Array.isArray(teaser.description) ? teaser.description.map((item, i) => (
                         <div key={i} className="flex items-start gap-2">
-                          <span className="text-disco text-lg">✔</span>
-                          <p className="text-lg font-garamond text-turkish-rose">{item}</p>
+                          <span className="text-disco text-base md:text-lg flex-shrink-0">✔</span>
+                          <p className="text-base md:text-lg font-garamond text-turkish-rose">{item}</p>
                         </div>
                       )) : (
-                        <p className="text-lg font-garamond text-turkish-rose">{teaser.description}</p>
+                        <p className="text-base md:text-lg font-garamond text-turkish-rose">{teaser.description}</p>
                       )}
                     </div>
                     <button 
                       onClick={scrollToWaitlist}
-                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-8 py-3 rounded-xl transition-colors mt-6"
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors mt-4 md:mt-6 w-full md:w-auto"
                     >
                       Join Waitlist
                     </button>
