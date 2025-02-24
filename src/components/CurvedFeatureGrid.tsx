@@ -1,12 +1,5 @@
 
 const CurvedFeatureGrid = () => {
-  const scrollToWaitlist = () => {
-    const waitlistSection = document.querySelector('.waitlist-section');
-    if (waitlistSection) {
-      waitlistSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="w-full max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-[24px] z-30">
       {[
@@ -27,31 +20,31 @@ const CurvedFeatureGrid = () => {
           key={index}
           className="relative w-[350px] transition-all duration-300 hover:-translate-y-[5px] hover:scale-[1.01]"
           style={{
-            transform: `rotate(${index === 0 ? '-3deg' : index === 2 ? '3deg' : '0deg'})`,
-            marginTop: index === 1 ? '-1rem' : '0'
+            transform: `rotate(${index === 0 ? '-5deg' : index === 2 ? '5deg' : '0deg'})`,
+            marginTop: index === 1 ? '-2rem' : '0'
           }}
         >
           <div 
             className={`
-              relative h-[180px]
+              relative h-[150px]
               bg-turkish-rose
-              border-2 border-[#BA778B]
-              overflow-hidden
-              transition-all duration-300
+              rounded-[10px]
+              border border-[#D4AF37]
               shadow-[0_4px_8px_rgba(0,0,0,0.15)]
               hover:shadow-[0_6px_12px_rgba(0,0,0,0.2)]
+              overflow-hidden
+              transition-all duration-300
             `}
           >
-            {/* Ticket Shape Corners - Deeper and More Curved */}
-            <div className="absolute inset-0">
-              {/* Top Left */}
-              <div className="absolute -left-4 -top-4 w-8 h-8 bg-careys-pink rounded-br-[2rem]" />
-              {/* Top Right */}
-              <div className="absolute -right-4 -top-4 w-8 h-8 bg-careys-pink rounded-bl-[2rem]" />
-              {/* Bottom Left */}
-              <div className="absolute -left-4 -bottom-4 w-8 h-8 bg-careys-pink rounded-tr-[2rem]" />
-              {/* Bottom Right */}
-              <div className="absolute -right-4 -bottom-4 w-8 h-8 bg-careys-pink rounded-tl-[2rem]" />
+            {/* Left Cutout */}
+            <div className="absolute -left-[8px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
+            
+            {/* Right Cutout */}
+            <div className="absolute -right-[8px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
+            
+            {/* Left Decorative Circle */}
+            <div className="absolute left-5 top-1/2 -translate-y-1/2 w-8 h-8 border border-[#D4AF37]/30 rounded-full flex items-center justify-center">
+              <div className="w-5 h-5 border border-[#D4AF37]/50 rounded-full" />
             </div>
 
             {/* Content Container */}
@@ -65,14 +58,14 @@ const CurvedFeatureGrid = () => {
                 </p>
                 
                 {/* CTA Button */}
-                <button 
-                  onClick={scrollToWaitlist}
-                  className="mt-2 px-6 py-1.5 bg-[#8C1444] text-[#FBFBEB] text-[16px] rounded-full font-medium mx-auto hover:bg-[#8C1444]/90 hover:scale-105 hover:shadow-[0_0_15px_rgba(140,20,68,0.3)] transition-all duration-300"
-                >
+                <button className="mt-2 px-6 py-1.5 bg-[#8C1444] text-[#FBFBEB] text-[16px] rounded-full font-medium mx-auto hover:bg-[#8C1444]/90 hover:scale-105 hover:shadow-[0_0_15px_rgba(140,20,68,0.3)] transition-all duration-300">
                   Claim Now
                 </button>
               </div>
             </div>
+
+            {/* Dotted Line */}
+            <div className="absolute left-14 right-14 top-1/2 -translate-y-1/2 border-t border-dashed border-[#D4AF37]/30" />
           </div>
         </div>
       ))}
