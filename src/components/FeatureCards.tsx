@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Feather, Gift, HandHeart, Leaf, Mail, Percent, Shirt } from 'lucide-react';
+import { Feather, Gift, HandHeart, Leaf } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +46,7 @@ export const FeatureCards = () => {
           {/* Cards Container */}
           <div className="sticky top-32 flex justify-center items-center">
             <div className="relative w-full max-w-2xl">
-              {/* Card 1 */}
+              {/* Card 1 - Updated with new icons */}
               <div 
                 ref={el => cardsRef.current[0] = el}
                 className="absolute top-0 left-0 right-0 bg-white rounded-2xl overflow-hidden shadow-xl"
@@ -91,6 +91,7 @@ export const FeatureCards = () => {
                 </div>
               </div>
 
+              {/* Keep existing cards 2 and 3 */}
               {/* Card 2 */}
               <div 
                 ref={el => cardsRef.current[1] = el}
@@ -109,43 +110,20 @@ export const FeatureCards = () => {
                 </div>
               </div>
 
-              {/* Card 3 - Updated with new promotional content */}
+              {/* Card 3 */}
               <div 
                 ref={el => cardsRef.current[2] = el}
-                className="absolute top-0 left-0 right-0 bg-white rounded-2xl overflow-hidden shadow-xl"
+                className="absolute top-0 left-0 right-0 aspect-square bg-white rounded-2xl overflow-hidden shadow-xl"
               >
                 <div className="h-full w-full p-8 flex flex-col justify-between">
-                  <div className="space-y-6">
-                    {/* Promo Code Section */}
-                    <div className="flex items-center space-x-4 text-disco">
-                      <Percent size={28} className="text-disco" />
-                      <div>
-                        <h3 className="text-xl font-serif-display text-disco-dark">Use code KANAK20</h3>
-                        <p className="text-turkish-rose font-garamond">Flat 20% OFF on your first order!</p>
-                      </div>
-                    </div>
-
-                    {/* Free Kurti Section */}
-                    <div className="flex items-center space-x-4">
-                      <Shirt size={28} className="text-disco" />
-                      <div>
-                        <h3 className="text-xl font-serif-display text-disco-dark">Win a Free Kurti!</h3>
-                        <p className="text-turkish-rose font-garamond">Stand a chance to get a beautiful Kurti from us on launch.</p>
-                      </div>
-                    </div>
-
-                    {/* Updates Section */}
-                    <div className="flex items-center space-x-4">
-                      <Mail size={28} className="text-disco" />
-                      <div>
-                        <h3 className="text-xl font-serif-display text-disco-dark">Stay tuned!</h3>
-                        <p className="text-turkish-rose font-garamond">Check your mail & WhatsApp for exciting updates.</p>
-                      </div>
-                    </div>
+                  <div>
+                    <h3 className="text-3xl font-serif-display text-disco-dark">Festive Wear</h3>
+                    <p className="text-turkish-rose font-garamond mt-4">
+                      Celebrate special occasions with our collection of festive ethnic wear, designed for memorable moments.
+                    </p>
                   </div>
-
-                  <button className="mt-6 bg-disco-dark text-white px-8 py-3 rounded-full font-garamond hover:bg-disco transition-colors self-start">
-                    Join Waitlist
+                  <button className="bg-disco-dark text-white px-8 py-3 rounded-full font-garamond hover:bg-disco transition-colors self-start">
+                    Shop Now
                   </button>
                 </div>
               </div>
