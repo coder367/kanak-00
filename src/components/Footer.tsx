@@ -13,11 +13,11 @@ export const Footer = () => {
             <ul className="space-y-2 sm:space-y-3 font-garamond text-turkish-rose">
               <li className="flex items-center gap-2 transition-colors duration-200 hover:text-disco cursor-pointer">
                 <Phone size={18} className="sm:w-5 sm:h-5" />
-                <span className="text-sm sm:text-base">+91 999 999 9999</span>
+                <span className="text-sm sm:text-base">+91 7757033088</span>
               </li>
               <li className="flex items-center gap-2 transition-colors duration-200 hover:text-disco cursor-pointer">
                 <Mail size={18} className="sm:w-5 sm:h-5" />
-                <span className="text-sm sm:text-base">info@kanakdhaga.com</span>
+                <span className="text-sm sm:text-base">kanakdhagamain@gmail.com</span>
               </li>
             </ul>
           </div>

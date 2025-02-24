@@ -13,7 +13,7 @@ export const TeaserCards = () => {
   const [isFixed, setIsFixed] = useState(false);
   const teasers: Teaser[] = [
     {
-      image: "/lovable-uploads/9b6b6b9a-a140-4c24-a626-f6a31bd071f8.png",
+      image: "/lovable-uploads/12ca3f72-8647-4356-b4e0-f06341eef697.png",
       icons: [
         { icon: "/lovable-uploads/4626dc7d-05b9-4deb-8583-9b1dd7c941ee.png", label: "Breathable" },
         { icon: "/lovable-uploads/10f8f108-fe25-447e-99e8-f53d6b14f47b.png", label: "Free Shipping" },
@@ -57,9 +57,9 @@ export const TeaserCards = () => {
   }, []);
 
   return (
-    <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-12">
+    <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-6 md:pb-12">
       <div className="container mx-auto px-4">
-        <div className="min-h-[100vh] md:min-h-[150vh] relative perspective-[1000px] pb-[30vh]">
+        <div className="min-h-[80vh] md:min-h-[150vh] relative perspective-[1000px] pb-[15vh] md:pb-[30vh]">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
