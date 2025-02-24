@@ -12,12 +12,11 @@ import { useInterval } from "@/hooks/use-interval";
 export const Collections = () => {
   const textContainerRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile();
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Text scroll animation
   useEffect(() => {
     const textScroll = textContainerRef.current;
-    
     if (textScroll) {
       const textAnimation = textScroll.animate(
         [
@@ -37,12 +36,16 @@ export const Collections = () => {
     }
   }, []);
 
+  // Auto scroll for images
   useInterval(() => {
     if (carouselRef.current) {
-      setCurrentSlide((prev) => (prev + 1) % 3);
-      carouselRef.current.scrollTo({
-        left: (currentSlide + 1) % 3 * carouselRef.current.offsetWidth,
-        behavior: 'smooth'
+      setCurrentSlide((prev) => {
+        const nextSlide = (prev + 1) % 3;
+        carouselRef.current?.scrollTo({
+          left: nextSlide * carouselRef.current.offsetWidth,
+          behavior: 'smooth'
+        });
+        return nextSlide;
       });
     }
   }, 3000);

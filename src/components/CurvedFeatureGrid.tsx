@@ -1,4 +1,3 @@
-
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useRef, useState } from "react";
 import {
@@ -56,7 +55,7 @@ const CurvedFeatureGrid = () => {
               {features.map((feature, index) => (
                 <CarouselItem key={index}>
                   <div className="relative w-full transition-all duration-300 px-2">
-                    <div className="relative h-[200px] bg-turkish-rose rounded-[20px] border border-[#D4AF37] shadow-[0_4px_8px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300">
+                    <div className="relative h-[200px] bg-turkish-rose rounded-[30px] border border-[#D4AF37] shadow-[0_4px_8px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300">
                       <div className="absolute -left-[12px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
                       <div className="absolute -right-[12px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
                       <div className="absolute left-5 top-1/2 -translate-y-1/2 w-8 h-8 border border-[#D4AF37]/30 rounded-full flex items-center justify-center">
