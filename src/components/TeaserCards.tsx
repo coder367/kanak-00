@@ -30,12 +30,8 @@ export const TeaserCards = () => {
     },
     {
       image: "/lovable-uploads/8e47072b-c16a-4210-879c-a243d34faf13.png",
-      title: "Exclusive Launch Offer",
-      description: [
-        "Flat 20% OFF on your first order – Use code KANAK20 at checkout.",
-        "Stand a chance to win a free Kurti as part of our launch giveaway.",
-        "Stay updated—check your email and WhatsApp for upcoming announcements."
-      ],
+      title: "Win Kurtis Worth ₹10,000! 5 Lucky Winners, Join Our Launch Giveaway!",
+      description: "",
     },
   ];
 
