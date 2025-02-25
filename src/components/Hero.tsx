@@ -1,5 +1,6 @@
+
 import { useEffect, useRef, useState } from 'react';
-import CountdownTimer from './CountdownTimer';
+import { CountdownTimer } from './CountdownTimer';
 import CurvedFeatureGrid from './CurvedFeatureGrid';
 import { useIsMobile } from '@/hooks/use-mobile';
 
