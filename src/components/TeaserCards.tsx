@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { useEffect, useState, useCallback } from "react";
 
@@ -78,7 +79,7 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className={`bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
+              className={`bg-white border-none p-4 sm:p-8 sm:pr-[22rem] rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
                 isVisible ? 'animate-fade-in' : 'opacity-0'
               }`}
               style={{
@@ -87,9 +88,9 @@ export const TeaserCards = () => {
                 transform: isFixed ? 
                   `translateY(${index * (window.innerWidth >= 768 ? 10 : 2)}vh) translateZ(${index * -100}px)` :
                   `translateY(${index * (window.innerWidth >= 768 ? 10 : 2)}vh) translateZ(${index * -100}px)`,
-                height: window.innerWidth < 768 ? 'auto' : undefined,
-                maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
-                minHeight: window.innerWidth < 768 ? '450px' : undefined,
+                height: window.innerWidth < 768 ? '550px' : undefined,
+                maxHeight: window.innerWidth < 768 ? '550px' : undefined,
+                minHeight: window.innerWidth < 768 ? '550px' : undefined,
                 opacity: index === 2 ? 0.99 : 1,
                 marginBottom: 0,
                 transitionDelay: `${index * 150}ms`,
@@ -97,7 +98,7 @@ export const TeaserCards = () => {
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <picture>
                       <source media="(min-width: 768px)" srcSet={teaser.image} />
                       <img 
@@ -129,7 +130,7 @@ export const TeaserCards = () => {
                 </>
               ) : index === 1 ? (
                 <>
-                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Exclusive Offer" 
@@ -151,7 +152,7 @@ export const TeaserCards = () => {
                 </>
               ) : (
                 <>
-                  <div className="w-full md:w-72 h-[200px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <img 
                       src={teaser.image} 
                       alt="Launch Offer" 
@@ -160,22 +161,6 @@ export const TeaserCards = () => {
                   </div>
                   <div className="flex-1 text-left">
                     <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
-                    <div className="space-y-3 md:space-y-4">
-                      {Array.isArray(teaser.description) ? teaser.description.map((item, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <span className="text-disco text-base md:text-lg flex-shrink-0">✔</span>
-                          <p className="text-base md:text-lg font-garamond text-turkish-rose">{item}</p>
-                        </div>
-                      )) : (
-                        <p className="text-base md:text-lg font-garamond text-turkish-rose">{teaser.description}</p>
-                      )}
-                    </div>
-                    <button 
-                      onClick={scrollToWaitlist}
-                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors mt-4 md:mt-6 w-full md:w-auto"
-                    >
-                      Join Waitlist
-                    </button>
                   </div>
                 </>
               )}
