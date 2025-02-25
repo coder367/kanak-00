@@ -69,7 +69,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
           className="p-2 rounded-lg transition-all duration-300 hover:bg-white/10 active:scale-95"
         >
           {isMobile ? (
-            <span className="text-white font-serif-display text-xl">KANAKDHAGA</span>
+            <span className="text-white font-serif-display text-base">KANAKDHAGA</span>
           ) : (
             <img 
               src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 

@@ -1,4 +1,3 @@
-
 import { Instagram, Phone, Mail, Link } from "lucide-react";
 
 export const Footer = () => {
@@ -7,7 +6,7 @@ export const Footer = () => {
       <div className="container mx-auto max-w-5xl">
         {/* Contact and Follow Us Container */}
         <div className="bg-rum-swizzle/80 rounded-xl p-6 sm:p-8 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4">
             {/* Contact Us Section */}
             <div>
               <h3 className="font-serif-display text-disco-dark text-3xl sm:text-3xl md:text-2xl mb-6 sm:mb-6">Contact Us</h3>
@@ -61,4 +60,3 @@ export const Footer = () => {
     </footer>
   );
 };
-
