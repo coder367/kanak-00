@@ -2,10 +2,6 @@
 import { Instagram, Phone, Mail, Link } from "lucide-react";
 
 export const Footer = () => {
-  const handleEmailClick = () => {
-    window.location.href = "mailto:kanakdhagamain@gmail.com";
-  };
-
   return (
     <footer className="bg-rum-swizzle py-12 sm:py-14 md:py-16 px-4 md:px-8">
       <div className="container mx-auto max-w-5xl">
@@ -18,12 +14,9 @@ export const Footer = () => {
               <ul className="space-y-4 sm:space-y-5 font-garamond text-turkish-rose">
                 <li className="flex items-center gap-3 transition-colors duration-200 hover:text-disco cursor-pointer">
                   <Phone size={24} className="sm:w-7 sm:h-7 md:w-6 md:h-6" />
-                  <a href="tel:+917757033088" className="text-xl sm:text-xl md:text-lg">+91 7757033088</a>
+                  <span className="text-xl sm:text-xl md:text-lg">+91 7757033088</span>
                 </li>
-                <li 
-                  onClick={handleEmailClick}
-                  className="flex items-center gap-3 transition-colors duration-200 hover:text-disco cursor-pointer"
-                >
+                <li className="flex items-center gap-3 transition-colors duration-200 hover:text-disco cursor-pointer">
                   <Mail size={24} className="sm:w-7 sm:h-7 md:w-6 md:h-6" />
                   <span className="text-xl sm:text-xl md:text-lg">kanakdhagamain@gmail.com</span>
                 </li>

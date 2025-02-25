@@ -1,10 +1,11 @@
 
-import { useRef, useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useRef, useState } from "react";
 import { useInterval } from "@/hooks/use-interval";
 
 const CurvedFeatureGrid = () => {
+  const isMobile = useIsMobile();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
   
   const features = [
     {
@@ -28,33 +29,21 @@ const CurvedFeatureGrid = () => {
     }
   };
 
-  // Check and update screen size
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth < 1084);
-    };
-    
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
   useInterval(() => {
-    if (isSmallScreen) {
+    if (isMobile) {
       setCurrentSlide((prev) => (prev + 1) % features.length);
     }
   }, 3000);
 
   const handleDotClick = (index: number) => {
-    if (isSmallScreen) {
+    if (isMobile) {
       setCurrentSlide(index);
     }
   };
 
-  if (isSmallScreen) {
+  if (isMobile) {
     return (
-      <div className="w-full max-w-[600px] mx-auto">
+      <div className="w-full">
         <div className="relative overflow-hidden w-full">
           <div 
             className="flex transition-transform duration-500 ease-in-out"
@@ -63,7 +52,7 @@ const CurvedFeatureGrid = () => {
             {features.map((feature, index) => (
               <div key={index} className="w-full flex-shrink-0 px-4">
                 <div className="relative w-full transition-all duration-300">
-                  <div className="relative h-[180px] bg-turkish-rose rounded-[30px] border border-[#D4AF37] shadow-[0_4px_8px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300 mb-4">
+                  <div className="relative h-[200px] bg-turkish-rose rounded-[30px] border border-[#D4AF37] shadow-[0_4px_8px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300 mb-4">
                     <div className="absolute -left-[12px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
                     <div className="absolute -right-[12px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-careys-pink rounded-full" />
                     <div className="absolute left-5 top-1/2 -translate-y-1/2 w-8 h-8 border border-[#D4AF37]/30 rounded-full flex items-center justify-center">
@@ -72,15 +61,15 @@ const CurvedFeatureGrid = () => {
                     
                     <div className="h-full px-8 py-6 flex flex-col justify-center">
                       <div className="flex flex-col gap-3">
-                        <h3 className="text-[18px] font-bold font-serif-display text-[#FBFBEB]">
+                        <h3 className="text-[20px] font-bold font-serif-display text-[#FBFBEB]">
                           {feature.title}
                         </h3>
-                        <p className="text-[15px] text-[#FBFBEB]/90 font-garamond">
+                        <p className="text-[16px] text-[#FBFBEB]/90 font-garamond">
                           {feature.description}
                         </p>
                         <button 
                           onClick={scrollToWaitlist}
-                          className="mt-2 px-5 py-1.5 bg-[#8C1444] text-[#FBFBEB] text-[15px] rounded-full font-medium mx-auto hover:bg-[#8C1444]/90 hover:scale-105 hover:shadow-[0_0_15px_rgba(140,20,68,0.3)] transition-all duration-300"
+                          className="mt-2 px-6 py-2 bg-[#8C1444] text-[#FBFBEB] text-[16px] rounded-full font-medium mx-auto hover:bg-[#8C1444]/90 hover:scale-105 hover:shadow-[0_0_15px_rgba(140,20,68,0.3)] transition-all duration-300"
                         >
                           Claim Now
                         </button>
@@ -93,7 +82,7 @@ const CurvedFeatureGrid = () => {
             ))}
           </div>
 
-          {/* Dots for navigation */}
+          {/* Dots for mobile */}
           <div className="flex justify-center space-x-2 mt-4">
             {features.map((_, index) => (
               <button
