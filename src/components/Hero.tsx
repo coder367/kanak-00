@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import CountdownTimer from './CountdownTimer';
 import CurvedFeatureGrid from './CurvedFeatureGrid';
@@ -69,11 +68,15 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
           onClick={scrollToTop} 
           className="p-2 rounded-lg transition-all duration-300 hover:bg-white/10 active:scale-95"
         >
-          <img 
-            src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
-            alt="Kanakdhaga Logo" 
-            className="h-8 sm:h-8 md:h-12 w-auto"
-          />
+          {isMobile ? (
+            <span className="text-white font-serif-display text-xl">KANAKDHAGA</span>
+          ) : (
+            <img 
+              src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
+              alt="Kanakdhaga Logo" 
+              className="h-8 sm:h-8 md:h-12 w-auto"
+            />
+          )}
         </button>
         <button 
           onClick={scrollToCollections}
@@ -114,7 +117,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
         </div>
 
         {/* Countdown Timer */}
-        <div className="mt-3 sm:mt-6">
+        <div className="mt-3 sm:mt-6 w-[90%] sm:w-auto mx-auto">
           <CountdownTimer />
         </div>
       </div>

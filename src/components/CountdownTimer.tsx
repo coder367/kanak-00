@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 
 const CountdownTimer = () => {
@@ -35,12 +34,12 @@ const CountdownTimer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const timeBoxStyle = "bg-[#BC1444]/80 backdrop-blur-sm rounded-lg p-4 md:p-5 flex flex-col items-center justify-center min-w-[80px] md:min-w-[90px] shadow-lg";
-  const numberStyle = "text-2xl md:text-3xl lg:text-4xl font-bold text-white font-serif-display";
-  const labelStyle = "text-xs md:text-sm text-white/90 uppercase tracking-wider font-serif-display mt-1";
+  const timeBoxStyle = "bg-[#BC1444]/80 backdrop-blur-sm rounded-lg p-3 md:p-5 flex flex-col items-center justify-center min-w-[60px] sm:min-w-[80px] md:min-w-[90px] shadow-lg";
+  const numberStyle = "text-xl md:text-3xl lg:text-4xl font-bold text-white font-serif-display";
+  const labelStyle = "text-[10px] md:text-sm text-white/90 uppercase tracking-wider font-serif-display mt-1";
 
   return (
-    <div className="flex gap-3 md:gap-5">
+    <div className="flex gap-2 md:gap-5">
       <div className={timeBoxStyle}>
         <span className={numberStyle}>{String(timeLeft.days).padStart(2, '0')}</span>
         <span className={labelStyle}>Days</span>
