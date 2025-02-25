@@ -101,20 +101,20 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       )}
 
       {/* Feature Grid */}
-      <div className="absolute top-[25%] sm:top-[35%] md:top-[43%] left-0 right-0 z-[40] px-6">
+      <div className="absolute top-[20%] sm:top-[35%] md:top-[43%] left-0 right-0 z-[40] px-6">
         <CurvedFeatureGrid />
       </div>
 
-      {/* Launching Soon and Timer Container - Adjusted for mobile */}
-      <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 lg:bottom-4 left-0 right-0 z-[40] px-6 flex flex-col items-center">
+      {/* Launching Soon and Timer Container */}
+      <div className="absolute bottom-2 sm:bottom-8 md:bottom-12 lg:bottom-4 left-0 right-0 z-[40] px-6 flex flex-col items-center">
         {/* Launching Soon Tag */}
-        <div className="mt-[30px] md:mt-0 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2 sm:space-x-3 shadow-lg hover:bg-[#8C1444]/90 hover:shadow-[0_0_15px_rgba(140,20,68,0.4)] transition-all duration-300">
+        <div className="mt-[20px] md:mt-0 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2 sm:space-x-3 shadow-lg hover:bg-[#8C1444]/90 hover:shadow-[0_0_15px_rgba(140,20,68,0.4)] transition-all duration-300">
           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#FBFBEB] animate-pulse" />
           <span className="text-[#FBFBEB] text-xs sm:text-sm md:text-base tracking-wider font-serif-display">Launching Soon</span>
         </div>
 
         {/* Countdown Timer */}
-        <div className="mt-4 sm:mt-6">
+        <div className="mt-3 sm:mt-6">
           <CountdownTimer />
         </div>
       </div>
