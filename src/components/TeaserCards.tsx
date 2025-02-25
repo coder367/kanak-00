@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { useEffect, useState, useCallback } from "react";
 
@@ -113,17 +112,17 @@ export const TeaserCards = () => {
                     </picture>
                   </div>
                   <div className="flex-1">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                       {teaser.icons?.map(({ icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
-                          <div className="w-8 h-8 md:w-10 md:h-10">
+                          <div className="w-12 h-12 md:w-14 md:h-14">
                             <img 
                               src={icon} 
                               alt={label}
                               className="w-full h-full object-contain" 
                             />
                           </div>
-                          <span className="text-xs md:text-sm mt-2 text-disco text-center">{label}</span>
+                          <span className="text-sm md:text-base mt-3 text-disco text-center">{label}</span>
                         </div>
                       ))}
                     </div>
