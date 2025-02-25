@@ -78,7 +78,7 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className={`bg-white border-none p-4 sm:p-8 sm:pr-[22rem] rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
+              className={`bg-white border-none p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
                 isVisible ? 'animate-fade-in' : 'opacity-0'
               }`}
               style={{
@@ -87,8 +87,8 @@ export const TeaserCards = () => {
                 transform: isFixed ? 
                   `translateY(${index * (window.innerWidth >= 768 ? 10 : 2)}vh) translateZ(${index * -100}px)` :
                   `translateY(${index * (window.innerWidth >= 768 ? 10 : 2)}vh) translateZ(${index * -100}px)`,
-                height: window.innerWidth < 768 ? '450px' : undefined,
-                maxHeight: window.innerWidth < 768 ? '450px' : undefined,
+                height: window.innerWidth < 768 ? 'auto' : undefined,
+                maxHeight: window.innerWidth < 768 ? '85vh' : undefined,
                 minHeight: window.innerWidth < 768 ? '450px' : undefined,
                 opacity: index === 2 ? 0.99 : 1,
                 marginBottom: 0,
@@ -107,7 +107,7 @@ export const TeaserCards = () => {
                       />
                     </picture>
                   </div>
-                  <div className="flex-1 overflow-y-auto max-h-[200px] md:max-h-none">
+                  <div className="flex-1">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                       {teaser.icons?.map(({ icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
@@ -136,7 +136,7 @@ export const TeaserCards = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 text-center md:text-left flex flex-col gap-4 overflow-y-auto max-h-[200px] md:max-h-none">
+                  <div className="flex-1 text-center md:text-left flex flex-col gap-4">
                     <h3 className="text-2xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
                     <p className="text-base md:text-xl font-garamond text-turkish-rose max-w-md">
                       {typeof teaser.description === 'string' ? teaser.description : teaser.description.join(' ')}
@@ -158,7 +158,7 @@ export const TeaserCards = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 text-left overflow-y-auto max-h-[200px] md:max-h-none">
+                  <div className="flex-1 text-left">
                     <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
                     <div className="space-y-3 md:space-y-4">
                       {Array.isArray(teaser.description) ? teaser.description.map((item, i) => (
