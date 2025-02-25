@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { useEffect, useState, useCallback } from "react";
 
@@ -144,7 +143,7 @@ export const TeaserCards = () => {
                     </p>
                     <button 
                       onClick={scrollToWaitlist}
-                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors mx-auto md:mx-0 mt-4"
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-4 md:px-6 py-2 rounded-xl transition-colors mx-auto md:mx-0 text-sm md:text-base"
                     >
                       Get Exclusive Access
                     </button>
@@ -161,6 +160,12 @@ export const TeaserCards = () => {
                   </div>
                   <div className="flex-1 text-left">
                     <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
+                    <button 
+                      onClick={scrollToWaitlist}
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors text-base md:text-lg"
+                    >
+                      Join Waitlist
+                    </button>
                   </div>
                 </>
               )}

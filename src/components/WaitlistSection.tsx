@@ -37,12 +37,6 @@ export const WaitlistSection = () => {
               </SelectTrigger>
               <SelectContent className="bg-white/90 backdrop-blur-md">
                 <SelectItem 
-                  value="facebook" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
-                >
-                  Facebook
-                </SelectItem>
-                <SelectItem 
                   value="instagram" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
