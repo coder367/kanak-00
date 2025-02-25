@@ -88,8 +88,8 @@ const Index = () => {
     <div className="relative">
       <Suspense fallback={null}>
         <Hero onScroll={setIsNavbarVisible} brandRef={brandRef} />
-        <WaitlistSection />
         <TeaserCards />
+        <WaitlistSection />
         <Collections />
         <AboutUs />
         <Footer />
