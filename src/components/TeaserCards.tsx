@@ -79,7 +79,7 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className={`bg-white border-none p-4 sm:p-8 sm:pr-[22rem] rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
+              className={`bg-white border-none p-4 sm:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
                 isVisible ? 'animate-fade-in' : 'opacity-0'
               }`}
               style={{
@@ -98,7 +98,7 @@ export const TeaserCards = () => {
             >
               {index === 0 ? (
                 <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                  <div className="w-full md:w-72 h-[220px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <picture>
                       <source media="(min-width: 768px)" srcSet={teaser.image} />
                       <img 
@@ -109,17 +109,17 @@ export const TeaserCards = () => {
                     </picture>
                   </div>
                   <div className="flex-1">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                       {teaser.icons?.map(({ icon, label }, i) => (
                         <div key={i} className="flex flex-col items-center">
-                          <div className="w-12 h-12 md:w-14 md:h-14">
+                          <div className="w-8 h-8 md:w-14 md:h-14">
                             <img 
                               src={icon} 
                               alt={label}
                               className="w-full h-full object-contain" 
                             />
                           </div>
-                          <span className="text-sm md:text-base mt-3 text-disco text-center">{label}</span>
+                          <span className="text-xs md:text-base mt-2 text-disco text-center">{label}</span>
                         </div>
                       ))}
                     </div>

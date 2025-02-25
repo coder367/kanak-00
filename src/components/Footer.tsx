@@ -1,3 +1,4 @@
+
 import { Instagram, Phone, Mail, Link } from "lucide-react";
 
 export const Footer = () => {
@@ -5,7 +6,7 @@ export const Footer = () => {
     <footer className="bg-rum-swizzle py-12 sm:py-14 md:py-16 px-4 md:px-8">
       <div className="container mx-auto max-w-5xl">
         {/* Contact and Follow Us Container */}
-        <div className="bg-rum-swizzle/80 rounded-xl p-6 sm:p-8 mb-12">
+        <div className="bg-rum-swizzle/80 rounded-xl p-6 sm:pl-8 sm:pt-8 sm:pb-8 sm:pr-[22rem] mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4">
             {/* Contact Us Section */}
             <div>
