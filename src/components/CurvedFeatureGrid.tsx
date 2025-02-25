@@ -1,10 +1,8 @@
 
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useRef, useState } from "react";
 import { useInterval } from "@/hooks/use-interval";
 
 const CurvedFeatureGrid = () => {
-  const isMobile = useIsMobile();
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const features = [
@@ -29,19 +27,32 @@ const CurvedFeatureGrid = () => {
     }
   };
 
+  // Check if screen width is less than 1084px
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1084);
+
+  // Add resize listener
+  useState(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1084);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   useInterval(() => {
-    if (isMobile) {
+    if (isSmallScreen) {
       setCurrentSlide((prev) => (prev + 1) % features.length);
     }
   }, 3000);
 
   const handleDotClick = (index: number) => {
-    if (isMobile) {
+    if (isSmallScreen) {
       setCurrentSlide(index);
     }
   };
 
-  if (isMobile) {
+  if (isSmallScreen) {
     return (
       <div className="w-full">
         <div className="relative overflow-hidden w-full">
@@ -82,7 +93,7 @@ const CurvedFeatureGrid = () => {
             ))}
           </div>
 
-          {/* Dots for mobile */}
+          {/* Dots for navigation */}
           <div className="flex justify-center space-x-2 mt-4">
             {features.map((_, index) => (
               <button
