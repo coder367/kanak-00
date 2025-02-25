@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { useInterval } from "@/hooks/use-interval";
 
 const CurvedFeatureGrid = () => {
+  const isMobile = useIsMobile();
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const features = [
@@ -28,22 +29,19 @@ const CurvedFeatureGrid = () => {
     }
   };
 
-  // Check if screen width is less than 1028px
-  const isSmallScreen = window.innerWidth < 1028;
-
   useInterval(() => {
-    if (isSmallScreen) {
+    if (isMobile) {
       setCurrentSlide((prev) => (prev + 1) % features.length);
     }
   }, 3000);
 
   const handleDotClick = (index: number) => {
-    if (isSmallScreen) {
+    if (isMobile) {
       setCurrentSlide(index);
     }
   };
 
-  if (isSmallScreen) {
+  if (isMobile) {
     return (
       <div className="w-full">
         <div className="relative overflow-hidden w-full">
@@ -84,7 +82,7 @@ const CurvedFeatureGrid = () => {
             ))}
           </div>
 
-          {/* Dots for navigation */}
+          {/* Dots for mobile */}
           <div className="flex justify-center space-x-2 mt-4">
             {features.map((_, index) => (
               <button
