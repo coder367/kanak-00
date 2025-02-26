@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { useEffect, useState, useCallback } from "react";
 
@@ -120,6 +121,28 @@ export const TeaserCards = () => {
                     </div>
                   </div>
                 </>
+              ) : index === 1 ? (
+                <>
+                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                    <img 
+                      src={teaser.image} 
+                      alt="Exclusive Offer" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 text-center md:text-left flex flex-col gap-4">
+                    <h3 className="text-2xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
+                    <p className="text-base md:text-xl font-garamond text-turkish-rose max-w-md">
+                      {typeof teaser.description === 'string' ? teaser.description : teaser.description.join(' ')}
+                    </p>
+                    <button 
+                      onClick={scrollToWaitlist}
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-4 md:px-6 py-2 rounded-xl transition-colors mx-auto md:mx-0 text-sm md:text-base"
+                    >
+                      Get Exclusive Access
+                    </button>
+                  </div>
+                </>
               ) : (
                 <>
                   <div className="w-full md:w-72 h-[220px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
@@ -150,28 +173,6 @@ export const TeaserCards = () => {
                     <p className="text-turkish-rose font-garamond leading-relaxed text-sm md:text-base">
                       {teaser.description}
                     </p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
-                    <img 
-                      src={teaser.image} 
-                      alt="Exclusive Offer" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 text-center md:text-left flex flex-col gap-4">
-                    <h3 className="text-2xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
-                    <p className="text-base md:text-xl font-garamond text-turkish-rose max-w-md">
-                      {typeof teaser.description === 'string' ? teaser.description : teaser.description.join(' ')}
-                    </p>
-                    <button 
-                      onClick={scrollToWaitlist}
-                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-4 md:px-6 py-2 rounded-xl transition-colors mx-auto md:mx-0 text-sm md:text-base"
-                    >
-                      Get Exclusive Access
-                    </button>
                   </div>
                 </>
               )}
