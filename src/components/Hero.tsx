@@ -93,24 +93,16 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
       {/* Brand Name Container */}
       {!isMobile && (
-        <div 
-          className="fixed z-[60] px-4"
-          style={{
-            top: isScrolled ? '10px' : '15%',
-            left: isScrolled ? '50%' : '24px',
-            transform: isScrolled ? 'translateX(-50%)' : 'translateX(0)',
-            transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-            willChange: 'transform, top'
-          }}
-        >
+        <div className="fixed z-[60] px-4" style={{
+          top: isScrolled ? '10px' : '15%',
+          transition: 'all 0.5s ease-in-out'
+        }}>
           <h1 
             ref={brandRef}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
             style={{
-              transform: `scale(${isScrolled ? 0.3 : 1})`,
-              transformOrigin: isScrolled ? 'center center' : 'left center',
-              transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-              willChange: 'transform'
+              transform: `scale(${isScrolled ? 0.15 : 1})`,
+              transition: 'transform 0.5s ease-in-out'
             }}
           >
             KANAKDHAGA
