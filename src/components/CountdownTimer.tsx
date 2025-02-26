@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from "@/integrations/supabase/client";
@@ -19,7 +18,6 @@ interface LaunchConfig {
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  // Fetch the launch date from Supabase
   const { data: launchConfig } = useQuery({
     queryKey: ['launchDate'],
     queryFn: async () => {
@@ -55,10 +53,8 @@ const CountdownTimer = () => {
   useEffect(() => {
     if (!launchConfig?.launch_date) return;
 
-    // Initial calculation
     setTimeLeft(calculateTimeLeft(launchConfig.launch_date));
 
-    // Update every second
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(launchConfig.launch_date));
     }, 1000);
@@ -75,7 +71,7 @@ const CountdownTimer = () => {
   }
 
   return (
-    <div className="flex gap-2.5 sm:gap-4 md:gap-5 justify-between w-full max-w-[290px] sm:max-w-[380px] md:max-w-[400px] mx-auto">
+    <div className="flex gap-2.5 sm:gap-4 md:gap-5 justify-between w-full max-w-[290px] sm:max-w-[380px] md:max-w-[400px] mx-auto mb-10 sm:mb-20">
       <div className={timeBoxStyle}>
         <span className={numberStyle}>{String(timeLeft.days).padStart(2, '0')}</span>
         <span className={labelStyle}>Days</span>
@@ -97,4 +93,3 @@ const CountdownTimer = () => {
 };
 
 export default CountdownTimer;
-
