@@ -1,7 +1,5 @@
-
 import { Card } from "@/components/ui/card";
 import { useEffect, useState, useCallback } from "react";
-import { ChevronRight } from "lucide-react";
 
 type Teaser = {
   image: string;
@@ -82,7 +80,7 @@ export const TeaserCards = () => {
               key={index} 
               className={`bg-white border-none p-4 sm:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
                 isVisible ? 'animate-fade-in' : 'opacity-0'
-              } ${index === 2 ? 'relative' : ''}`}
+              }`}
               style={{
                 willChange: 'transform',
                 transformStyle: 'preserve-3d',
@@ -177,11 +175,6 @@ export const TeaserCards = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="absolute -bottom-8 left-0 right-0 h-32 bg-white" style={{
-                    borderRadius: '50%',
-                    transform: 'scaleX(1.5)',
-                    zIndex: -1
-                  }} />
                 </>
               )}
             </Card>
