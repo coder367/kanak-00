@@ -79,7 +79,7 @@
 
 /* Custom bottom spacing for large screens */
 @media (min-width: 1024px) {
-  .lg\:bottom-8 {
-    bottom: -4rem;
+  .lg\:bottom-16 {
+    bottom: 1rem;
   }
 }

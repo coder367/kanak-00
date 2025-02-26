@@ -58,11 +58,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       className="min-h-[100vh] flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-24 lg:pt-32 relative overflow-hidden" 
       ref={observerRef}
       style={{
-        backgroundImage: `url("${
-          window.innerWidth >= 1024 
-            ? '/lovable-uploads/25969a87-4de9-4b06-993a-5bd749cb93fa.png'
-            : '/lovable-uploads/27e1b3e4-eb7a-4115-8128-508aaa426b71.png'
-        }")`,
+        backgroundImage: 'url("/lovable-uploads/27e1b3e4-eb7a-4115-8128-508aaa426b71.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
