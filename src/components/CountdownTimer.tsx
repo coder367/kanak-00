@@ -1,16 +1,37 @@
 
 import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from "@/integrations/supabase/client";
+
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
 
 const CountdownTimer = () => {
-  const calculateTimeLeft = () => {
-    let launchDate = localStorage.getItem('launchDate');
-    if (!launchDate) {
-      const date = new Date();
-      date.setDate(date.getDate() + 60);
-      localStorage.setItem('launchDate', date.toISOString());
-      launchDate = date.toISOString();
-    }
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
+  // Fetch the launch date from Supabase
+  const { data: launchConfig } = useQuery({
+    queryKey: ['launchDate'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('launch_config')
+        .select('launch_date')
+        .maybeSingle();
+      
+      if (error) {
+        console.error('Error fetching launch date:', error);
+        throw error;
+      }
+      
+      return data;
+    }
+  });
+
+  const calculateTimeLeft = (launchDate: string): TimeLeft => {
     const difference = new Date(launchDate).getTime() - new Date().getTime();
     
     if (difference <= 0) {
@@ -25,19 +46,27 @@ const CountdownTimer = () => {
     };
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
   useEffect(() => {
+    if (!launchConfig?.launch_date) return;
+
+    // Initial calculation
+    setTimeLeft(calculateTimeLeft(launchConfig.launch_date));
+
+    // Update every second
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(launchConfig.launch_date));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [launchConfig?.launch_date]);
 
   const timeBoxStyle = "bg-[#BC1444]/80 backdrop-blur-sm rounded-lg p-2.5 sm:p-4 md:p-5 flex flex-col items-center justify-center min-w-[65px] sm:min-w-[85px] md:min-w-[90px] shadow-lg";
   const numberStyle = "text-2xl sm:text-3xl md:text-4xl font-bold text-white font-serif-display";
   const labelStyle = "text-xs sm:text-sm text-white/90 uppercase tracking-wider font-serif-display mt-1 sm:mt-2";
+
+  if (!launchConfig?.launch_date) {
+    return <div className="text-white text-center">Loading...</div>;
+  }
 
   return (
     <div className="flex gap-2.5 sm:gap-4 md:gap-5 justify-between w-full max-w-[290px] sm:max-w-[380px] md:max-w-[400px] mx-auto">
