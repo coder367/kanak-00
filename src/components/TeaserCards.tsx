@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { useEffect, useState, useCallback } from "react";
 
@@ -29,7 +30,7 @@ export const TeaserCards = () => {
       description: "Sign up now and enjoy an exclusive 20% discount on your first order, along with early access and a sneak peek at our first drop.",
     },
     {
-      image: "/lovable-uploads/8e47072b-c16a-4210-879c-a243d34faf13.png",
+      image: "/lovable-uploads/2a75a14a-ca16-4b47-a695-0448e316ecf3.png",
       title: "Win Kurtis Worth ₹10,000! 5 Lucky Winners, Join Our Launch Giveaway!",
       description: "",
     },
@@ -152,11 +153,14 @@ export const TeaserCards = () => {
               ) : (
                 <>
                   <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
-                    <img 
-                      src={teaser.image} 
-                      alt="Launch Offer" 
-                      className="w-full h-full object-cover"
-                    />
+                    <picture>
+                      <source media="(min-width: 768px)" srcSet="/lovable-uploads/2a75a14a-ca16-4b47-a695-0448e316ecf3.png" />
+                      <img 
+                        src="/lovable-uploads/b790f0eb-1a82-497d-b18a-ea2aa37c77be.png" 
+                        alt="Launch Offer" 
+                        className="w-full h-full object-cover"
+                      />
+                    </picture>
                   </div>
                   <div className="flex-1 text-left">
                     <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
