@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -46,7 +45,6 @@ export const WaitlistSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate all required fields
     if (!formData.fullName) {
       toast({
         title: "Missing Information",
@@ -103,7 +101,6 @@ export const WaitlistSection = () => {
         className: "bg-white border-2 border-[#8C1444]/20 shadow-lg",
       });
 
-      // Reset form
       setFormData({
         fullName: "",
         email: "",
@@ -181,35 +178,35 @@ export const WaitlistSection = () => {
                   value="instagram" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Instagram size={18} className="text-disco" />
+                  <Instagram size={18} className="text-black" />
                   Instagram
                 </SelectItem>
                 <SelectItem 
                   value="friends" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Users size={18} className="text-disco" />
+                  <Users size={18} className="text-black" />
                   Friends
                 </SelectItem>
                 <SelectItem 
                   value="google" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Search size={18} className="text-disco" />
+                  <Search size={18} className="text-black" />
                   Google
                 </SelectItem>
                 <SelectItem 
                   value="whatsapp" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <MessageCircle size={18} className="text-disco" />
+                  <MessageCircle size={18} className="text-black" />
                   Whatsapp
                 </SelectItem>
                 <SelectItem 
                   value="others" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <MoreHorizontal size={18} className="text-disco" />
+                  <MoreHorizontal size={18} className="text-black" />
                   Others
                 </SelectItem>
               </SelectContent>
