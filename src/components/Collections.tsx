@@ -44,7 +44,7 @@ export const Collections = () => {
   }, 3000);
 
   const images = [
-    "/lovable-uploads/7b27dc6d-47a9-4b38-9aa0-4ceea485d2ae.png",
+    "/lovable-uploads/b7be83d5-985f-413e-a449-e0984a72b397.png",
     "/lovable-uploads/198fdacb-0a3b-4f40-bbf7-552a328f74ea.png",
     "/lovable-uploads/3a6333ff-d27f-481c-9b11-4403340dc64a.png"
   ];
@@ -81,7 +81,7 @@ export const Collections = () => {
                 className={`${isMobile ? 'w-full flex-shrink-0' : 'w-1/3'} px-2`}
                 style={isMobile ? { transform: `translateX(-${currentSlide * 100}%)` } : undefined}
               >
-                <Card className="w-[85%] mx-auto aspect-[3/4] rounded-[30px] overflow-hidden">
+                <Card className="w-[85%] mx-auto aspect-[3/4] rounded-2xl overflow-hidden">
                   <img 
                     src={image} 
                     alt={`Collection ${index + 1}`}
