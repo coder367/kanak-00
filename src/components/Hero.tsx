@@ -93,7 +93,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
       {/* Brand Name Container */}
       {!isMobile && (
-        <div className="fixed z-[60] px-4">
+        <div className="fixed z-[60] w-full flex justify-center">
           <h1 
             ref={brandRef}
             className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
@@ -101,8 +101,9 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
               transform: `scale(${isScrolled ? 0.35 : 1})`,
               position: 'fixed',
               top: isScrolled ? '10px' : '15%',
-              left: isScrolled ? '24px' : '24px',
-              transformOrigin: 'left center',
+              left: '50%',
+              transformOrigin: 'center center',
+              translate: '-50% 0',
               transition: 'all 0.5s ease-out'
             }}
           >
