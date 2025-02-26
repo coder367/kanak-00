@@ -31,8 +31,8 @@ export const TeaserCards = () => {
     },
     {
       image: "/lovable-uploads/2a75a14a-ca16-4b47-a695-0448e316ecf3.png",
-      title: "🎉 Grand Launch Giveaway",
-      description: "Win Kurtis Worth ₹10,000! 5 Lucky Winners, Join Our Launch Giveaway!",
+      title: "Win Kurtis Worth ₹10,000! 5 Lucky Winners, Join Our Launch Giveaway!",
+      description: "",
     },
   ];
 
@@ -73,9 +73,9 @@ export const TeaserCards = () => {
   }, []);
 
   return (
-    <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-0 teaser-cards-section">
+    <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-6 md:pb-12 teaser-cards-section">
       <div className="container mx-auto px-4">
-        <div className="min-h-[80vh] md:min-h-[150vh] relative perspective-[1000px] pb-[5vh] md:pb-[10vh]">
+        <div className="min-h-[80vh] md:min-h-[150vh] relative perspective-[1000px] pb-[15vh] md:pb-[30vh]">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
@@ -96,54 +96,7 @@ export const TeaserCards = () => {
                 transitionDelay: `${index * 150}ms`,
               }}
             >
-              {index === 2 ? (
-                <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
-                    <picture>
-                      <source media="(min-width: 768px)" srcSet="/lovable-uploads/2a75a14a-ca16-4b47-a695-0448e316ecf3.png" />
-                      <img 
-                        src="/lovable-uploads/b790f0eb-1a82-497d-b18a-ea2aa37c77be.png" 
-                        alt="Launch Offer" 
-                        className="w-full h-full object-cover"
-                      />
-                    </picture>
-                  </div>
-                  <div className="flex-1 text-center">
-                    <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
-                    <p className="text-base md:text-xl font-garamond text-turkish-rose mb-6">{teaser.description}</p>
-                    <div className="flex justify-center">
-                      <button 
-                        onClick={scrollToWaitlist}
-                        className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors text-base md:text-lg"
-                      >
-                        Join Waitlist
-                      </button>
-                    </div>
-                  </div>
-                </>
-              ) : index === 1 ? (
-                <>
-                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
-                    <img 
-                      src={teaser.image} 
-                      alt="Exclusive Offer" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 text-center md:text-left flex flex-col gap-4">
-                    <h3 className="text-2xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
-                    <p className="text-base md:text-xl font-garamond text-turkish-rose max-w-md">
-                      {typeof teaser.description === 'string' ? teaser.description : teaser.description.join(' ')}
-                    </p>
-                    <button 
-                      onClick={scrollToWaitlist}
-                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-4 md:px-6 py-2 rounded-xl transition-colors mx-auto md:mx-0 text-sm md:text-base"
-                    >
-                      Get Exclusive Access
-                    </button>
-                  </div>
-                </>
-              ) : (
+              {index === 0 ? (
                 <>
                   <div className="w-full md:w-72 h-[220px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
                     <picture>
@@ -173,6 +126,50 @@ export const TeaserCards = () => {
                     <p className="text-turkish-rose font-garamond leading-relaxed text-sm md:text-base">
                       {teaser.description}
                     </p>
+                  </div>
+                </>
+              ) : index === 1 ? (
+                <>
+                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                    <img 
+                      src={teaser.image} 
+                      alt="Exclusive Offer" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 text-center md:text-left flex flex-col gap-4">
+                    <h3 className="text-2xl md:text-5xl font-serif-display text-disco-dark">{teaser.title}</h3>
+                    <p className="text-base md:text-xl font-garamond text-turkish-rose max-w-md">
+                      {typeof teaser.description === 'string' ? teaser.description : teaser.description.join(' ')}
+                    </p>
+                    <button 
+                      onClick={scrollToWaitlist}
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-4 md:px-6 py-2 rounded-xl transition-colors mx-auto md:mx-0 text-sm md:text-base"
+                    >
+                      Get Exclusive Access
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="w-full md:w-72 h-[250px] md:h-[400px] overflow-hidden rounded-xl flex-shrink-0">
+                    <picture>
+                      <source media="(min-width: 768px)" srcSet="/lovable-uploads/2a75a14a-ca16-4b47-a695-0448e316ecf3.png" />
+                      <img 
+                        src="/lovable-uploads/b790f0eb-1a82-497d-b18a-ea2aa37c77be.png" 
+                        alt="Launch Offer" 
+                        className="w-full h-full object-cover"
+                      />
+                    </picture>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
+                    <button 
+                      onClick={scrollToWaitlist}
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors text-base md:text-lg"
+                    >
+                      Join Waitlist
+                    </button>
                   </div>
                 </>
               )}
