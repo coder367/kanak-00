@@ -176,38 +176,38 @@ export const WaitlistSection = () => {
               <SelectContent className="bg-white/90 backdrop-blur-md">
                 <SelectItem 
                   value="instagram" 
-                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Instagram className="h-4 w-4 text-black shrink-0" />
-                  <span>Instagram</span>
+                  <Instagram size={18} className="text-black" />
+                  Instagram
                 </SelectItem>
                 <SelectItem 
                   value="friends" 
-                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Users className="h-4 w-4 text-black shrink-0" />
-                  <span>Friends</span>
+                  <Users size={18} className="text-black" />
+                  Friends
                 </SelectItem>
                 <SelectItem 
                   value="google" 
-                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Search className="h-4 w-4 text-black shrink-0" />
-                  <span>Google</span>
+                  <Search size={18} className="text-black" />
+                  Google
                 </SelectItem>
                 <SelectItem 
                   value="whatsapp" 
-                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <MessageCircle className="h-4 w-4 text-black shrink-0" />
-                  <span>Whatsapp</span>
+                  <MessageCircle size={18} className="text-black" />
+                  Whatsapp
                 </SelectItem>
                 <SelectItem 
                   value="others" 
-                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <MoreHorizontal className="h-4 w-4 text-black shrink-0" />
-                  <span>Others</span>
+                  <MoreHorizontal size={18} className="text-black" />
+                  Others
                 </SelectItem>
               </SelectContent>
             </Select>

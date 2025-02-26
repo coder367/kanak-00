@@ -58,10 +58,9 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       className="min-h-[100vh] flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-24 lg:pt-32 relative overflow-hidden" 
       ref={observerRef}
       style={{
-        backgroundImage: 'url("/lovable-uploads/e71ba616-9bb7-48c9-bce9-19a52cb34e1a.png")',
-        backgroundSize: 'contain',
+        backgroundImage: 'url("/lovable-uploads/c4f711de-11f8-4a1e-b230-901510a703ef.png")',
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
       }}
     >
       {/* Background Navbar */}
