@@ -57,17 +57,10 @@ export const Footer = () => {
 
         {/* Brand and Copyright Section */}
         <div className="text-center pt-8 sm:pt-10 border-t border-turkish-rose/20">
-          <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8">
-            <img 
-              src="/lovable-uploads/d669cdcc-cad4-494f-9f6d-3e80b6596477.png"
-              alt="Brand Logo"
-              className="w-12 sm:w-16 md:w-20 lg:w-24 h-12 sm:h-16 md:h-20 lg:h-24"
-            />
-            <h2 className="font-serif-display text-disco-dark tracking-wider text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
-              KANAKDHAGA
-            </h2>
-          </div>
-          <p className="font-garamond text-turkish-rose text-xs sm:text-sm mt-4">
+          <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-disco-dark mb-4 sm:mb-6 tracking-wider">
+            KANAKDHAGA
+          </h2>
+          <p className="font-garamond text-turkish-rose text-xs sm:text-sm">
             © {new Date().getFullYear()} Kanakdhaga. All rights reserved.
           </p>
         </div>
