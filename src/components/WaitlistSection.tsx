@@ -88,8 +88,18 @@ export const WaitlistSection = () => {
       if (error) throw error;
 
       toast({
-        title: "Success!",
-        description: "You've been added to our waitlist. We'll be in touch soon!",
+        title: "🎉 Congratulations!",
+        description: (
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-xl font-serif-display text-[#8C1444]">
+              You're now an Exclusive Member of KANAKDHAGA
+            </span>
+            <div className="text-turkish-rose text-sm">
+              We'll keep you updated with exclusive offers and launches!
+            </div>
+          </div>
+        ),
+        className: "bg-white border-2 border-[#8C1444]/20 shadow-lg",
       });
 
       // Reset form
