@@ -85,14 +85,14 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
             top: isScrolled ? '10px' : '15%',
             left: '24px',
             transform: isScrolled 
-              ? 'scale(0.4)' 
+              ? 'scale(0.6)' 
               : 'scale(1)',
             transformOrigin: 'left center'
           }}
         >
           <h1 
             ref={brandRef}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display whitespace-nowrap"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.3rem] font-serif-display whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity"
             onClick={scrollToTop}
           >
             KANAKDHAGA
