@@ -13,15 +13,61 @@ export const WaitlistSection = () => {
     whatsappNumber: "",
     referralSource: "",
   });
+  const [errors, setErrors] = useState({
+    email: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      setErrors(prev => ({ ...prev, email: "Email is required" }));
+      return false;
+    }
+    if (!emailRegex.test(email)) {
+      setErrors(prev => ({ ...prev, email: "Please enter a valid email address (e.g., example@domain.com)" }));
+      return false;
+    }
+    setErrors(prev => ({ ...prev, email: "" }));
+    return true;
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setFormData(prev => ({ ...prev, email: value }));
+    if (value) {
+      validateEmail(value);
+    } else {
+      setErrors(prev => ({ ...prev, email: "" }));
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.fullName || !formData.email || !formData.referralSource) {
+    // Validate all required fields
+    if (!formData.fullName) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all required fields.",
+        description: "Please enter your full name",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!formData.referralSource) {
+      toast({
+        title: "Missing Information",
+        description: "Please select where you heard about us",
         variant: "destructive",
       });
       return;
@@ -53,6 +99,7 @@ export const WaitlistSection = () => {
         whatsappNumber: "",
         referralSource: "",
       });
+      setErrors({ email: "" });
 
     } catch (error) {
       toast({
@@ -76,20 +123,31 @@ export const WaitlistSection = () => {
           </p>
           
           <div className="space-y-3 md:space-y-4">
-            <Input 
-              type="text" 
-              placeholder="Full Name" 
-              value={formData.fullName}
-              onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
-              className="w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6"
-            />
-            <Input 
-              type="email" 
-              placeholder="Email" 
-              value={formData.email}
-              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-              className="w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6"
-            />
+            <div className="relative">
+              <Input 
+                type="text" 
+                placeholder="Full Name" 
+                value={formData.fullName}
+                onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
+                className="w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6"
+              />
+            </div>
+
+            <div className="relative">
+              <Input 
+                type="email" 
+                placeholder="Email" 
+                value={formData.email}
+                onChange={handleEmailChange}
+                className={`w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6 ${
+                  errors.email ? 'ring-2 ring-red-500' : ''
+                }`}
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1 text-left">{errors.email}</p>
+              )}
+            </div>
+
             <Input 
               type="tel" 
               placeholder="Whatsapp number (Optional)" 
