@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Instagram, Users, Search, MessageCircle, MoreHorizontal } from "lucide-react";
 
 export const WaitlistSection = () => {
   const { toast } = useToast();
@@ -125,7 +124,7 @@ export const WaitlistSection = () => {
   };
 
   return (
-    <section className="waitlist-section bg-careys-pink/60 backdrop-blur-lg py-8 md:py-16 relative -mt-12 md:-mt-24">
+    <section className="waitlist-section bg-careys-pink/60 backdrop-blur-lg py-16 md:py-20 relative">
       <div className="container mx-auto px-4 max-w-xl relative z-10">
         <form onSubmit={handleSubmit} className="text-center space-y-6 md:space-y-8 bg-white/10 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-lg">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif-display text-[#8C1444]">Join the waitlist</h2>
@@ -179,37 +178,32 @@ export const WaitlistSection = () => {
               <SelectContent className="bg-white/90 backdrop-blur-md">
                 <SelectItem 
                   value="instagram" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <Instagram size={18} className="text-disco" />
                   Instagram
                 </SelectItem>
                 <SelectItem 
                   value="friends" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <Users size={18} className="text-disco" />
                   Friends
                 </SelectItem>
                 <SelectItem 
                   value="google" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <Search size={18} className="text-disco" />
                   Google
                 </SelectItem>
                 <SelectItem 
                   value="whatsapp" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <MessageCircle size={18} className="text-disco" />
                   Whatsapp
                 </SelectItem>
                 <SelectItem 
                   value="others" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <MoreHorizontal size={18} className="text-disco" />
                   Others
                 </SelectItem>
               </SelectContent>
