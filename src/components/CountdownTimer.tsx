@@ -10,6 +10,12 @@ interface TimeLeft {
   seconds: number;
 }
 
+interface LaunchConfig {
+  id: number;
+  launch_date: string;
+  created_at: string;
+}
+
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -19,7 +25,7 @@ const CountdownTimer = () => {
     queryFn: async () => {
       const { data, error } = await supabase
         .from('launch_config')
-        .select('launch_date')
+        .select('*')
         .maybeSingle();
       
       if (error) {
@@ -27,7 +33,7 @@ const CountdownTimer = () => {
         throw error;
       }
       
-      return data;
+      return data as LaunchConfig;
     }
   });
 
@@ -91,3 +97,4 @@ const CountdownTimer = () => {
 };
 
 export default CountdownTimer;
+
