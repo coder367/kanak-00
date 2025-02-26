@@ -15,7 +15,6 @@ export const WaitlistSection = () => {
   });
   const [errors, setErrors] = useState({
     email: "",
-    whatsappNumber: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -33,21 +32,6 @@ export const WaitlistSection = () => {
     return true;
   };
 
-  const validateWhatsappNumber = (number: string) => {
-    if (!number) {
-      setErrors(prev => ({ ...prev, whatsappNumber: "WhatsApp number is required" }));
-      return false;
-    }
-    // Check if number starts with + and contains only digits after that
-    const phoneRegex = /^\+\d{10,15}$/;
-    if (!phoneRegex.test(number)) {
-      setErrors(prev => ({ ...prev, whatsappNumber: "Please enter a valid number with country code (e.g., +911234567890)" }));
-      return false;
-    }
-    setErrors(prev => ({ ...prev, whatsappNumber: "" }));
-    return true;
-  };
-
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setFormData(prev => ({ ...prev, email: value }));
@@ -55,16 +39,6 @@ export const WaitlistSection = () => {
       validateEmail(value);
     } else {
       setErrors(prev => ({ ...prev, email: "" }));
-    }
-  };
-
-  const handleWhatsappChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setFormData(prev => ({ ...prev, whatsappNumber: value }));
-    if (value) {
-      validateWhatsappNumber(value);
-    } else {
-      setErrors(prev => ({ ...prev, whatsappNumber: "" }));
     }
   };
 
@@ -90,15 +64,6 @@ export const WaitlistSection = () => {
       return;
     }
 
-    if (!validateWhatsappNumber(formData.whatsappNumber)) {
-      toast({
-        title: "Invalid WhatsApp Number",
-        description: "Please enter a valid WhatsApp number with country code",
-        variant: "destructive",
-      });
-      return;
-    }
-
     if (!formData.referralSource) {
       toast({
         title: "Missing Information",
@@ -115,7 +80,7 @@ export const WaitlistSection = () => {
         {
           full_name: formData.fullName,
           email: formData.email,
-          whatsapp_number: formData.whatsappNumber,
+          whatsapp_number: formData.whatsappNumber || null,
           referral_source: formData.referralSource,
         },
       ]);
@@ -134,7 +99,7 @@ export const WaitlistSection = () => {
         whatsappNumber: "",
         referralSource: "",
       });
-      setErrors({ email: "", whatsappNumber: "" });
+      setErrors({ email: "" });
 
     } catch (error) {
       toast({
@@ -165,7 +130,6 @@ export const WaitlistSection = () => {
                 value={formData.fullName}
                 onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
                 className="w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6"
-                required
               />
             </div>
 
@@ -178,33 +142,23 @@ export const WaitlistSection = () => {
                 className={`w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6 ${
                   errors.email ? 'ring-2 ring-red-500' : ''
                 }`}
-                required
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1 text-left">{errors.email}</p>
               )}
             </div>
 
-            <div className="relative">
-              <Input 
-                type="tel" 
-                placeholder="WhatsApp number with country code (e.g., +911234567890)" 
-                value={formData.whatsappNumber}
-                onChange={handleWhatsappChange}
-                className={`w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6 ${
-                  errors.whatsappNumber ? 'ring-2 ring-red-500' : ''
-                }`}
-                required
-              />
-              {errors.whatsappNumber && (
-                <p className="text-red-500 text-sm mt-1 text-left">{errors.whatsappNumber}</p>
-              )}
-            </div>
+            <Input 
+              type="tel" 
+              placeholder="Whatsapp number (Optional)" 
+              value={formData.whatsappNumber}
+              onChange={(e) => setFormData(prev => ({ ...prev, whatsappNumber: e.target.value }))}
+              className="w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6"
+            />
             
             <Select
               value={formData.referralSource}
               onValueChange={(value) => setFormData(prev => ({ ...prev, referralSource: value }))}
-              required
             >
               <SelectTrigger 
                 className="w-full bg-white/20 border-none text-[#8C1444] placeholder:text-turkish-rose h-12 md:h-14 rounded-xl md:rounded-2xl text-base md:text-lg px-4 md:px-6"
