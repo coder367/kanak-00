@@ -65,10 +65,24 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
     >
       {/* Background Navbar */}
       <div 
-        className={`fixed top-0 left-0 right-0 h-16 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-end px-4 sm:px-6 md:px-8 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 h-16 sm:h-16 md:h-20 bg-disco-dark z-[50] flex items-center justify-between px-4 sm:px-6 md:px-8 transition-all duration-500 ${
           isScrolled || isMobile ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
+        <button 
+          onClick={scrollToTop} 
+          className="p-2 rounded-lg transition-all duration-300 hover:bg-white/10 active:scale-95"
+        >
+          {isMobile ? (
+            <span className="text-white font-serif-display text-base">KANAKDHAGA</span>
+          ) : (
+            <img 
+              src="/lovable-uploads/2c48a457-88f2-45e0-af06-0d043afd1978.png" 
+              alt="Kanakdhaga Logo" 
+              className="h-8 sm:h-10 md:h-12 w-auto"
+            />
+          )}
+        </button>
         <button 
           onClick={scrollToCollections}
           className="text-white px-4 sm:px-6 py-2 sm:py-2.5 border border-white rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-disco-dark active:scale-95 hover:shadow-lg"
@@ -79,21 +93,17 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
 
       {/* Brand Name Container */}
       {!isMobile && (
-        <div 
-          className="fixed z-[60] px-4 transition-all duration-500 ease-in-out transform"
-          style={{
-            top: isScrolled ? '10px' : '15%',
-            left: '24px',
-            transform: isScrolled 
-              ? 'scale(0.6)' 
-              : 'scale(1)',
-            transformOrigin: 'left center'
-          }}
-        >
+        <div className="fixed z-[60] px-4" style={{
+          top: isScrolled ? '10px' : '15%',
+          transition: 'all 0.5s ease-in-out'
+        }}>
           <h1 
             ref={brandRef}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.3rem] font-serif-display whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity"
-            onClick={scrollToTop}
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white tracking-[0.15rem] sm:tracking-[0.25rem] md:tracking-[0.5rem] font-serif-display transition-all duration-500"
+            style={{
+              transform: `scale(${isScrolled ? 0.15 : 1})`,
+              transition: 'transform 0.5s ease-in-out'
+            }}
           >
             KANAKDHAGA
           </h1>
