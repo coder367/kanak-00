@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { useEffect, useState, useCallback } from "react";
 
@@ -78,7 +79,9 @@ export const TeaserCards = () => {
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className={`bg-white border-none p-4 sm:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
+              className={`bg-white border-none p-4 sm:p-8 ${
+                index === 2 ? 'rounded-t-2xl rounded-b-[3rem]' : 'rounded-2xl'
+              } flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
                 isVisible ? 'animate-fade-in' : 'opacity-0'
               }`}
               style={{

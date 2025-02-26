@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { Instagram, Users, Search, MessageCircle, MoreHorizontal } from "lucide-react";
 
 export const WaitlistSection = () => {
   const { toast } = useToast();
@@ -180,31 +180,46 @@ export const WaitlistSection = () => {
                   value="instagram" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  Instagram
+                  <div className="flex items-center gap-2">
+                    <Instagram className="h-4 w-4" />
+                    Instagram
+                  </div>
                 </SelectItem>
                 <SelectItem 
                   value="friends" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  Friends
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4" />
+                    Friends
+                  </div>
                 </SelectItem>
                 <SelectItem 
                   value="google" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  Google
+                  <div className="flex items-center gap-2">
+                    <Search className="h-4 w-4" />
+                    Google
+                  </div>
                 </SelectItem>
                 <SelectItem 
                   value="whatsapp" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  Whatsapp
+                  <div className="flex items-center gap-2">
+                    <MessageCircle className="h-4 w-4" />
+                    Whatsapp
+                  </div>
                 </SelectItem>
                 <SelectItem 
                   value="others" 
                   className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  Others
+                  <div className="flex items-center gap-2">
+                    <MoreHorizontal className="h-4 w-4" />
+                    Others
+                  </div>
                 </SelectItem>
               </SelectContent>
             </Select>
