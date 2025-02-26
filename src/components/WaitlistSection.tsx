@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -176,38 +177,38 @@ export const WaitlistSection = () => {
               <SelectContent className="bg-white/90 backdrop-blur-md">
                 <SelectItem 
                   value="instagram" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <Instagram size={18} className="text-black" />
-                  Instagram
+                  <Instagram className="h-4 w-4 text-black shrink-0" />
+                  <span>Instagram</span>
                 </SelectItem>
                 <SelectItem 
                   value="friends" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <Users size={18} className="text-black" />
-                  Friends
+                  <Users className="h-4 w-4 text-black shrink-0" />
+                  <span>Friends</span>
                 </SelectItem>
                 <SelectItem 
                   value="google" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <Search size={18} className="text-black" />
-                  Google
+                  <Search className="h-4 w-4 text-black shrink-0" />
+                  <span>Google</span>
                 </SelectItem>
                 <SelectItem 
                   value="whatsapp" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <MessageCircle size={18} className="text-black" />
-                  Whatsapp
+                  <MessageCircle className="h-4 w-4 text-black shrink-0" />
+                  <span>Whatsapp</span>
                 </SelectItem>
                 <SelectItem 
                   value="others" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer"
                 >
-                  <MoreHorizontal size={18} className="text-black" />
-                  Others
+                  <MoreHorizontal className="h-4 w-4 text-black shrink-0" />
+                  <span>Others</span>
                 </SelectItem>
               </SelectContent>
             </Select>
