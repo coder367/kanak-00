@@ -57,7 +57,7 @@ export const Footer = () => {
 
         {/* Brand and Copyright Section */}
         <div className="text-center pt-8 sm:pt-10 border-t border-turkish-rose/20">
-          <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-disco-dark mb-4 sm:mb-6 tracking-wider">
+          <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-[10rem] text-disco-dark mb-4 sm:mb-6 tracking-wider leading-none">
             KANAKDHAGA
           </h2>
           <p className="font-garamond text-turkish-rose text-xs sm:text-sm">
