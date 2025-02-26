@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { useEffect, useState, useCallback } from "react";
 
@@ -73,15 +72,13 @@ export const TeaserCards = () => {
   }, []);
 
   return (
-    <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-0 md:pb-6 teaser-cards-section">
+    <section className="bg-careys-pink/60 backdrop-blur-lg pt-16 md:pt-24 pb-8 md:pb-6 teaser-cards-section">
       <div className="container mx-auto px-4">
         <div className="min-h-[80vh] md:min-h-[150vh] relative perspective-[1000px] pb-0 md:pb-[30vh]">
           {teasers.map((teaser, index) => (
             <Card 
               key={index} 
-              className={`bg-white border-none p-4 sm:p-8 ${
-                index === 2 ? 'rounded-t-2xl rounded-b-[3rem]' : 'rounded-2xl'
-              } flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
+              className={`bg-white border-none p-4 sm:p-8 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 items-center sticky top-[15vh] transition-transform duration-300 overflow-hidden ${
                 isVisible ? 'animate-fade-in' : 'opacity-0'
               }`}
               style={{
