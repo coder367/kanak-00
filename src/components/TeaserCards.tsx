@@ -31,8 +31,8 @@ export const TeaserCards = () => {
     },
     {
       image: "/lovable-uploads/2a75a14a-ca16-4b47-a695-0448e316ecf3.png",
-      title: "🎉 Grand Launch Giveaway",
-      description: "Win Kurtis Worth ₹10,000! 5 Lucky Winners, Join Our Launch Giveaway!",
+      title: "Win Kurtis Worth ₹10,000! 5 Lucky Winners, Join Our Launch Giveaway!",
+      description: "",
     },
   ];
 
@@ -162,17 +162,14 @@ export const TeaserCards = () => {
                       />
                     </picture>
                   </div>
-                  <div className="flex-1 text-center">
+                  <div className="flex-1 text-left">
                     <h3 className="text-2xl md:text-4xl font-serif-display text-disco-dark mb-4 md:mb-6">{teaser.title}</h3>
-                    <p className="text-turkish-rose text-base md:text-lg mb-6">{teaser.description}</p>
-                    <div className="flex justify-center">
-                      <button 
-                        onClick={scrollToWaitlist}
-                        className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors text-base md:text-lg"
-                      >
-                        Join Waitlist
-                      </button>
-                    </div>
+                    <button 
+                      onClick={scrollToWaitlist}
+                      className="bg-disco hover:bg-disco-dark text-white font-garamond px-6 md:px-8 py-2 md:py-3 rounded-xl transition-colors text-base md:text-lg"
+                    >
+                      Join Waitlist
+                    </button>
                   </div>
                 </>
               )}

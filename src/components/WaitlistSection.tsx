@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -45,6 +46,7 @@ export const WaitlistSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validate all required fields
     if (!formData.fullName) {
       toast({
         title: "Missing Information",
@@ -101,6 +103,7 @@ export const WaitlistSection = () => {
         className: "bg-white border-2 border-[#8C1444]/20 shadow-lg",
       });
 
+      // Reset form
       setFormData({
         fullName: "",
         email: "",
@@ -173,41 +176,41 @@ export const WaitlistSection = () => {
               >
                 <SelectValue placeholder="Where did you hear about us?" />
               </SelectTrigger>
-              <SelectContent className="bg-white shadow-lg border-none">
+              <SelectContent className="bg-white/90 backdrop-blur-md">
                 <SelectItem 
                   value="instagram" 
-                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Instagram size={18} className="text-[#8C1444] shrink-0" />
-                  <span>Instagram</span>
+                  <Instagram size={18} className="text-disco" />
+                  Instagram
                 </SelectItem>
                 <SelectItem 
                   value="friends" 
-                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Users size={18} className="text-[#8C1444] shrink-0" />
-                  <span>Friends</span>
+                  <Users size={18} className="text-disco" />
+                  Friends
                 </SelectItem>
                 <SelectItem 
                   value="google" 
-                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <Search size={18} className="text-[#8C1444] shrink-0" />
-                  <span>Google</span>
+                  <Search size={18} className="text-disco" />
+                  Google
                 </SelectItem>
                 <SelectItem 
                   value="whatsapp" 
-                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <MessageCircle size={18} className="text-[#8C1444] shrink-0" />
-                  <span>Whatsapp</span>
+                  <MessageCircle size={18} className="text-disco" />
+                  Whatsapp
                 </SelectItem>
                 <SelectItem 
                   value="others" 
-                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
+                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <MoreHorizontal size={18} className="text-[#8C1444] shrink-0" />
-                  <span>Others</span>
+                  <MoreHorizontal size={18} className="text-disco" />
+                  Others
                 </SelectItem>
               </SelectContent>
             </Select>
