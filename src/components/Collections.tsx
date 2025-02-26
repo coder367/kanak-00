@@ -44,7 +44,7 @@ export const Collections = () => {
   }, 3000);
 
   const images = [
-    "/lovable-uploads/7b27dc6d-47a9-4b38-9aa0-4ceea485d2ae.png",
+    "/lovable-uploads/09a5c7a4-bef7-4d81-8ce7-82eb86660aea.png",
     "/lovable-uploads/198fdacb-0a3b-4f40-bbf7-552a328f74ea.png",
     "/lovable-uploads/3a6333ff-d27f-481c-9b11-4403340dc64a.png"
   ];

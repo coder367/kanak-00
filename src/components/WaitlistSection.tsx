@@ -173,41 +173,41 @@ export const WaitlistSection = () => {
               >
                 <SelectValue placeholder="Where did you hear about us?" />
               </SelectTrigger>
-              <SelectContent className="bg-white/90 backdrop-blur-md">
+              <SelectContent className="bg-white shadow-lg border-none">
                 <SelectItem 
                   value="instagram" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
                 >
-                  <Instagram size={18} className="text-black" />
-                  Instagram
+                  <Instagram size={18} className="text-[#8C1444] shrink-0" />
+                  <span>Instagram</span>
                 </SelectItem>
                 <SelectItem 
                   value="friends" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
                 >
-                  <Users size={18} className="text-black" />
-                  Friends
+                  <Users size={18} className="text-[#8C1444] shrink-0" />
+                  <span>Friends</span>
                 </SelectItem>
                 <SelectItem 
                   value="google" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
                 >
-                  <Search size={18} className="text-black" />
-                  Google
+                  <Search size={18} className="text-[#8C1444] shrink-0" />
+                  <span>Google</span>
                 </SelectItem>
                 <SelectItem 
                   value="whatsapp" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
                 >
-                  <MessageCircle size={18} className="text-black" />
-                  Whatsapp
+                  <MessageCircle size={18} className="text-[#8C1444] shrink-0" />
+                  <span>Whatsapp</span>
                 </SelectItem>
                 <SelectItem 
                   value="others" 
-                  className="hover:bg-turkish-rose/10 hover:text-disco transition-colors cursor-pointer flex items-center gap-2"
+                  className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-turkish-rose/10"
                 >
-                  <MoreHorizontal size={18} className="text-black" />
-                  Others
+                  <MoreHorizontal size={18} className="text-[#8C1444] shrink-0" />
+                  <span>Others</span>
                 </SelectItem>
               </SelectContent>
             </Select>
