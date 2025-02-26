@@ -118,7 +118,7 @@ export const Hero = ({ onScroll, brandRef }: HeroProps) => {
       </div>
 
       {/* Launching Soon and Timer Container */}
-      <div className="absolute bottom-20 sm:bottom-16 md:bottom-12 lg:bottom-8 left-0 right-0 z-[40] px-4 sm:px-6 flex flex-col items-center">
+      <div className="absolute bottom-40 sm:bottom-16 md:bottom-12 lg:bottom-8 left-0 right-0 z-[40] px-4 sm:px-6 flex flex-col items-center">
         {/* Launching Soon Tag */}
         <div className="mt-[20px] md:mt-0 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-white/30 bg-[#8C1444] backdrop-blur-sm flex items-center space-x-2 sm:space-x-3 shadow-lg hover:bg-[#8C1444]/90 hover:shadow-[0_0_15px_rgba(140,20,68,0.4)] transition-all duration-300">
           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#FBFBEB] animate-pulse" />
